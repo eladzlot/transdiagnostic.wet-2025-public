@@ -1,0 +1,62 @@
+## Change model {{mname}}
+
+```{r include=FALSE}
+  mname = '{{mname}}'
+  
+  d = data_long %>% filter(measure == mname, !is.na(value), wave>0)
+  m = model.change(d, mname)
+  post = extract.samples(m)
+  prec = precis(m, depth=9)
+```
+  
+```{r change-{{mname}}}
+  # Save current plotting parameters
+  opar <- par(no.readonly = TRUE)
+
+  # Set up plotting area: 2 rows, 2 columns (fills by row)
+  par(mfrow = c(2, 2))
+  
+  plot_mean_sum_by_condition(d,mname)
+  
+  change_link = function(post, cond, waves){
+    mat = with(post, cbind(bbar_baseline, bbar_treatment[,cond], bbar_treatment[,cond], bbar_treatment[,cond], bbar_fu1[,cond], bbar_fu2[,cond])) %>%
+  apply(1, cumsum) %>% t
+    return(mat[,waves])
+  }
+  waves = unique(d$wave)
+  conditions = unique(d$condition)
+  colors = c("#E69F00", "#56B4E9", "#009E73")
+  outcomes = lapply(1:length(conditions), function(cond){
+    mat = change_link(post, cond, waves)
+    list(
+      means = apply(mat, 2, mean),
+      PI = apply(mat, 2, PI),
+      col = colors[cond]
+    )
+  })
+  
+  plot(NULL, type = "n", ylim = c(-4,1), xlim=range(waves), xlab = "Wave", ylab = "Cum logit", main = paste0("Change ", mname))
+  for (outcome in outcomes){
+    lines(waves, outcome$means, type = "o", col = outcome$col, pch = 16, lty = 2)
+    shade(outcome$PI, waves)
+  }
+  
+legend( "top",  legend = conditions,
+  col = colors[1:length(conditions)],
+  pch = 14 + (1:length(conditions)),
+  lty = 1:length(conditions),
+  horiz = TRUE,
+  bty = "n",
+  inset = c(0, -0.3), # Adjust to position the legend above the plot
+  xpd=TRUE
+)
+
+  precis(m, depth=2, pars = c('bbar_baseline','bbar_treatment', 'bbar_fu1','bbar_fu2')) %>% plot(main = 'Change parameters')
+  precis(m, depth=2, pars = c('alpha','beta')) %>% plot(main='IRT parameters')
+
+  # Reset to original plotting parameters
+  par(opar)
+```
+
+&nbsp;
+

@@ -1,0 +1,226 @@
+# Methods
+
+This study was a randomized controlled trial (RCT) in which participants were randomly assigned to one of two groups: the treatment group (WET) or the control group (Neutral Imagery Writing, NIW).
+Additionally, data from a waitlist control group was incorporated, collected from a prior study with the same structure and inclusion/exclusion criteria [see @sorkaTransdiagnosticSelfGuidedImageryinpreparation].
+This provided both a passive control and an active control for comparison.
+The study employed a double-blind design to ensure objectivity.
+Study personnel had no direct interaction with participants, and both experimenters and participants were unaware of group assignments until the one-week follow-up.
+The primary outcome was defined as the change in OASIS scores, with changes in WSAS scores and other proposed mechanisms serving as secondary outcomes.
+Covariations between changes in OASIS and changes in each potential mechanism were also explored.
+
+Supplementary materials, including datasets, analysis scripts, and detailed methodological documentation, are available on GitHub at [https://github.com/eladzlot/transdiagnostic.wet-2025-public](https://github.com/eladzlot/transdiagnostic.wet-2025-public).
+To protect participant confidentiality, the datasets have been redacted to include only quantitative information, as the core threats and other open-ended responses could potentially identify specific individuals.
+These resources enhance transparency and facilitate replication of the findings.
+
+## Participants
+
+Participants were recruited through the Prolific platform, compensated at $\pounds 9$/hour.
+Inclusion criteria included high pathological anxiety (greater than 4 on the OASIS),
+and impaired daily function (at least one item scored above 2 on WSAS).
+Exclusion criteria were severe depression [greater than 14 on the PHQ\; @kroenkePHQ8MeasureCurrent2009], post-trauma [greater than 6 on the brief PCL-5\; @zuromskiDevelopingOptimalShortform2019], or psychotic symptoms [evaluated via items 19 and 20 from the DIAMOND screener\; @tolinPsychometricPropertiesStructured2018].
+In addition, English as a fluent language was required.
+Furthermore, participants who had reported head injury or reading and writing difficulties in the Prolific system were excluded.
+Finally, only experienced users on the Prolific platform with an approval rate of above 95, and with minimum previous submissions of 300 were allowed to participate in this study.
+An ethnically diverse sample was requested from Prolific.
+
+A power analysis indicated that a sample size of 148 participants would provide 0.8 power, but due to financial constraints, Bayesian stopping criteria allowed for early termination.
+Recruitment continued until region of practical equivalence (ROPE) showed no significant difference could be found between WET and NIW conditions.
+
+Participants were randomly assigned to the treatment and control groups in a 2:1 ratio, using block randomization ($OASIS \geq 8$), aiming to ensure equal distribution of anxiety severity between groups.
+The randomization process was integrated into the experiment program code.
+
+
+## Measures
+
+```{r include=FALSE, warning=FALSE, message=FALSE, cache=TRUE}
+library(psych)
+source(here('scripts','helpers.R'))
+if (!exists('data_long')) source(here('scripts','load_data.R'))
+
+measure_list = c('oasis', 'wsas', 'dts','taf_m','taf_l', 'bcss_self_neg', 'bcss_other_neg','bcss_self_pos', 'bcss_other_pos','tiii','ifs', 'scs', 'mcq_confidence','mcq_worry','mcq_self','mcq_danger','mcq_control', 'bsam.pre', 'bsam.post')
+
+omega.list = list()
+for (m in measure_list) {
+  omega.list[[m]] = omega_from_long(data_long %>% filter(measure == m))
+}
+omega.list[['bsam']] = omega_from_long(data_long %>% filter(measure %in% c('bsam.pre', 'bsam.post')))
+```
+
+The *Overall Anxiety Severity and Impairment Scale* [OASIS\; @normanDevelopmentValidationOverall2006] assesses the frequency, intensity, and functional impairment of anxiety and fear over the past week.
+Participants rate their anxiety on a 5-point scale from 0 (little or none) to 4 (extreme or all the time).
+Higher scores indicate more severe anxiety-related impairment, with a cut-off score of eight recommended for distinguishing anxiety disorders and a change of four points considered clinically significant [@moorePsychometricEvaluationOverall2015].
+The OASIS has strong psychometric properties, with an omega coefficient of `r omega.list$oasis` across timepoints in our sample, indicating high reliability.
+
+The *Work and Social Adjustment Scale* [WSAS\; @mundtWorkSocialAdjustment2002] was used to assess functional impairment due to anxiety symptoms.
+The scale consists of five items, each rated on a 9-point Likert scale (0 = no impairment to 8 = severe impairment), evaluating the extent of difficulty in work, home management, social leisure, private leisure, and close relationships.
+In our sample, the omega coefficient  was `r omega.list$wsas`, indicating high reliability.
+
+The *Thought-Action Fusion Scale Revised* [TAF-R\; @shafranThoughtactionFusionObsessive1996] measured the degree to which individuals equate thoughts with actions.
+It includes 19 items rated on a 5-point Likert scale (0 = disagree strongly to 4 = agree strongly), with higher scores indicating a stronger tendency toward thought–action fusion.
+The scale comprises two subscales: **TAF-Moral**, which reflects the belief that having unacceptable thoughts is morally equivalent to performing them, and **TAF-Likelihood**, which captures the belief that thinking certain thoughts increases the likelihood of them occurring.
+We analyzed these subscales separately.
+In our sample, the omega coefficient for moral and likelihood TAF was `r omega.list$taf_m` and `r omega.list$taf_l` respectively, indicating excellent reliability.
+
+The *Brief Core Schema Scale* [BCSS\; @fowlerBriefCoreSchema2006] was employed to assess positive and negative cognitive self-schemas.
+It consists of 24 items regarding the self or others (e.g., “I am talented”; “I am loved”), divided into two subscales each (e.g., self-positive and self-negative).
+Each item is rated on a 5-point Likert scale (0 = Don’t Believe it to 4 = Believe it totally).
+In our sample, the omega coefficients for each scale were at least `r min(c(omega.list$bcss_self_pos, omega.list$bcss_self_neg, omega.list$bcss_other_pos, omega.list$bcss_other_neg))`, indicating excellent reliability.
+
+The *Distress Tolerance Scale* [DTS\; @simonsDistressToleranceScale2005] assessed participants' ability to tolerate distressing emotions and situations.
+The DTS consists of 15 items rated on a 5-point Likert scale (1 = strongly agree to 5 = strongly disagree), evaluating various aspects of distress tolerance, including participants' perceived ability to withstand negative emotions without engaging in impulsive behaviors.
+Due to a coding mistake, item 6 was missing and item 7 was repeated twice, thus we dropped item 6 completely from all analyses.
+In our sample, the omega coefficient  was `r omega.list$dts`, indicating excellent reliability.
+
+The *Metacognition Questionnaire-30* [MCQ-30\; @wellsShortFormMetacognitions2004] was employed to evaluate metacognitive processes and beliefs related to anxiety.
+The MCQ-30 consists of 30 items rated on a Likert scale ranging from 1 (do not agree) to 4 (agree very much).
+It assesses five factors of metacognition: cognitive confidence, positive beliefs about worry, cognitive self-consciousness, negative beliefs about the uncontrollability of thoughts and danger, and beliefs about the need to control thoughts.
+In our sample, the omega coefficients  were at least `r min(c(omega.list$mcq_danger, omega.list$mcq_confidence, omega.list$mcq_worry, omega.list$mcq_self, omega.list$control))`, indicating excellent reliability.
+
+The *Self-Compassion Scale-Short Form* [SCS-SF\; @raesConstructionFactorialValidation2011] assessed participants’ levels of self-compassion.
+The SCS-SF consists of 12 items rated on a 5-point Likert scale (1 = almost never to 5 = almost always).
+Higher scores indicate a greater frequency of self-compassionate thoughts and behaviors.
+In our sample, the omega coefficient  was `r omega.list$scs`, indicating excellent reliability.
+
+The *Impact of Future Event Scale* [IFES\; @deeproseMeasuringIntrusiveProspective2011] assessed the impact of intrusive prospective, personally-relevant imagery.
+Participants completed 24 items evaluating intrusive pre-experiencing, avoidance, and hyper-arousal, responding to how frequently each statement was true for them over the past seven days.
+Responses were given on a 5-point scale (0 = not at all to 4 = frequently).
+For example, one item asked, "Pictures about the future popped into my mind."
+In our sample, the omega coefficient  was `r omega.list$ifs`, indicating excellent reliability.
+
+The *Brief State Anxiety Measure*  [BSAM\; @bergAreEmotionsFrightening1998] was used to assess participants' state anxiety in response to their core threat. 
+The BSAM consists of six items (relaxed, steady, strained, comfortable, worried, tense) adapted from the State-Trait Anxiety Inventory (STAI).
+These items are designed to provide a brief and efficient measure of state anxiety.
+Each item is rated on a 7-point scale (1 = Not at all, 4 = Very much so), with higher scores indicating greater levels of anxiety.
+In this study, participants were asked to imagine their core threat script for a few moments both before and after each writing session.
+They then completed the BSAM to report their current anxiety levels.
+The BSAM demonstrated excellent internal consistency in our sample, as indicated by an omega coefficient of `r omega.list$bsam`.
+
+The *Treatment Credibility Questionnaire* [@devillyPsychometricPropertiesCredibility2000] was used to evaluate treatment credibility.
+Credibility was assessed once, at the middle of Session 1, following the presentation of the overall treatment rationale and before the intervention itself.
+Patients rated the therapy on a scale from 0 (not at all) to 8 (very), assessing both how they felt about the intervention and how effective they believed it would be.
+The scale has demonstrated strong internal consistency and test–retest reliability [@devillyPsychometricPropertiesCredibility2000].
+
+## Procedure
+
+The final protocol consists of several steps.
+In the initial phase, participants identified and articulated their core threats, which represent the ultimate fears underlying their anxiety.
+They then developed a concise script connecting proximal threats to core threats, creating a clear narrative of how these threats were expected to unfold.
+Participants engaged in four 20-minute writing sessions designed to facilitate emotional processing, followed by two follow-up sessions: the first one week after completing the intervention and the second two months later (see Figure \@ref(fig:progress)).
+Outcomes were measured at each session, while mechanisms were assessed pre- and post-intervention to observe the dynamics of change [see @kazdinMediatorsMechanismsChange2007].
+
+(ref:progress-caption) The timeline of the experiment. WET stands for writing for both WET and NIW groups. The waitlist control group completed the questionnaires at time equivalent to WET 1, WET 4, and the 1 week follow-up
+
+```{r progress, fig.cap="(ref:progress-caption)", out.width="100%", fig.heigh=2}
+knitr::include_graphics(here("images","progress-resized.png"))
+```
+
+Symptoms, measured using the OASIS, were assessed before each writing session, except for the final session, where symptoms were measured after writing.
+Additionally, symptoms were measured at both follow-up sessions.
+Functioning, measured using the WSAS, was assessed at pre-intervention, post-intervention, and both follow-ups.
+Mechanisms were evaluated at pre-intervention (before the first writing session) and post-intervention (after the fourth writing session).
+
+Participants were divided into three groups: WET, NIW, and waitlist.
+The WET group was instructed to expand on their threat script, focusing on repeated and detailed exposure to distressing content, while the NIW group was guided to identify and describe a neutral situation emphasizing sensory details without emotional valence.
+Both groups were instructed to write vividly and in detail, describing their thoughts and emotions during the exercise.
+The WET group received standard exposure-based psychoeducation, which emphasized how confronting distressing material could reduce emotional impact over time.
+In contrast, the NIW group received psychoeducation highlighting the value of distraction and mental control in fostering emotional regulation.
+The waitlist group, which served as a control, completed the OASIS and WSAS three times at one-week intervals to mirror the timepoints of pre-intervention, post-intervention, and one-week follow-up.
+Full instructions for both WET and NIW, including psychoeducation materials, are available in the supplementary materials.
+
+## Statistical Analysis
+
+### Change Model
+
+In this study, we employ a multilevel ANCOVA design to account for the nested structure of the data, where anxiety responses are measured repeatedly within individuals over time [@bodnerDetectingDifferentiatingDirection2018; @vanbreukelenANCOVACHANGEBaseline2013].
+The data collected is hierarchical in nature, with multiple measurements nested within each individual.
+This nested structure can lead to dependencies among observations within the same individual, violating the assumption of independence in traditional ANCOVA.
+For example, rate of change during the treatment is likely correlated to baseline symptom levels.
+Multilevel modeling, addresses these dependencies by incorporating random effects to capture the variability within and between individuals.
+By accounting for both within- and between-subject variability, multilevel modeling reduces bias that could arise from unaccounted dependencies in repeated measures, thus providing more precise estimates of the treatment effects.
+Furthermore, it becomes possible to investigate individual as well as group level effects [@raudenbushHierarchicalLinearModels2002].
+
+To understand change, the estimand is the group level rate of change at each time point.
+In the first part of the study, efficacy was examined by the *fixed effects* — the average rates of change across individuals.
+These fixed effects allow us to assess the overall population-level impact of the interventions on anxiety symptoms and mechanisms at different time points.
+
+
+In the second part of the study, symptom-mechanisms covariation was examined by modeling the *random effects* — the individual deviations from the group-level trends.
+These random effects allow us to capture individual differences in rates of change and explore how these differences relate to the proposed change-driving mechanisms.
+By modeling both fixed and random effects, we can explore not only the general efficacy of the intervention but also the individual variability in response to treatment, which may reveal underlying mechanisms.
+
+To account for follow-up measurements at varying time lags (e.g., 1 week, 2 months), we employ a **piecewise growth model**, allowing for separate slopes at different follow-up times [@bollenLatentCurveModels2006; @andersson35yearFollowInternetdeliveredCognitive2013].
+This model enables us to estimate distinct rates of change during different phases of the study.
+Combined with the measurement model described below, this is in essence a latent change score model [@cancerDynamicalPropertiesConceptual2021; @mcardleLatentVariableModeling2009].
+
+The equation for this linear model is as follows:
+
+$$\theta_{ti} = \beta_{0i} + \beta_{1i} \cdot \min(t-1, 3) \cdot 1_{\{t > 1\}} + \beta_{2i} \cdot 1_{\{t > 5\}} + \beta_{3i} \cdot 1_{\{t=6\}}$$
+$$\beta_{ji} = \bar{\beta}_{j,\text{condition}} + u_{ji}$$
+
+The latent symptom severity ($\theta$) is linearly modeled as a baseline effect ($\beta_{0i}$) for each individual and the rate of change after the first session and up to the fourth session ($\beta_{1i}$).
+Separate terms ($\beta_{2i}$) and ($\beta_{3i}$) represent the rate of change at follow-up (1 week, 2 months), allowing for flexible modeling of changes at different time intervals.
+The individual-specific effects, ($\beta_{ji}$), are modeled as deviations from the group-level effects, ($\bar{\beta}_{j,\text{condition}}$), to capture both individual and group variability.
+
+### Measurement Model
+
+Given that anxiety was measured using an ordinal scale, we linked latent symptom severity ($\theta$) to the observed ordinal responses using an ordered logit model with a cumulative link function [@mccullaghRegressionModelsOrdinal1980].
+This model assumes that ordinal responses are generated by an underlying continuous latent variable, with thresholds ($\kappa$) defining the response categories.
+The ordered logit function estimates the probability ($\phi$) of endorsing each response category based on the latent symptom severity trait ($\theta$).
+
+To account for measurement error and the multidimensionality of the anxiety construct, we adopted a graded response model (GRM) from the item response theory (IRT) framework [@samejimaGradedResponseModels2016].
+The GRM is well-suited for ordinal data, modeling the probability of endorsing an item category as a function of both item-specific parameters (discrimination: ($\alpha$), and difficulty: ($\beta$) and the individual’s latent trait level ($\theta$).
+
+The GRM allows us to model the latent symptom severity ($\theta$) for each individual at a specific time point, while accounting for the unique characteristics of each item.
+The discrimination parameter ($\alpha$) captures how well each item distinguishes between individuals with different levels of anxiety, while the difficulty parameter ($\beta$) reflects the trait level required to endorse higher response categories.
+This approach helps address known issues with the reliability of change scores [@prielerProblemsMeasurementChange2008; @rodebaughUnreliabilityThreatUnderstanding2016].
+
+In this framework, $\theta$ is estimated from the multilevel model described earlier, capturing both individual-specific (random) effects and group-level (fixed) effects.
+The integration of the GRM with the broader multilevel model allows us to model the latent trait accurately, taking into account both item-level variability and individual differences in anxiety over time.
+
+The equation for the measurement model is as follows:
+
+$$R_{itq} \sim \text{Ordered-logit}(\phi_{itq}, \kappa)$$
+$$\phi_{itq} = \alpha_q \cdot (\theta_{it} - \beta_q)$$
+
+Here, the likelihood function represents the probability of observing the ordinal response ($R$), given the latent symptom severity  ($\theta$).
+The IRT model specifies the relationship between the latent trait and the item parameters, providing a comprehensive approach to modeling anxiety across individuals.
+Detailed specifications for this model are provided in Appendix 1, and the full code is available in the supplementary materials.
+
+## Mechanisms
+
+Our second research question investigates the role of various mechanisms in driving changes in pathological anxiety.
+While establishing causality is notoriously difficult, particularly in psychological research [@eronenCausalDiscoveryProblem2020], our goal is to identify correlations that may signal possible causal relationships.
+
+Mechanisms of change in psychotherapy refer to the processes or events through which psychological interventions achieve their effects on symptoms or functioning.
+Demonstrating that an intervention causes a change, does not explain *why* these changes came about.
+Establishing a mechanism requires strong association between the treatment and process, and between the process and the outcome [@kazdinMediatorsMechanismsChange2007].
+Thus, our task is to establish an association between the process and outcome for each process that was found to change by the treatment.
+
+The question here focuses on the process of change, thus we're interested in an association between *changes* in process and mechanism.
+We use multivariate latent curve models to examine the association between symptoms and process as they change through time [@maccallumStudyingMultivariateChange1997; @damianDoesVariabilityHuman2010; @baldwinAnalyzingMultipleOutcomes2014].
+This approach extends common univariate growth models by allowing the simultaneous examination of multiple outcomes, capturing both the relationships between individual processes and how they evolve over time.
+Specifically, we model both anxiety (as measured by the OASIS) and the process of interest in parallel, using a single covariance matrix to estimate the random effects for both processes.
+Detailed specifications for this model are provided in Appendix 2, and the full code is available in the supplementary materials.
+
+By incorporating a shared covariance matrix, we capture the correlations between baseline values (intercepts) and changes (slopes) both within and across the two outcomes.
+This enables us to test whether baseline levels of a mechanism predict changes in anxiety (moderation) and whether changes in the mechanism correlate with changes in anxiety (mediation).
+These cross-process correlations help identify which mechanisms are most strongly associated with changes in anxiety, guiding future research aimed at testing causal pathways.
+
+Although this analysis does not establish causality, it offers valuable insights into potential intervention targets.
+For example, identifying mechanisms that strongly correlate with changes in anxiety could inform more focused treatments by highlighting which processes to target for clinical improvement.
+Further research will need to extend these findings by extending them into full mediation models [@hilleyDynamicChangeMeets2022].
+
+### Missing Data and Estimation
+
+All participants who began the intervention were included in the analysis.
+Missing data were imputed via Bayesian imputation, assuming that missingness may be affected by baseline trait levels and task completion difficulty.
+
+We used Bayesian methods to estimate the parameters of the model using Markov Chain Monte Carlo (MCMC) algorithms implemented in Stan [@carpenterStanProbabilisticProgramming2017], and via the rethinking interface [@mcelreathStatisticalRethinkingBayesian2020].
+We specified weakly informative priors for the regression coefficients, the thresholds, and the item parameters.
+We assessed the convergence and the fit of the model using posterior predictive checks, trace plots, and effective sample sizes.
+We use a credible interval of 89% [@mcelreathStatisticalRethinkingBayesian2020].
+
+<!--- ?????????????
+# verification
+This change model was verified by comparison to an unstructured model, where time was treated as a categorical variable [@crits-christophRepeatedAssessmentsDepressive2023].
+--> 

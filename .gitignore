@@ -1,0 +1,23 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+raw
+raw.old
+old
+tmp
+
+# Ignore temporary LibreOffice files
+~$*
+*.swp
+*.~lock.*
+*.odt~
+*.ods~
+*.odp~
+*.odb~
+
+*_files
+*_cache
+*.rds
+data/models/**/*.csv

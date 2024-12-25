@@ -1,0 +1,30 @@
+\usetikzlibrary{decorations.pathmorphing,arrows.meta}
+
+\begin{tikzpicture}
+    % Draw the arrow
+    \draw[very thick] (1.5, 9) -- (1.5, 2) -- (2.5, 2) -- (0, 0) -- (-2.5, 2) -- (-1.5, 2) -- (-1.5, 9);
+
+    % Draw wavy dividers
+    \draw[thick,decorate,decoration={snake,amplitude=1mm,segment length=12mm}] (-1.5, 7.25) -- (1.5, 7.25);
+    \draw[thick,decorate,decoration={snake,amplitude=1mm,segment length=12mm}] (-1.5, 5.5) -- (1.5, 5.5);
+    \draw[thick,decorate,decoration={snake,amplitude=1mm,segment length=12mm}] (-1.5, 3.75) -- (1.5, 3.75);
+
+    % Labels
+    \node at (0, 8.125) {Baseline ($b_0$)};
+    \node at (0, 6.375) {Treatment ($b_1$)};
+    \node at (0, 4.625) {FU 1 ($b_2$)};
+    \node at (0, 2.875) {FU 2 ($b_3$)};
+
+    % Perpendicular arrows and labels on the right
+    \draw[thick,<-] (2, 8.125) -- (3, 8.125) node[right] {Condition};
+    \draw[thick,<-] (2, 6.375) -- (3, 6.375) node[right] {Condition};
+    \draw[thick,<-] (2, 4.625) -- (3, 4.625) node[right] {Condition};
+    \draw[thick,<-] (2, 2.875) -- (3, 2.875) node[right] {Condition};
+
+    % Node labeled "ID" and arrows on the left, angled accordingly
+    \node at (-4, 6) {ID};
+    \draw[thick,->] (-3.5, 6) -- (-2, 8.125);
+    \draw[thick,->] (-3.5, 6) -- (-2, 6.375);
+    \draw[thick,->] (-3.5, 6) -- (-2, 4.625);
+    \draw[thick,->] (-3.5, 6) -- (-2, 2.875);
+\end{tikzpicture}

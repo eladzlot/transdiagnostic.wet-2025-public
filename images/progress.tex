@@ -1,0 +1,40 @@
+\documentclass[10pt]{article}
+\usepackage{tikz}
+\usepackage[landscape]{geometry}
+
+\begin{document}
+
+\thispagestyle{empty}
+\usetikzlibrary{positioning,arrows,arrows.meta,fit,shapes}
+
+\begin{tikzpicture}
+    [
+        node distance = 15mm and 20mm,
+        line width = 1.5,
+        auto,
+        %scale=1, every node/.style={scale=1.3},
+        >={Stealth[width=3mm, length=4mm]},
+        shorten >=2mm,
+        shorten <=2mm,
+        state/.style={align=center, draw, rectangle, minimum height=12mm, font=\bf},
+        example/.style={align=center},
+        lab/.style={align=center, font=\em},
+        arr/.style={-{Implies}, double, lightgray}
+    ]
+
+    \node[isosceles triangle, align=center, draw, minimum height=18mm, font=\bf](scr)                                            {Screening};
+    \node[state]        (int1)          [right=of scr]                   {Measures\\WET 1};
+    \node[state]        (int2)          [right=of int1]                  {WET 2};
+    \node[state]        (int3)          [right=of int2]                  {WET 3};
+    \node[state]        (int4)          [right=of int3]                  {WET 4\\Measures};
+    \node[state, circle](fu)            [right=30mm of int4]                      {Followup};
+
+    \path (scr)         edge [->]   node[lab, above] {}           (int1)
+          (int1)        edge [->]   node[lab, above] {2 Days}           (int2)
+          (int2)        edge [->]   node[lab, above] {2 Days}           (int3)
+          (int3)        edge [->]   node[lab, above] {2 Days}           (int4)
+          (int4)        edge [->, dotted]   node[lab, above] {1 week\\2 months}          (fu);
+
+\end{tikzpicture}
+
+\end{document}

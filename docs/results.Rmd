@@ -1,0 +1,357 @@
+```{r results.setup, echo=FALSE, include=FALSE}
+library(tidyverse)
+library(rethinking)
+library(here)
+library(papaja)
+source(here('scripts','load_data.R'))
+source(here('scripts','model.helpers.R'))
+```
+
+# Results
+
+## Participants
+
+```{r participants, echo=FALSE, include=FALSE}
+
+N.screened = screening$prolific_pid %>% unique %>% length()
+N.randomized  = pid.condition %>% filter(condition != 'waitlist') %>% nrow()
+N.treatment  = pid.condition %>% filter(condition == 'treatment') %>% nrow()
+N.control  = pid.condition %>% filter(condition == 'control') %>% nrow()
+N.waitlist = pid.condition %>% filter(condition == 'waitlist') %>% nrow()
+
+
+d = demographics.data %>% filter(condition != 'waitlist')
+# checking condition differences
+conditions.demog.ps = max(c(
+    fisher.test(table(d$condition, d$Ethnicity))$p.value,
+    fisher.test(table(d$condition, d$Sex))$p.value,
+    wilcox.test(oasis ~ condition, data = d)$p.value,
+    wilcox.test(wsas ~ condition, data = d)$p.value
+))
+```
+
+Recruitment began August 6, 2023, and ended September 25, 2023, and the final assessment occurred December 2, 2023.
+Of `r N.screened` individuals initially screened,
+`r N.randomized` were randomly assigned at a 2:1 ratio to WET `r format_count_perc(N.treatment, N.randomized)` or NIW `r format_count_perc(N.control, N.randomized)` conditions.
+The age of participants in the NIW group was significantly lower than that of participants in the WET group (Wilcoxon test, `r apa_print(wilcox.test(Age ~ condition, data = d))$full_result`). 
+Fisher exact test indicated no significant group differences in ethnicity or sex, and Wilcoxon tests showed no significant group differences for pre-treatment symptom measures ($ps >$ `r conditions.demog.ps`).
+
+Given the similarity in post-treatment outcomes between the treatment and control groups, we incorporated additional data (n = `r N.waitlist`) from a waitlist control group.
+This data was collected in a similar study conducted between February 1 and February 24, 2023 [@sorkaTransdiagnosticSelfGuidedImageryinpreparation].
+This was done in order to make sure that the changes found during the intervention were not due to chance.
+These subjects were randomly assigned to a waitlist control group for a study that focused on mechanisms of imagery rescripting.
+Given the identical inclusion/exclusion criteria and the minor time gap between data collection periods, we expect no systematic differences between the groups.
+The CONSORT flowchart (see Figure \@ref(fig:consort)) provides a detailed overview of the recruitment, randomization, and follow-up processes across the two active groups.
+
+(ref:consort) A CONSORT flowchart providing a detailed overview of the recruitment, randomization, and follow-up processes across the two active groups.
+
+```{r consort, echo=FALSE, fig.cap='(ref:consort)', fig.height=6, fig.width=6, message=FALSE, warning=FALSE, cache=TRUE, file=here('scripts','figures.consort.R'), out.width="100%"}
+```
+
+
+```{r completed, echo=FALSE, include=FALSE}
+d <- demographics.data %>% filter(condition !='waitlist')
+
+# Calculate completion statistics
+N.completed <- demographics.data$completed %>% sum
+N.completed.treatment <- demographics.data %>% filter(condition == "treatment", completed==TRUE) %>% nrow()
+N.completed.control <- demographics.data %>% filter(condition == "control", completed==TRUE) %>% nrow()
+
+# Perform statistical tests
+completed.test <- table(d$condition, d$completed) %>% fisher.test()
+
+# Checking demographic differences for completers
+completed.sex.table <- table(d$completed, d$Sex)
+completed.demog.ps <- min(c(
+  fisher.test(table(d$completed, d$Ethnicity))$p.value,
+  wilcox.test(Age ~ completed, data = d)$p.value,
+  wilcox.test(oasis ~ completed, data = d)$p.value,
+  wilcox.test(wsas ~ completed, data = d)$p.value
+))
+```
+
+The large majority of participants `r format_count_perc(N.completed, N.randomized)` completed all assessments.
+Study completion rates did not differ between treatment (`r format_perc(N.completed.treatment, N.treatment)`) and control (`r format_perc(N.completed.control, N.control)`); `r apa_print.fisher(completed.test)`.
+Female participants had a significantly lower attrition rate (`r format_perc(completed.sex.table[1, 1], sum(completed.sex.table[, 1]))`) compared to males (`r format_perc(completed.sex.table[1, 2], sum(completed.sex.table[, 2]))`); `r apa_print.fisher(fisher.test(completed.sex.table))`.
+Fisher’s exact and Wilcoxon tests revealed no significant differences between study completers and non-completers in terms of age, ethnicity, or symptom measures ($ps > `r completed.demog.ps`$).
+A detailed breakdown of pre-treatment demographic and symptom characteristics can be found in Table 1.
+
+(ref:demographics) Pre-treatment and Demographic Characteristics of Intent-to-Treat Sample. WET = Written Exposure, NIW = Neutral Imagery Writing, Waitlist group were added as a reference from a different study [@sorkaTransdiagnosticSelfGuidedImageryinpreparation].
+
+```{r demographics, file=here('scripts','tables.demographics.R'), echo=FALSE, message=FALSE, warning=FALSE,cache=TRUE}
+```
+
+## Intervention Quality
+```{r credibility, echo=FALSE, include=FALSE, cache=TRUE}
+# Filter and summarize the data for credibility measures
+d <- data_long %>%
+  filter(measure == 'credibility.think' | measure == 'credibility.feel') %>%
+  group_by(measure, condition, id) %>%
+  summarise(value = sum(value), .groups = "drop")
+
+# Extract cognitive scores for treatment and control conditions
+cognitive_score_wet <- d %>%
+  filter(condition == 'treatment', measure == 'credibility.think') %>%
+  pull(value)
+
+cognitive_score_ew <- d %>%
+  filter(condition == 'control', measure == 'credibility.think') %>%
+  pull(value)
+
+# Extract feeling scores for treatment and control conditions
+feeling_score_wet <- d %>%
+  filter(condition == 'treatment', measure == 'credibility.feel') %>%
+  pull(value)
+
+feeling_score_ew <- d %>%
+  filter(condition == 'control', measure == 'credibility.feel') %>%
+  pull(value)
+```
+
+Both WET and NIW were rated highly on the Devilly Credibility Scale, indicating strong credibility in both interventions.
+On the cognitive subscale, WET scored `r format_mean_sd(cognitive_score_wet)`, while NIW scored  `r format_mean_sd(cognitive_score_ew)`.
+Similarly, on the feeling subscale, WET scored  `r format_mean_sd(feeling_score_wet)` and NIW scored `r format_mean_sd(feeling_score_ew)`.
+These results suggest that participants found both interventions to be highly credible in terms of both their perceived logic and their intuitive appeal.
+
+Participants generally found the writing task acceptable, though some in the WET condition reported it as difficult, while some in the NIW condition described it as progressively boring.
+
+Participants in the WET condition successfully created powerful exposure scripts that addressed their core threats.
+For instance, an excerpt from the script of a socially anxious individual reads:
+
+> What am I doing here? I am a nobody. I know nothing. I feel almost sick now with nerves and dread. What if I just left now? Would anyone even notice? But it's too late…  
+> I am to speak first, so I can't even steal other people's ideas…  
+> [They're thinking] Who is this idiot? I stumble on and on. I want to stop and for it all to be over, but I can't. It just goes on forever. It is like dying in slow motion.
+
+Adherence in the NIW condition was less strict, with some participants writing scripts that focused on positive outcomes rather than neutral events.
+For example, one participant wrote:
+
+> I feel enthusiastic about starting my day on a positive and productive day.
+> Today instead of going through my phone for an hour on social media, I start with making my bed and cleaning my room.
+> ... I start applying for opportunities that align with my qualifications and a bit of me is worried but still hopeful that I get recognized and recruited.
+
+This type of writing is similar to what is done in imagery rehearsal [cf. @krakowClinicalManagementChronic2006].
+
+## Symptom Measures
+
+```{r growth.changes, echo=FALSE, include=FALSE, cache=TRUE}
+source(here('scripts','model.growth.R'))
+d = data_long %>% filter(measure == 'oasis', !is.na(value), wave>0) %>% left_join(demographics.data)
+m = model.growth(d, 'oasis')
+post = extract.samples(m)
+
+sd.wet = d %>% filter(wave == 1, condition == 'treatment') %>% group_by(id) %>% summarize(v = sum(value)) %>% pull(v) %>% sd
+sd.ew = d %>% filter(wave == 1, condition == 'control') %>% group_by(id) %>% summarize(v = sum(value)) %>% pull(v) %>% sd
+sd.wl = d %>% filter(wave == 1, condition == 'waitlist') %>% group_by(id) %>% summarize(v = sum(value)) %>% pull(v) %>% sd
+
+expected = list(
+  growth_link(post,1),
+  growth_link(post,2),
+  growth_link(post,3)
+)
+
+delta.wet = expected[[1]][,1]-expected[[1]][,5]
+delta.ew = expected[[2]][,1]-expected[[2]][,5]
+delta.wl = expected[[3]][,1]-expected[[3]][,5]
+
+delta.treatment.wet = (expected[[1]][,1]-expected[[1]][,4])/sd.wet
+delta.treatment.ew = (expected[[2]][,1]-expected[[2]][,4])/sd.ew
+delta.treatment.wl = (expected[[3]][,1]-expected[[3]][,4])/sd.wl
+delta.fu1.wet = (expected[[1]][,4]-expected[[1]][,5])/sd.wet
+delta.fu1.ew = (expected[[2]][,4]-expected[[2]][,5])/sd.ew
+delta.fu1.wl = (expected[[3]][,4]-expected[[3]][,5])/sd.wl
+delta.fu2.wet = (expected[[1]][,5]-expected[[1]][,6])/sd.wet
+delta.fu2.ew = (expected[[2]][,5]-expected[[2]][,6])/sd.ew
+delta.fu2.wl = (expected[[3]][,5]-expected[[3]][,6])/sd.ew
+delta.all.wet = (expected[[1]][,1]-expected[[1]][,6])/sd.wet
+delta.all.ew = (expected[[2]][,1]-expected[[2]][,6])/sd.ew
+delta.all.wl = (expected[[3]][,1]-expected[[3]][,6])/sd.wl
+```
+
+We fit a Bayesian latent growth curve model to assess the efficacy of the interventions (see Figure \@ref(fig:growth) for a visualization of the model's estimated trajectories). 
+We calculated the standardized mean change (SMC) for each group using the pre-treatment standard deviation as the denominator [@beckerSynthesizingStandardizedMeanchange1988].
+This standardization allows comparisons across measures, with higher effect size values indicating better outcomes.
+Additionally, we report the probability of direction, which quantifies the certainty that the outcome is greater than 0.
+The probability of direction, marked in this paper as P(>0), ranges from 0 to 1, where values close to 0 indicate high certainty of a negative effect (symptom deterioration), and values close to 1 indicate high certainty of a positive effect [symptom improvement See @makowskiIndicesEffectExistence2019].
+
+(ref:growth) Estimated treatment trajectories for each intervention based on the latent growth model. Values are adjusted for gender. WET = Written Exposure Therapy; NIW = Neutral Imagery Writing. The time intervals between pre-treatment and post-treatment, and between post-treatment and followup 1 (FU1), were approximately one week. The interval between FU1 and followup 2 (FU2) was approximately two months, which is indicated by the dashed regression line. The shaded gray area represents the 89% credible interval (CI).
+
+```{r growth, file=here('scripts','figures.growth.R'), echo=FALSE, message=FALSE, warning=FALSE, fig.cap='(ref:growth)', cache=TRUE}
+```
+
+Trait anxiety, as measured by the OASIS, significantly improved across all three interventions at the one-week follow-up.
+The estimated raw score improvements were `r format_estimate(delta.wet, estimand = 'M')` for the WET group, `r format_estimate(delta.ew, estimand = 'M')` for the NIW group, and `r format_estimate(delta.wl, estimand = 'M')` for the Waitlist group.
+
+Participants in the WET group showed significant improvements during the treatment period compared to the Waitlist group (`r format_estimate(delta.treatment.wet - delta.treatment.wl)`).
+These gains continued at a similar rate at the one-week follow-up, again compared to the Waitlist group (`r format_estimate(delta.fu1.wet - delta.fu1.wl)`).
+At the two-month follow-up, the gains were likely continued at a slower rate relative to the projected Waitlist trajectory, as no Waitlist data was collected at this time point (`r format_estimate(delta.fu2.wet - delta.fu2.wl)`).
+The improvement trajectory appeared linear, with consistent gains observed throughout the intervention and continuing during both follow-ups.
+Total improvement when compared to the projected Waitlist trend was `r format_estimate(delta.all.wet - delta.all.wl)`.
+
+Participants in the NIW group also demonstrated significant improvements during the treatment period compared to the Waitlist group (`r format_estimate(delta.treatment.ew - delta.treatment.wl)`).
+These improvements were sustained at the one-week follow-up, again in comparison to the Waitlist group (`r format_estimate(delta.fu1.ew - delta.fu1.wl)`).
+At the two-month follow-up, the gains were maintained relative to the projected Waitlist trajectory, as no Waitlist data was collected at this time point (`r format_estimate(delta.fu2.ew - delta.fu2.wl)`).
+Although participants in the NIW group showed considerable overall improvement (`r format_estimate(delta.all.ew - delta.all.wl)`).
+The L-shaped trajectory indicates that most of the gains occurred during the treatment phase and then stabilized.
+From pre-treatment to the two-month follow-up, WET demonstrated a slightly greater cumulative advantage over NIW (`r format_estimate(delta.all.wet - delta.all.ew)`).
+While participants in the NIW group showed considerable overall improvement (`r format_estimate(delta.all.ew - delta.all.wl)`), the L-shaped trajectory suggests that most of the gains occurred during the treatment phase and then stabilized.
+From pre-treatment to the two-month follow-up, WET demonstrated a slightly greater cumulative advantage over NIW (`r format_estimate(delta.all.wet - delta.all.ew)`).
+
+Contrary to our hypothesis, the NIW group had a slight advantage over WET during the treatment phase (`r format_estimate(delta.treatment.wet - delta.treatment.ew)`).
+However, WET outperformed NIW at both the one-week follow-up (`r format_estimate(delta.fu1.wet - delta.fu1.ew)`) and the two-month follow-up (`r format_estimate(delta.fu2.wet - delta.fu2.ew)`).
+
+These findings suggest that both WET and NIW interventions effectively reduce trait anxiety compared to the Waitlist control.
+However, while NIW showed slightly greater gains during the treatment phase, WET exhibited stronger and more sustained improvements post-treatment.
+This pattern highlights the potential of WET for achieving longer-term symptom reduction.
+
+```{r growth.changes.wsas, echo=FALSE, include=FALSE, cache=TRUE}
+# Source the growth model script
+source(here('scripts', 'model.growth.R'))
+
+# Filter and join the data for WSAS measure
+d <- data_long %>%
+  filter(measure == 'wsas', !is.na(value), wave > 0) %>%
+  left_join(demographics.data, by = c("id", 'condition'))  # Ensure proper join key if needed
+
+sd.wsas.wet = d %>% filter(wave == 1, condition == 'treatment') %>% group_by(id) %>% summarize(v = sum(value)) %>% pull(v) %>% sd
+sd.wsas.ew = d %>% filter(wave == 1, condition == 'control') %>% group_by(id) %>% summarize(v = sum(value)) %>% pull(v) %>% sd
+sd.wsas.wl = d %>% filter(wave == 1, condition == 'waitlist') %>% group_by(id) %>% summarize(v = sum(value)) %>% pull(v) %>% sd
+
+# Fit the growth model
+m <- model.growth(d, 'wsas', force = FALSE)
+
+# Extract posterior samples
+post <- extract.samples(m)
+
+# Compute expected growth links
+expected <- list(
+  growth_link(post, 1),
+  growth_link(post, 2),
+  growth_link(post, 3)
+)
+
+# Calculate deltas for WET, NIW, and WL conditions
+delta.wsas.wet <- expected[[1]][, 1] - expected[[1]][, 5]
+delta.wsas.ew <- expected[[2]][, 1] - expected[[2]][, 5]
+delta.wsas.wl <- expected[[3]][, 1] - expected[[3]][, 5]
+```
+
+Functional impairment, assessed using the WSAS, showed significant improvement across all three interventions. 
+At one-week follow-up, the estimated improvement in WSAS scores was `r format_estimate(delta.wsas.wet, estimand = 'M')` for WET, `r format_estimate(delta.wsas.ew, estimand = 'M')` for NIW, and `r format_estimate(delta.wsas.wl, estimand = 'M')` for the waiting list.
+Both WET (`r format_estimate(delta.wsas.wet/sd.wsas.wet - delta.wsas.wl/sd.wsas.wl)`) and NIW (`r format_estimate(delta.wsas.ew/sd.wsas.ew - delta.wsas.wl/sd.wsas.wl)`) resulted in greater improvements in functional impairment compared to the waiting list at the one week followup.
+However, no significant differences were observed between them (`r format_estimate(delta.wsas.wet/sd.wsas.wet - delta.wsas.ew/sd.wsas.ew)`).
+These outcomes were kept at the 2 month followup.
+
+## Treatment Processes
+
+We now shift our focus to understanding the processes underlying change in WET.
+Our second, exploratory hypothesis proposed that the identified mechanisms of change would improve during therapy.
+Detailed results for WET are presented in Table 2.
+Below, we highlight the significant findings in WET, alongside the corresponding effects observed in the NIW group.
+Difference between the groups is reported in all places where it is significant.
+This comparison aims to identify differential effects while maintaining a primary focus on WET, which is the central topic of this paper.
+Full results for NIW are available in the supplementary materials.
+
+```{r processes_tab, file=here('scripts','tables.processes.R'), echo=FALSE, message=FALSE, warning=FALSE, cache=TRUE}
+```
+
+```{r processes, echo=FALSE, include=FALSE, cache=FALSE}
+if (!exists('process_models')) source(here('scripts','run.processes.R'))
+get_change = function(proc, condition = 'wet'){(proc[[condition]][,1]-proc[[condition]][,2])/if_else(condition == 'wet', proc$sd.wet, proc$sd.ew)}
+
+d.dts = get_change(process_models[['dts']])
+d.bcss_self_pos = get_change(process_models[['bcss_self_pos']])
+d.ifs = get_change(process_models[['ifs']])
+d.mcq_confidence = get_change(process_models[['mcq_confidence']])
+d.mcq_danger = get_change(process_models[['mcq_danger']])
+
+d.mcq_confidence.ew = get_change(process_models[['mcq_confidence']], condition = 'ew')
+d.dts.ew = get_change(process_models[['dts']], condition = 'ew')
+d.bcss_self_pos.ew = get_change(process_models[['bcss_self_pos']], condition = 'ew')
+d.ifs.ew = get_change(process_models[['ifs']], condition = 'ew')
+d.mcq_danger.ew = get_change(process_models[['mcq_danger']], condition = 'ew')
+```
+
+Distress tolerance (DTS) improved significantly in the WET group (`r format_estimate(-d.dts)`), while it may have deteriorated in the NIW group (`r format_estimate(-d.dts.ew)`).
+The difference between the groups was statistically significant (`r format_estimate(d.dts.ew - d.dts)`), aligning with our expectations.
+WET likely encouraged participants to tolerate distress through structured exposure, whereas NIW may have reinforced avoidance behaviors.
+
+Positive self-schemas, as measured by the BCSS, increased significantly in WET (`r format_estimate(-d.bcss_self_pos)`), suggesting that the intervention fostered more adaptive self-beliefs.
+In contrast, no significant change was found in the NIW group (`r format_estimate(-d.bcss_self_pos.ew)`).
+
+Perceived impact of future events (IFES) decreased significantly in the WET group (`r format_estimate(d.ifs)`).
+No significant change was observed in the NIW group (`r format_estimate(d.ifs.ew)`).
+
+For metacognitions measured by the MCQ, both (lack of) cognitive confidence (`r format_estimate(d.mcq_confidence)`) and negative beliefs about uncontrollability and danger (`r format_estimate(d.mcq_danger)`) increased significantly in WET.
+However, no significant changes were found in the NIW group for either (lack of) cognitive confidence (`r format_estimate(d.mcq_confidence.ew)`) or negative beliefs about uncontrollability and danger (`r format_estimate(d.mcq_danger.ew)`).
+
+These findings suggest several potential mechanisms of change for WET, which we investigate in the upcoming section.
+The other mechanisms did not improve and thus will not be analyzed.
+
+## Mechanisms of Change
+
+```{r mechanisms, echo=FALSE, include=FALSE, cache=FALSE}
+source(here('scripts','run.mechanisms.R'))
+r.dts = extract.samples(mechanism_models$dts)$Rho[,2,5] 
+r.dts.ew = extract.samples(mechanism_models$dts.ew)$Rho[,2,5] 
+r.bcss_self_pos = extract.samples(mechanism_models$bcss_self_pos)$Rho[,3,5] 
+r.mcq_confidence = extract.samples(mechanism_models$mcq_confidence)$Rho[,3,5] 
+r.mcq_danger = extract.samples(mechanism_models$mcq_danger)$Rho[,3,5] 
+```
+
+We examined each process affected by WET to assess whether changes in these processes corresponded with symptom change.
+Detailed results, including specific changes in processes and symptom levels, can be found in Table 3.
+
+The only process found both to respond to WET and to change alongside symptoms was distress tolerance (DTS).
+The correlation between changes in DTS and symptoms during treatment was `r format_estimate(r.dts, estimand = '*r*')`.
+Given that NIW actively *decreased* distress tolerance, we investigated the effect of change in distress tolerance on change in symptoms within NIW as well.
+We found that in contrast with WET, in NIW an increase in distress tolerance was actually correlated with an increase in symptoms `r format_estimate(r.dts.ew, estimand = '*r*')`.
+This suggests a differential process where in WET distress tolerance decreases anxiety whereas in NIW anxiety is decreased via distraction and avoiding stress.
+
+No processes were significantly predictive of change at follow-up.
+However, improvements in positive self-schema (`r format_estimate(r.bcss_self_pos, estimand = '*r*')`), cognitive confidence (`r format_estimate(r.mcq_confidence, estimand = '*r*')`), and a reduction in negative beliefs about uncontrollability and danger (`r format_estimate(r.mcq_danger, estimand = '*r*')`) all weakly predicted change at follow-up.
+
+Thus, these four processes warrant additional research when investigating the mechanisms of WET.
+
+```{r mechanisms.table, echo=FALSE, message=FALSE, warning=FALSE, cache=TRUE, file=here('scripts','tables.mechanisms.R')}
+```
+
+## Response to Core Threats
+
+```{r state.anx.code, echo=FALSE, include=FALSE, cache=TRUE}
+if (!exists('mechanism_models')) source(here('scripts','run.mechanisms.R'))
+r.bsam.change.all = extract.samples(mechanism_models$bsam.change.all)$Rho[,2,5] 
+r.bsam.change.all.ew = extract.samples(mechanism_models$bsam.change.all.ew)$Rho[,2,5] 
+r.dts.bsam.wet = extract.samples(mechanism_models$dts.bsam.wet)$Rho[,2,5] 
+```
+
+Alongside global mechanisms and metacognitions, we explored how participants’ threat responses changed in relation to their core threat.
+To investigate this, we examined state anxiety before and after each writing session using the BSAM.
+Participants rated their state anxiety while vividly imagining their core threat script.
+This approach allowed us to assess both within-session and between-session changes in anxiety levels (see Figure \@ref(fig:stateanx)).
+
+(ref:stateanx) Trajectory of state anxiety as a function of time. Dashed lines are the trajectory of pre intervention measurements. Arrows are within session changes, pointing at the post intervention measure.
+
+```{r stateanx, file=here('scripts','figures.state.anx.R'), echo=FALSE, message=FALSE, warning=FALSE, fig.cap='(ref:stateanx)', cache=TRUE}
+```
+
+Our findings revealed distinct differences between the groups.
+Both began with similarly high levels of state anxiety.
+During the first session, the NIW group experienced a significant reduction in anxiety, reflecting their instruction to distract themselves from the threat.
+In contrast, the WET group’s anxiety levels remained high and stable, consistent with their instruction to focus on the core threat.
+
+By the second session, both groups had established new patterns:
+the NIW group maintained the reduced anxiety achieved after session one, while the WET group experienced a significant reduction in anxiety even below that of the NIW group.
+This between-session reduction in state anxiety predicted improvements in trait anxiety (OASIS), in line with meta-analysis showing that between session habituation is correlated with treatment outcome [e.g., @ruppEmotionalProcessingTheory2017].
+However, stronger correlations were found in the WET group (`r format_estimate(r.bsam.change.all, estimand = '*r*')`) than in the NIW group (`r format_estimate(r.bsam.change.all.ew, estimand = '*r*')`).
+It is reasonable to assume that the reduction in trait anxiety in response to the core threat is caused by decrease in DTS, as seen above.
+However, no correlation was found between change in DTS and change in state anxiety (`r format_estimate(r.dts.bsam.wet, estimand = '*r*')`).
+
+The distinct trajectory of state anxiety in the WET group suggests a unique mechanism of change.
+Specifically, the larger decrease in state anxiety between sessions in the WET group may indicate deeper processing of core threats, which in turn is associated with more robust symptom improvements.
+
+Furthermore, within-session patterns diverged between the groups.
+For the NIW group, writing reduced state anxiety, while for the WET group, it increased state anxiety.
+This result serves as a manipulation check and aligns with the interventions' instructions: WET participants were encouraged to actively engage with their fears, while NIW participants were guided to distract themselves from them.
+
+Interestingly, there was evidence of a slight reduction in the magnitude of within-session anxiety increases over time in the WET group.
+This trend suggests that participants may have become more accustomed to the task, potentially reflecting a process of habituation.
