@@ -1,0 +1,167 @@
+---
+title: "Supplementary Material: Description of Models"
+output: pdf_document
+---
+
+# Models Overview
+
+Both models were implemented via non-centered parametrThis supplementary material provides a detailed explanation of the two models used in the study: the **Growth Model** and the **Mechanisms Model**.
+Each model is described through mathematical equations.
+Weakly informative priors were assigned to the variables to regularize the results.
+Both models were implemented using a non-centered parameterization approach.ization.
+
+## Growth Model
+
+The growth model was used both to evaluate the changes in symptom severity and functional impairment over time across different intervention groups, and to investigate changes in proposed mechanisms.
+
+```{=latex}
+\begin{align*}
+\text{Measurement model:} \\
+R_{itq} &\sim \text{Ordered-logit}(\phi_{itq}, \kappa) \tag{likelihood} \\
+\phi_{itq} &= \alpha_q \cdot (\theta_{it} - \beta_q) \tag{IRT model}  \\
+\kappa &\sim \text{Normal}(0,1.5) \tag{cutpoints} \\
+\alpha_q &\sim \text{Log-Normal}(0,0.5) \tag{IRT discrimination} \\
+\beta_q &\sim \text{Normal}(0,1) \tag{IRT location} \\
+\text{Change model:} \\
+\theta_{it} &= (\bar{b}_{1,\text{condition}} + u_{2i}) \tag{baseline} \\
+            &\quad + (\bar{b}_{2,\text{condition}} + u_{2i}) \cdot \min(t-1,\ 3) \tag{$\Delta$ at intervention} \\
+            &\quad + (\bar{b}_{3,\text{condition}} + u_{3i}) \cdot 1_{\{t \geq 5\}} \tag{$\Delta$ at FU\_1}\\
+            &\quad + (\bar{b}_{4,\text{condition}} + u_{4i}) \cdot 1_{\{t=6\}} \tag{$\Delta$ at FU\_2} \\
+            &\quad + G \cdot \gamma \tag{gender} \\
+\bar{b}_{1,\text{condition}} &\sim \text{Normal}(0,1.5) \tag{$\theta$ intercept} \\
+\bar{b}_{[2,3,4],\text{condition}} &\sim \text{Normal}(0,0.5) \tag{$\theta$ slopes} \\
+\gamma &\sim Normal(0, 0.5) \tag {gender effect} \\
+\sigma_{1\ldots4} &\sim \text{Exponential}(1) \tag{scale for $u$} \\
+\rho &\sim \text{LKJcorr}(4) \tag{correlation matrix} \\
+\Sigma &= \text{diag}(\sigma) \cdot \rho \cdot \text{diag}(\sigma) \tag{covariance matrix} \\
+\begin{bmatrix} u_{1i} \\ u_{2i} \\ u_{3i} \\ u_{4i} \end{bmatrix} &\sim
+\text{MVNormal} \left( \begin{bmatrix} 0\\0\\0\\0 \end{bmatrix}, \Sigma \right) \tag{person effects}
+\end{align*}
+```
+
+\newpage
+
+Here's a breakdown of the variables used in the model:
+
+*   **$R_{itq}$:** This represents the observed response for individual *i* at time *t* on item *q*. This is the actual measured value.
+
+*   **$\phi_{itq}$:** This is the linear predictor in the ordered logit model. It links the latent trait ($\theta_{it}$) to the observed response ($R_{itq}$).
+
+*   **$\kappa$:** These are the cutpoints (thresholds) in the ordered logit model. They define the boundaries between the ordered categories of the responses.
+
+*   **$\alpha_q$:** This is the discrimination parameter for item *q* in the IRT model. It indicates how well an item differentiates between different levels of the latent trait. A higher $\alpha_q$ means the item is more sensitive to changes in the latent trait.
+
+*   **$\beta_q$:** This is the difficulty (or location) parameter for item *q* in the IRT model. It represents the level of the latent trait at which a person has a 50% chance of endorsing a particular item.
+
+*   **$\theta_{it}$:** This is the latent trait score (e.g., symptom severity) for individual *i* at time *t*. This is the unobserved variable that the model is trying to estimate.
+
+*   **$\bar{b}_{1,\text{condition}}$:** This is the population-level baseline intercept for a given condition. It represents the average starting level of the latent trait.
+
+*   **$\bar{b}_{2,\text{condition}}$:** This is the population-level slope representing the change during the intervention for a given condition.
+
+*   **$\bar{b}_{3,\text{condition}}$:** This is the population-level slope representing the change at the first follow-up (FU1) for a given condition.
+
+*   **$\bar{b}_{4,\text{condition}}$:** This is the population-level slope representing the change at the second follow-up (FU2) for a given condition.
+
+*   **$u_{1i}$, $u_{2i}$, $u_{3i}$, $u_{4i}$:** These are the individual-level random effects for baseline, intervention change, FU1 change and FU2 change respectively. They capture individual deviations from the population average trajectories. Note that $u_{1i}$ is the random intercept, $u_{2i}$ is the random slope for the intervention period, $u_{3i}$ is the random slope for the change between the end of intervention and FU1, and $u_{4i}$ is the random slope for the change between FU1 and FU2.
+
+*   **$t$:** Represents time (wave) or measurement occasion.
+
+*   **$\min(t-1, 3)$:** This ensures that the intervention effect is only applied up to time point 4 (the end of the intervention period).
+
+*   **$1_{\{t \geq 5\}}$:** This is an indicator function (also known as an Iverson bracket). It equals 1 when *t* is greater than or equal to 5 (i.e. at FU1 and FU2) and 0 otherwise, thus modeling the change specifically at the first follow-up and beyond.
+
+*   **$1_{\{t=6\}}$:** This is an indicator function. It equals 1 when *t* = 6 (FU2) and 0 otherwise, thus modeling the *additional* change specifically at the second follow-up.
+
+*   **$G$:** Represents gender (coded as -0.5/0.5).
+
+*   **$\gamma$:** Represents the effect of gender on the latent trait.
+
+*   **$\sigma_{1...4}$:** These are the standard deviations of the random effects (baseline, intervention slope, FU1 slope and FU2 slope). They quantify the variability of individual trajectories around the population average.
+
+*   **$\rho$:** This is the correlation matrix of the random effects. It describes the relationships between the individual-level deviations in baseline, intervention response, FU1 response and FU2 response.
+
+*   **$\Sigma$:** This is the covariance matrix of the random effects, derived from the standard deviations ($\sigma$) and the correlation matrix ($\rho$). It fully describes the variance and covariance structure of the random effects.
+
+\newpage
+## Mechanisms Model
+
+The mechanisms model explores the processes underlying symptom changes, identifying potential mediators of the intervention's effects.
+
+```{=latex}
+\begin{align*}
+\text{Measurement model for Symptoms:} \\
+R_{x,itq} &\sim \text{Ordered-logit}(\phi_{x,itq}, \kappa_x) \tag{likelihood} \\
+\phi_{x,itq} &= \alpha_{x,q} \cdot (\theta_{x,it} - \beta_{x,q}) \tag{IRT model}  \\
+\kappa_x &\sim \text{Normal}(0,1.5) \tag{cutpoints} \\
+\alpha_{x,q} &\sim \text{Log-Normal}(0,0.5) \tag{IRT discrimination} \\
+\beta_{x,q} &\sim \text{Normal}(0,1) \tag{IRT location} \\
+\\
+\text{Measurement model for Mechanisms:} \\
+R_{m,itq} &\sim \text{Ordered-logit}(\phi_{m,itq}, \kappa_m) \tag{likelihood} \\
+\phi_{m,itq} &= \alpha_{m,q} \cdot (\theta_{m,it} - \beta_{m,q}) \tag{IRT model}  \\
+\kappa_m &\sim \text{Normal}(0,1.5) \tag{cutpoints} \\
+\alpha_{m,q} &\sim \text{Log-Normal}(0,0.5) \tag{IRT discrimination} \\
+\beta_{m,q} &\sim \text{Normal}(0,1) \tag{IRT location} \\
+\\
+\text{Change model for Symptoms:} \\
+\theta_{x,it} &= (\bar{b_x}_{1,\text{condition}} + u_{1i}) \tag{baseline} \\
+            &\quad + (\bar{b_x}_{2,\text{condition}} + u_{2i}) \cdot \min(t-1,\ 3) \tag{$\Delta$ at intervention} \\
+            &\quad + (\bar{b_x}_{3,\text{condition}} + u_{3i}) \cdot 1_{\{t=6\}} \tag{$\Delta$ at FU\_2} \\
+            &\quad + G \cdot \gamma \tag{gender} \\
+\bar{b_x}_{1,\text{condition}} &\sim \text{Normal}(0,1.5) \tag{$\theta$ intercept} \\
+\bar{b_x}_{[2,3],\text{condition}} &\sim \text{Normal}(0,0.5) \tag{$\theta$ slopes} \\
+\gamma &\sim Normal(0, 0.5) \tag {gender effect} \\
+\\
+\text{Change model for Mechanisms:} \\
+\theta_{m,it} &= (\bar{b_m}_{4,\text{condition}} + u_{4i}) \tag{baseline} \\
+            &\quad + (\bar{b_m}_{5,\text{condition}} + u_{5i}) \cdot \min(t-1,\ 3) \tag{$\Delta$ at intervention} \\
+\bar{b_m}_{4,\text{condition}} &\sim \text{Normal}(0,1.5) \tag{$\theta$ intercept} \\
+\bar{b_m}_{5,\text{condition}} &\sim \text{Normal}(0,0.5) \tag{$\theta$ slopes} \\
+\\
+\text{Shared dynamics} \\
+\sigma_{1\ldots5} &\sim \text{Exponential}(1) \tag{scale for $u$} \\
+\rho &\sim \text{LKJcorr}(5) \tag{correlation matrix} \\
+\Sigma &= \text{diag}(\sigma) \cdot \rho \cdot \text{diag}(\sigma) \tag{covariance matrix} \\
+\begin{bmatrix} u_{1i} \\ u_{2i} \\ u_{3i} \\ u_{4i} \\ u_{5i} \end{bmatrix} &\sim
+\text{MVNormal} \left( \begin{bmatrix} 0\\0\\0\\0\\0 \end{bmatrix}, \Sigma \right) \tag{person effects}
+\end{align*}
+```
+
+Here's a breakdown of the variables used in the model:
+
+*   **$R_{x,itq}$ and $R_{m,itq}$:** These represent the observed responses for individual *i* at time *t* on item *q* for symptoms (x) and mechanisms (m), respectively. These are the actual measured values.
+
+*   **$\phi_{x,itq}$ and $\phi_{m,itq}$:** These are the linear predictors in the ordered logit models for symptoms and mechanisms, respectively. They link the latent traits ($\theta$) to the observed responses ($R$).
+
+*   **$\kappa_x$ and $\kappa_m$:** These are the cutpoints (thresholds) in the ordered logit models for symptoms and mechanisms, respectively. They define the boundaries between the ordered categories of the responses.
+
+*   **$\alpha_{x,q}$ and $\alpha_{m,q}$:** These are the discrimination parameters for item *q* in the IRT models for symptoms and mechanisms, respectively. They indicate how well an item differentiates between different levels of the latent trait. A higher $\alpha$ means the item is more sensitive to changes in the latent trait.
+
+*   **$\beta_{x,q}$ and $\beta_{m,q}$:** These are the difficulty (or location) parameters for item *q* in the IRT models for symptoms and mechanisms, respectively. They represent the level of the latent trait at which a person has a 50% chance of endorsing a particular item.
+
+*   **$\theta_{x,it}$ and $\theta_{m,it}$:** These are the latent trait scores (e.g., symptom severity, mechanism level) for individual *i* at time *t*. These are the unobserved variables that the model is trying to estimate.
+
+*   **$\bar{b_x}_{1,\text{condition}}$ and $\bar{b_m}_{1,\text{condition}}$:** These are the population-level baseline intercepts for symptoms and mechanisms, respectively, for a given condition. They represent the average starting level of the latent trait.
+
+*   **$\bar{b_x}_{2,\text{condition}}$ and $\bar{b_m}_{2,\text{condition}}$:** These are the population-level slopes representing the change during the intervention for symptoms and mechanisms, respectively, for a given condition.
+
+*   **$\bar{b_x}_{3,\text{condition}}$ and $\bar{b_m}_{3,\text{condition}}$:** These are the population-level slopes representing the change at follow-up 2 for symptoms and mechanisms, respectively, for a given condition.
+
+*   **$u_{x,1i}$, $u_{x,2i}$, $u_{x,3i}$, $u_{m,1i}$, $u_{m,2i}$, $u_{m,3i}$:** These are the individual-level random effects for baseline, intervention change, and follow-up 2, respectively, for symptoms and mechanisms. They capture individual deviations from the population average trajectories.
+
+*   **$t$:** Represents time (wave) or measurement occasion.
+
+*   **$\min(t-1, 3)$:** This ensures that the intervention effect is only applied up to time point 4 (the end of the intervention period).
+
+*   **$1_{\{t=6\}}$:** This is an indicator function (also known as an Iverson bracket). It equals 1 when *t* = 6 (FU2) and 0 otherwise, thus modeling the change specifically at the second follow-up.
+
+*   **$G$:** Represents gender (coded as -0.5/0.5).
+
+*   **$\gamma$:** Represents the effect of gender on symptom change.
+
+*   **$\sigma_{1...3}$:** These are the standard deviations of the random effects (baseline, intervention slope, and FU2 slope). They quantify the variability of individual trajectories around the population average.
+
+*   **$\rho$:** This is the correlation matrix of the random effects. It describes the relationships between the individual-level deviations in baseline, intervention response, and follow-up response.
+
+*   **$\Sigma$:** This is the covariance matrix of the random effects, derived from the standard deviations ($\sigma$) and the correlation matrix ($\rho$). It fully describes the variance and covariance structure of the random effects.

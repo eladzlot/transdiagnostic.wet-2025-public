@@ -1,21 +1,21 @@
 # Discussion
 
-The results of this study suggest that future-oriented WET is an effective and scalable intervention for treating transdiagnostic anxiety.
+The results of this study suggest that self-guided, future-oriented WET is an effective and scalable intervention for treating transdiagnostic anxiety.
 Moreover, they highlight distress tolerance and anxiety levels regarding one's core threat as key mechanisms of change.
 
 ## Effectiveness of WET
 
 Recent years have seen a growing interest in evidence-based self-help interventions, including unguided [e.g., @morganEffectivenessUnguidedInternet2017] and guided online treatments [@anderssonInternetdeliveredPsychologicalTreatments2019].
 These interventions often achieve effect sizes comparable to face-to-face therapy [@esfandiariInternetDeliveredFacetoFaceCognitive2021].
-Our findings contribute to this literature by demonstrating that online future-oriented WET can achieve meaningful improvements and by emphasizing the depth and personal engagement participants can achieve with thoughtfully designed prompts and structured guidance.
+Our findings contribute to this literature by demonstrating that self-guided, online, future-oriented WET can achieve meaningful improvements.
+Participants can achieve depth and personal engagement with thoughtfully designed prompts and structured guidance.
 This raises potential for the incorporation of WET in transdiagnostic or specific online protocols.
 
 In a meta-analysis of online unguided self-help interventions, Wang and colleagues [-@wangSystematicReviewMetaanalysis2023]
-reported small effects when treating anxiety ($d = -0.35$, 95% CI [-0.48, -0.22]).
-Whereas in the current study, WET demonstrated a small effect size on anxiety during treatment ($d = `r mean(delta.treatment.wet - delta.treatment.wl)`$) that developed into a medium effect size at one week follow-up ($d = `r mean(delta.wet/sd.wet - delta.wl/sd.wl)`$) and was maintained at the two month followup ($`r mean(delta.all.wet - delta.all.wl)`$).
+reported small effects when treating anxiety ($d = 0.35$, 95% CI [0.22, 0.48]).
+Whereas in the current study, WET demonstrated a small effect size on anxiety during treatment ($d = `r mean(delta.treatment.wet - delta.treatment.wl)`$) that developed into a medium effect size at one week follow-up ($d = `r mean(delta.wet/sd.wet - delta.wl/sd.wl)`$) and kept improving  at the two month followup ($`r mean(delta.all.wet - delta.all.wl)`$).
 This change corresponds to approximately $`r mean(delta.all.wet*sd.wet)`$ points on the OASIS, which is more than half the reliable change threshold of $4.41$ [@moorePsychometricEvaluationOverall2015].
 Alongside the reduction in anxiety, we observed a small but significant improvement in functional impairment, corroborating the clinical relevance of the intervention.
-
 These results suggest that while the current version of future-oriented WET is effective, it should not be viewed as a standalone intervention.
 Instead, it should be integrated as part of a larger, multi-component treatment framework and examined to see if it improves outcomes.
 
@@ -28,7 +28,7 @@ Moreover, consistent with previous studies [@sloanBriefExposureBasedTreatment201
 
 The effectiveness of WET supports the notion that writing about one's future threats enables emotional processing.
 Furthermore, it highlights that individuals are capable of engaging in this process without the active guidance of a therapist.
-Beyond the implications as an inexpensive and accessible intervention, WET provides a scalable method to investigate processes in psychotherapy.
+Beyond the implications as an inexpensive and accessible intervention, WET provides a scalable method to investigate therapeutic processes in exposure and other interventions.
 It offers a relatively simple intervention that can easily be adjusted to emphasize different aspects of the intervention process, such as focusing on the first or third person, varying levels of immersion, or addressing past versus future events.
 Additionally, WET generates rich textual data that can offer further insights into the cognitive and emotional dynamics at play during emotional processing
 Thus, wet serves as an important tool in the psychotherapy researcher's toolbox.
@@ -42,7 +42,7 @@ This approach creates a dynamic, evolving narrative that may facilitate deeper p
 This technique is explicitly encouraged in the WET manual for PTSD [@sloanWrittenExposureTherapy2019].
 
 This approach introduces a tradeoff between immersion and reflective distance.
-While traditional imaginal exposure enhances internal focus through closed-eye immersion, WET requires writing with eyes open, which may reduce immersion but adds a layer of reflective distance.
+While traditional imaginal exposure enhances immersion through closing ones' eyes, WET requires writing with ones' eyes open, which may reduce immersion but adds a layer of reflective distance.
 This act of writing allows participants to examine their feared experiences from new perspectives, encouraging deeper cognitive and emotional processing, even if it lacks the intense focus of imaginal exposure.
 To address this, participants are instructed to remain attuned to their emotions and sensations, and if they run out of content, briefly close their eyes to regain immersion.
 
@@ -55,19 +55,20 @@ This objective data allows for more nuanced understanding of how individuals pro
 ## NIW as an Intervention
 
 At first glance, WET appears to have failed to improve immediate outcomes beyond the control condition.
-However, we argue that this interpretation may overlook a key factor: NIW itself demonstrated significant effects, raising questions about its role as a "true" placebo.
-Originally designed as a control condition, NIW produced unexpectedly robust outcomes.
+However, we argue that this interpretation may overlook a key factor: NIW itself demonstrated significant effects, raising questions about its role as an inert placebo.
+Designed as a control condition, NIW produced unexpectedly robust outcomes.
 Active control conditions in psychological interventions typically demonstrate moderate effects.
 For example, research on internet-based cognitive behavioral therapy for anxiety has shown that active control groups yield effect sizes around $0.5$, using interventions such as relaxation tasks or forum participation [@newbyInternetbasedCognitiveBehavioral2018; @johanssonTailoredVsStandardized2012; @carlbringIndividuallytailoredInternetbasedTreatment2011].
 The average effect size of expressive writing interventions is even lower at $0.075$ [@frattaroliExperimentalDisclosureIts2006].
 By contrast, NIW had an absolute effect size of $`r mean(delta.ew/sd.ew)`$ at the one week follow-up.
-This level of effectiveness suggests that NIW cannot simply be dismissed as a placebo.
+This level of effectiveness suggests that NIW should not be dismissed as simply placebo.
 
 Several mechanisms may explain NIW’s unexpected efficacy.
 One possibility is the role of *distancing*, a well-documented emotion regulation strategy [@powersRegulatingEmotionDistancing2019; @krossSelfdistancingTheoryResearch2017].
 Writing about non-distressing topics may have helped participants practice disengaging from threatening cognitions, facilitating emotional recovery.
 Indeed, evidence suggests that such training reduces distress [@dennyBehavioralEffectsLongitudinal2014], and this was the faux rationale given in the psychoeducation section.
-Alternatively, participants were asked to evaluate their response to the core threat script twice every session in order to evaluate their state anxiety, this could have acted as a sort of exposure.
+Alternatively, participants were asked to evaluate their response to the core threat script twice every session in order to evaluate their state anxiety.
+This could have acted as a form of exposure.
 Additionally, preliminary analyses of NIW scripts revealed that participants often produced highly positive or meditative content.
 This suggests that mindfulness processes or the generation of positive imagery may have contributed to the observed outcomes, consistent with findings that these strategies improve emotional well-being [@hofmannEffectMindfulnessBasedTherapy2010; @pileHarnessingEmotionalMental2021].
 Similarly, rehearsing positive ideation, even when unrelated to personal worries, has been shown to counteract worry in individuals with generalized anxiety disorder [@eaglesonPowerPositiveThinking2016].
@@ -83,19 +84,19 @@ NIW produced a rapid initial reduction in anxiety symptoms, demonstrating its ut
 However, these gains plateaued over time.
 In contrast, WET showed slower initial progress but continued to reduce symptoms steadily, ultimately achieving greater long-term effectiveness.
 
-These findings suggest that NIW may be valuable for immediate symptom relief, while WET provides more sustained benefits.
+These findings suggest that NIW may be valuable for immediate symptom relief, whereas WET provides more sustained benefits.
 The small sample size in the NIW condition (29 participants) limits the generalizability of these results, emphasizing the need for further research to confirm these effects and determine the optimal contexts for each approach.
 
 ## How WET Works
 
-It is clear that a greater understanding of the underlying mechanisms of interventions [@nivPrecisionCognitiveBehavioral2021], and a holistic theory that integrates their theory is needed [@huppertCBTAnxietyDisorders2020;@brewinTHEORETICALFOUNDATIONSCOGNITIVEBEHAVIOR1996; @hofmannFutureInterventionScience2019].
+It is clear that a greater understanding of the underlying mechanisms of interventions is needed [@nivPrecisionCognitiveBehavioral2021], as is a holistic theory [@huppertCBTAnxietyDisorders2020;@brewinTHEORETICALFOUNDATIONSCOGNITIVEBEHAVIOR1996; @hofmannFutureInterventionScience2019].
 The current study aims to advance our understanding of treatment mechanisms by identifying potential mediators.
 Kraemer [-@kraemerMediatorsModeratorsTreatment2002] emphasizes that mediators are potential pathways linking treatment to outcomes, though not all mediators qualify as true causal mechanisms.
 
 Rather than focusing on a specific process, we surveyed a range of potential mechanisms in order to identify candidates for mechanisms of change in WET.
-Of these, we focused on the processes that were found to change significantly in WET: distress tolerance (DTS), positive self-schema, perceived impact of future events, and metacognitive processes, including lack of cognitive confidence and negative beliefs about uncontrollability and danger.
+Of these, we focused on the processes that were found to change significantly in WET: distress tolerance, positive self-schema, perceived impact of future events, and metacognitive processes, including lack of cognitive confidence and negative beliefs about uncontrollability and danger.
 These processes were carried forward to investigate their roles in symptom reduction.
-Of these, only DTS was significantly correlated with symptom change in WET, providing evidence that DTS may serve as a key mechanism.
+Of these, only distress tolerance was significantly correlated with symptom change in WET, providing evidence that distress tolerance may serve as a key mechanism.
 Additionally, change in the anxious response to core threats was found to predict symptom change.
 
 ### Distress Tolerance
@@ -103,17 +104,17 @@ Additionally, change in the anxious response to core threats was found to predic
 Distress tolerance, defined as an individual’s ability to endure negative emotional states [@simonsDistressToleranceScale2005], is increasingly recognized as a transdiagnostic factor implicated in emotional disorders.
 It has been linked to symptom severity and treatment outcome in conditions including depression [@lassDistressToleranceSymptoms2020], anxiety [@michelEmotionalDistressTolerance2016], PTSD [@boffaDistressToleranceMechanism2018], and substance use disorders [@leyroDistressTolerancePsychopathological2010].
 Psychotherapies that enhance distress tolerance, such as dialectical behavior therapy, often improve patients’ capacity to engage with distressing emotions, reducing avoidance behaviors and promoting resilience [@leyroDistressTolerancePsychopathological2010].
-Indeed, prior research has demonstrated that DTS mediates change in mindfulness-based interventions [@liDistressToleranceMechanism2023; @liDistressToleranceMediator2024].
+Indeed, prior research has demonstrated that distress tolerance mediates change in mindfulness-based interventions [@liDistressToleranceMechanism2023; @liDistressToleranceMediator2024].
 
 Our findings suggest that WET fosters distress tolerance presumably by encouraging participants to engage with distressing thoughts and emotions.
-While these results support the role of DTS as a mechanism of change in WET, further research is needed to establish a causal connection between changes in DTS and symptom reduction [@kraemerMediatorsModeratorsTreatment2002].
-Specifically, longitudinal studies could clarify whether improvements in DTS precede or occur concurrently with symptom changes.
+While these results support the role of distress tolerance as a mechanism of change in WET, further research is needed to establish a causal connection between changes in DTS and symptom reduction [@kraemerMediatorsModeratorsTreatment2002].
+Specifically, longitudinal studies could clarify whether improvements in distress tolerance precede or occur concurrently with symptom changes.
 
 Research suggests that specific subtypes of distress tolerance, such as intolerance of uncertainty and anxiety sensitivity, are stronger predictors of change than general DTS [@michelEmotionalDistressTolerance2016].
-This underscores the importance of refining our understanding of both the effects of WET on DTS and the role of DTS in symptom reduction.
-Future studies would do well to investigate these subdomains, so that we can better delineate how WET enhances specific facets of DTS and how these improvements contribute to therapeutic outcomes.
-Breaking DTS into its components offers a more nuanced perspective, potentially revealing differential pathways through which WET drives change.
-Such insights could guide the development of tailored interventions that maximize the impact of DTS improvements across diverse emotional disorders.
+This underscores the importance of refining our understanding of both the effects of WET on distress tolerance and the role of distress tolerance in symptom reduction.
+Future studies would do well to investigate these subdomains, so that we can better delineate how WET enhances specific facets of distress tolerance and how these improvements contribute to therapeutic outcomes.
+Breaking distress tolerance into its components offers a more nuanced perspective, potentially revealing differential pathways through which WET drives change.
+Such insights could guide the development of tailored interventions that maximize the impact of distress tolerance improvements across diverse emotional disorders.
 
 ### Responses to Core Threats
 
@@ -122,7 +123,8 @@ Our findings showed that WET not only reduced response to core threats but did s
 Notably, the rate of threat reduction between the first and second sessions predicted symptom improvement by the fourth session, supporting the idea of a causal relationship.
 
 The majority of threat reduction in WET occurred between sessions one and two, with minimal change thereafter despite ongoing symptom improvements.
-This pattern suggests that repeated engagement with the core threat might exert its effects through other mechanisms, such as DTS as seen above.
+This pattern suggests that repeated engagement with the core threat might exert its effects through other mechanisms, such as distress tolerance as seen above.
+Alternatively, there might be benefits from continued perturbation of the core threats via repeated activation.
 Further research should explore whether improving the writing script at each session to further engage in “hot spots” could improve threat reduction across sessions.
 This approach aligns with practices in WET for PTSD, where scripts are progressively refined each session [@sloanWrittenExposureTherapy2019].
 
@@ -148,16 +150,22 @@ Exploring these complementary aspects could provide broader insights into therap
 
 ## Advancing Mechanism-Driven Research with Transdiagnostic WET
 
-As clinical psychology evolves from observational studies focusing primarily on intervention outcomes to hypothesis-driven research targeting specific mechanisms [see @hofmannFutureInterventionScience2019], there is a growing demand for scalable, flexible methodologies capable of exploring these mechanisms in depth.
-Addressing this need, the current study applies WET—an existing intervention designed to treat specific disorders—to a transdiagnostic phenomenon: anxiety.
+As clinical psychology shifts from observational studies primarily focused on intervention outcomes to hypothesis-driven research targeting specific mechanisms [see @hofmannFutureInterventionScience2019], there is an increasing demand for scalable, flexible methodologies capable of exploring these mechanisms in depth.
+To address this need, the current study applies WET—an existing intervention designed to treat specific disorders—to a transdiagnostic phenomenon: anxiety.
 Transdiagnostic WET represents a significant advancement by offering a concise, self-administered intervention that is easily delivered online.
-Beyond its demonstrated effectiveness in reducing anxiety and functional impairment, WET’s adaptability is its true strength.
-Its structured yet flexible instructions can be modified to test various interventions, target different mechanisms, and assess their effects on a range of outcomes.
-This versatility positions WET as a valuable tool for mechanism-focused research.
+Beyond its proven effectiveness in reducing anxiety and functional impairment, WET’s adaptability is its true strength.
+Its structured yet flexible instructions can be tailored to test various interventions, target different mechanisms, and assess their effects on a range of outcomes, positioning it as a valuable tool for mechanism-focused research.
 
-The scalability of WET further enhances its utility, allowing for broad implementation on online platforms.
-This scalability not only increases accessibility but also facilitates the collection of detailed process data, paving the way for in-depth exploration of the mechanisms underlying therapeutic change.
-By leveraging these strengths, WET holds the potential to advance the field toward more personalized, effective interventions.
+In conclusion, this study demonstrates the efficacy of self-guided, online transdiagnostic WET, showing its superiority over both a waitlist control and an active writing control condition.
+With just four 20-minute writing sessions, WET achieved large effect sizes at follow-up.
+Furthermore, the study identified two potential mechanisms through which WET appears to work: increasing distress tolerance and reducing distress associated with activated core threats.
 
-By enabling researchers to investigate both process and outcome across diverse populations and settings, WET moves the field closer to fulfilling the vision of process-focused, mechanism-driven research [@hofmannFutureInterventionScience2019].
-Future studies should continue to leverage WET’s strengths to refine mechanistic understanding and develop interventions that are not only effective but also precisely targeted to underlying psychological processes.
+By extending WET’s reach and accessibility, this research extends existing literature while suggesting ways to enhance its effectiveness by further targeting potential mechanisms.
+WET enables researchers to investigate both processes and outcomes across diverse populations and settings.
+It thus moves the field closer to realizing the vision of process-focused, mechanism-driven research [@hofmannFutureInterventionScience2019] while offering a scalable, accessible transdiagnostic intervention.
+
+
+
+
+
+

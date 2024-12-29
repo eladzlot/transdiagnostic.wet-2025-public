@@ -36,12 +36,13 @@ Of `r N.screened` individuals initially screened,
 The age of participants in the NIW group was significantly lower than that of participants in the WET group (Wilcoxon test, `r apa_print(wilcox.test(Age ~ condition, data = d))$full_result`). 
 Fisher exact test indicated no significant group differences in ethnicity or sex, and Wilcoxon tests showed no significant group differences for pre-treatment symptom measures ($ps >$ `r conditions.demog.ps`).
 
-Given the similarity in post-treatment outcomes between the treatment and control groups, we incorporated additional data (n = `r N.waitlist`) from a waitlist control group.
+Given the similarity in post-treatment outcomes between the treatment and control groups, we incorporated additional data (n = `r N.waitlist`) from a waitlist control group as an idiographic benchmarking group.
 This data was collected in a similar study conducted between February 1 and February 24, 2023 [@sorkaTransdiagnosticSelfGuidedImageryinpreparation].
-This was done in order to make sure that the changes found during the intervention were not due to chance.
-These subjects were randomly assigned to a waitlist control group for a study that focused on mechanisms of imagery rescripting.
+This was done in order to make sure that the changes found during the interventions were not due to chance.
+These participants were randomly assigned to a waitlist control group for a study that focused on mechanisms of imagery rescripting.
 Given the identical inclusion/exclusion criteria and the minor time gap between data collection periods, we expect no systematic differences between the groups.
 The CONSORT flowchart (see Figure \@ref(fig:consort)) provides a detailed overview of the recruitment, randomization, and follow-up processes across the two active groups.
+Comprehensive demographic information is provided in Table \@ref(tab:demographics).
 
 (ref:consort) A CONSORT flowchart providing a detailed overview of the recruitment, randomization, and follow-up processes across the two active groups.
 
@@ -74,7 +75,6 @@ The large majority of participants `r format_count_perc(N.completed, N.randomize
 Study completion rates did not differ between treatment (`r format_perc(N.completed.treatment, N.treatment)`) and control (`r format_perc(N.completed.control, N.control)`); `r apa_print.fisher(completed.test)`.
 Female participants had a significantly lower attrition rate (`r format_perc(completed.sex.table[1, 1], sum(completed.sex.table[, 1]))`) compared to males (`r format_perc(completed.sex.table[1, 2], sum(completed.sex.table[, 2]))`); `r apa_print.fisher(fisher.test(completed.sex.table))`.
 Fisher’s exact and Wilcoxon tests revealed no significant differences between study completers and non-completers in terms of age, ethnicity, or symptom measures ($ps > `r completed.demog.ps`$).
-A detailed breakdown of pre-treatment demographic and symptom characteristics can be found in Table 1.
 
 (ref:demographics) Pre-treatment and Demographic Characteristics of Intent-to-Treat Sample. WET = Written Exposure, NIW = Neutral Imagery Writing, Waitlist group were added as a reference from a different study [@sorkaTransdiagnosticSelfGuidedImageryinpreparation].
 
@@ -112,8 +112,7 @@ Both WET and NIW were rated highly on the Devilly Credibility Scale, indicating 
 On the cognitive subscale, WET scored `r format_mean_sd(cognitive_score_wet)`, while NIW scored  `r format_mean_sd(cognitive_score_ew)`.
 Similarly, on the feeling subscale, WET scored  `r format_mean_sd(feeling_score_wet)` and NIW scored `r format_mean_sd(feeling_score_ew)`.
 These results suggest that participants found both interventions to be highly credible in terms of both their perceived logic and their intuitive appeal.
-
-Participants generally found the writing task acceptable, though some in the WET condition reported it as difficult, while some in the NIW condition described it as progressively boring.
+In their open feedback after the study, participants generally found the writing task acceptable, though some in the WET condition reported it as difficult, while some in the NIW condition described it as progressively boring.
 
 Participants in the WET condition successfully created powerful exposure scripts that addressed their core threats.
 For instance, an excerpt from the script of a socially anxious individual reads:
@@ -122,7 +121,7 @@ For instance, an excerpt from the script of a socially anxious individual reads:
 > I am to speak first, so I can't even steal other people's ideas…  
 > [They're thinking] Who is this idiot? I stumble on and on. I want to stop and for it all to be over, but I can't. It just goes on forever. It is like dying in slow motion.
 
-Adherence in the NIW condition was less strict, with some participants writing scripts that focused on positive outcomes rather than neutral events.
+Adherence in the NIW condition was less confined, with some participants writing scripts that focused on positive outcomes rather than neutral events.
 For example, one participant wrote:
 
 > I feel enthusiastic about starting my day on a positive and productive day.
@@ -178,24 +177,22 @@ The probability of direction, marked in this paper as P(>0), ranges from 0 to 1,
 ```{r growth, file=here('scripts','figures.growth.R'), echo=FALSE, message=FALSE, warning=FALSE, fig.cap='(ref:growth)', cache=TRUE}
 ```
 
-Trait anxiety, as measured by the OASIS, significantly improved across all three interventions at the one-week follow-up.
+Clinical anxiety, as measured by the OASIS, significantly improved across all three interventions at the one-week follow-up.
 The estimated raw score improvements were `r format_estimate(delta.wet, estimand = 'M')` for the WET group, `r format_estimate(delta.ew, estimand = 'M')` for the NIW group, and `r format_estimate(delta.wl, estimand = 'M')` for the Waitlist group.
 
 Participants in the WET group showed significant improvements during the treatment period compared to the Waitlist group (`r format_estimate(delta.treatment.wet - delta.treatment.wl)`).
 These gains continued at a similar rate at the one-week follow-up, again compared to the Waitlist group (`r format_estimate(delta.fu1.wet - delta.fu1.wl)`).
-At the two-month follow-up, the gains were likely continued at a slower rate relative to the projected Waitlist trajectory, as no Waitlist data was collected at this time point (`r format_estimate(delta.fu2.wet - delta.fu2.wl)`).
+At the two-month follow-up, the gains in WET were estimated to continue at a slower rate compared to the previous gains observed in the WET group (`r format_estimate(delta.fu2.wet - delta.fu2.wl)`).
+Notably, this rate of change was estimated in relation to the projected Waitlist trajectory, as no Waitlist data was collected at this time point.
 The improvement trajectory appeared linear, with consistent gains observed throughout the intervention and continuing during both follow-ups.
 Total improvement when compared to the projected Waitlist trend was `r format_estimate(delta.all.wet - delta.all.wl)`.
 
 Participants in the NIW group also demonstrated significant improvements during the treatment period compared to the Waitlist group (`r format_estimate(delta.treatment.ew - delta.treatment.wl)`).
 These improvements were sustained at the one-week follow-up, again in comparison to the Waitlist group (`r format_estimate(delta.fu1.ew - delta.fu1.wl)`).
 At the two-month follow-up, the gains were maintained relative to the projected Waitlist trajectory, as no Waitlist data was collected at this time point (`r format_estimate(delta.fu2.ew - delta.fu2.wl)`).
-Although participants in the NIW group showed considerable overall improvement (`r format_estimate(delta.all.ew - delta.all.wl)`).
-The L-shaped trajectory indicates that most of the gains occurred during the treatment phase and then stabilized.
+Participants in the NIW group showed considerable overall improvement (`r format_estimate(delta.all.ew - delta.all.wl)`).
 From pre-treatment to the two-month follow-up, WET demonstrated a slightly greater cumulative advantage over NIW (`r format_estimate(delta.all.wet - delta.all.ew)`).
 While participants in the NIW group showed considerable overall improvement (`r format_estimate(delta.all.ew - delta.all.wl)`), the L-shaped trajectory suggests that most of the gains occurred during the treatment phase and then stabilized.
-From pre-treatment to the two-month follow-up, WET demonstrated a slightly greater cumulative advantage over NIW (`r format_estimate(delta.all.wet - delta.all.ew)`).
-
 Contrary to our hypothesis, the NIW group had a slight advantage over WET during the treatment phase (`r format_estimate(delta.treatment.wet - delta.treatment.ew)`).
 However, WET outperformed NIW at both the one-week follow-up (`r format_estimate(delta.fu1.wet - delta.fu1.ew)`) and the two-month follow-up (`r format_estimate(delta.fu2.wet - delta.fu2.ew)`).
 
@@ -246,8 +243,8 @@ These outcomes were kept at the 2 month followup.
 We now shift our focus to understanding the processes underlying change in WET.
 Our second, exploratory hypothesis proposed that the identified mechanisms of change would improve during therapy.
 Detailed results for WET are presented in Table 2.
-Below, we highlight the significant findings in WET, alongside the corresponding effects observed in the NIW group.
-Difference between the groups is reported in all places where it is significant.
+Below the table, we highlight the significant findings in WET, alongside the corresponding effects observed in the NIW group.
+Difference between the groups is reported in all places where they are significant.
 This comparison aims to identify differential effects while maintaining a primary focus on WET, which is the central topic of this paper.
 Full results for NIW are available in the supplementary materials.
 
@@ -271,7 +268,7 @@ d.ifs.ew = get_change(process_models[['ifs']], condition = 'ew')
 d.mcq_danger.ew = get_change(process_models[['mcq_danger']], condition = 'ew')
 ```
 
-Distress tolerance (DTS) improved significantly in the WET group (`r format_estimate(-d.dts)`), while it may have deteriorated in the NIW group (`r format_estimate(-d.dts.ew)`).
+Distress tolerance (DTS) improved significantly in the WET group (`r format_estimate(-d.dts)`), while it somewhat deteriorated in the NIW group (`r format_estimate(-d.dts.ew)`).
 The difference between the groups was statistically significant (`r format_estimate(d.dts.ew - d.dts)`), aligning with our expectations.
 WET likely encouraged participants to tolerate distress through structured exposure, whereas NIW may have reinforced avoidance behaviors.
 
@@ -343,7 +340,7 @@ By the second session, both groups had established new patterns:
 the NIW group maintained the reduced anxiety achieved after session one, while the WET group experienced a significant reduction in anxiety even below that of the NIW group.
 This between-session reduction in state anxiety predicted improvements in trait anxiety (OASIS), in line with meta-analysis showing that between session habituation is correlated with treatment outcome [e.g., @ruppEmotionalProcessingTheory2017].
 However, stronger correlations were found in the WET group (`r format_estimate(r.bsam.change.all, estimand = '*r*')`) than in the NIW group (`r format_estimate(r.bsam.change.all.ew, estimand = '*r*')`).
-It is reasonable to assume that the reduction in trait anxiety in response to the core threat is caused by decrease in DTS, as seen above.
+It is reasonable to hypothesize that the reduction in trait anxiety in response to the core threat is caused by decrease in DTS, as seen above.
 However, no correlation was found between change in DTS and change in state anxiety (`r format_estimate(r.dts.bsam.wet, estimand = '*r*')`).
 
 The distinct trajectory of state anxiety in the WET group suggests a unique mechanism of change.

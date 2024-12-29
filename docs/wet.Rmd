@@ -48,9 +48,9 @@ abstract: |
   This study introduces Transdiagnostic WET, a future-oriented adaptation designed to address anxiety by focusing exposure on core threats and encouraging immersive emotional engagement.
   The primary goals were to validate the efficacy of Transdiagnostic WET in reducing anxiety symptoms and to investigate mechanisms driving such changes.
 
-  To achieve this, we conducted a randomized controlled trial (RCT) comparing WET to a neutral imagery task and a waitlist control group, with all interventions fully self-administered.
+  To achieve this, we conducted a randomized controlled trial (RCT) comparing WET to a neutral imagery writing task and a waitlist control group, with all interventions fully self-administered.
   Outcomes were analyzed using Bayesian multilevel linear IRT models.
-  The results demonstrated that WET was highly effective, with an effect size of *d* = 0.85 compared to waitlist, and that changes in distress tolerance (*r* = 0.37) and anxiety regarding core threats (*r* = 0.39) correlated with symptom reduction.
+  The results demonstrated that WET was highly effective, with an effect size of *d* = 0.85 compared to waitlist at two-months follow-up, and that changes in distress tolerance (*r* = 0.37) and anxiety regarding core threats (*r* = 0.39) correlated with symptom reduction.
 
   These findings suggest that future-oriented WET is a scalable and effective intervention for treating transdiagnostic anxiety.
   Additionally, the results highlight key mechanisms of change that warrant further exploration, including distress tolerance and threat-specific anxiety.

@@ -21,8 +21,8 @@ model.mechanism <- function(d_x, d_m, model_name, ...) {
     is_fu2_x = d_x$wave == 6,                  # Follow-up 2 indicator for x
     N_id = length(all_ids),                    # Total number of unique participants
     G = case_when(
-      d_x$Sex == 'Female' ~ 1,
-      d_x$Sex == 'Male' ~ -1,
+      d_x$Sex == 'Female' ~ .5,
+      d_x$Sex == 'Male' ~ -.5,
       .default = 0
     ),
     

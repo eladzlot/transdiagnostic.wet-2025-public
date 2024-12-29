@@ -1,24 +1,22 @@
 Written interventions have long been part of the psychological toolbox [@ruiniWritingTechniquePsychotherapies2022].
 They have been used both as an aid and as a central technique [@riordanScriptotherapyTherapeuticWriting1996; @smythExpressiveWritingClinical2008].
-Expressive writing is a therapeutic technique in which individuals freely write about emotional or traumatic experiences [@pennebakerWritingEmotionalExperiences1997].
-Evidence indicates that expressive writing has a consistent but limited effect [e.g., @frattaroliExperimentalDisclosureIts2006].
+One such method, expressive writing, is a therapeutic technique in which individuals freely write about emotional or traumatic experiences [@pennebakerWritingEmotionalExperiences1997].
+Evidence indicates that general expressive writing has a consistent but limited effect [e.g., @frattaroliExperimentalDisclosureIts2006].
 However, there is evidence that expressive writing is highly effective in specific contexts.
-In particular, writing treatments have been found to be effective for PTSD in meta-analyses
-[e.g., @emmerikWritingTherapyPosttraumatic2013; @gergerComparativeEfficacyAcceptability2021] though evidence is mixed [@mogkHealthEffectsExpressive2006].
 
-Written Exposure Therapy (WET) is a structured, brief intervention designed to treat traumatic experiences through expressive writing.
-Originally developed as a focused application of imaginal exposure (IE), WET was created to offer a streamlined, accessible alternative to more traditional therapies.
-Studies have shown that WET yields strong effects, comparable to established treatments like Cognitive Processing Therapy and Prolonged Exposure [@thompson-hollandsBriefNovelTherapies2019; @sloanWrittenExposureTherapy2019; @sloanWrittenExposureIntervention2012; @sloanWrittenExposureTherapy2023].
-While WET has traditionally been applied specifically to PTSD, recent studies have extended its use to generalized anxiety [@goldmanImpactWrittenExposure2007; @ovanessianPreliminaryTestTherapeutic2019] including an online format [@roch-gagneFeasibilityOpenTrial2019], indicating its potential for broader, transdiagnostic applications.
+Written Exposure Therapy (WET) is a structured, brief intervention designed to treat traumatic experiences of individuals with PTSD through expressive writing.
+Originally developed as a focused application of imaginal exposure (IE) for PTSD, WET was created to offer a streamlined, accessible alternative to more traditional therapies.
+Studies have shown that WET yields strong effects for PTSD, comparable to established treatments like Cognitive Processing Therapy and Prolonged Exposure [@thompson-hollandsBriefNovelTherapies2019; @sloanWrittenExposureTherapy2019; @sloanWrittenExposureIntervention2012; @sloanWrittenExposureTherapy2023].
+While WET has traditionally been applied specifically to PTSD, recent studies have extended its use to generalized anxiety disorder (GAD) by focusing on future-oriented feared outcomes [@goldmanImpactWrittenExposure2007; @ovanessianPreliminaryTestTherapeutic2019] including in an online format [@roch-gagneFeasibilityOpenTrial2019], indicating its potential for broader, transdiagnostic applications.
 
-This paper introduces Transdiagnostic WET, a variation of WET tailored for a transdiagnostic population.
-Since WET integrates elements of both IE and expressive writing, we address the foundations of each approach to fine-tune Transdiagnostic WET.
-Two key insights drive the modifications to WET: exposure needs to be a) focused and b) immersive.
+This paper introduces transdiagnostic WET, a variation of WET tailored for a transdiagnostic population.
+Since WET integrates elements of both IE and expressive writing, we address the foundations of each approach to fine-tune transdiagnostic WET.
+Two key insights drive the modifications that have been made from past-oriented WET to future-oriented WET: exposure needs to be a) focused and b) immersive.
 
 Meta-analyses have found that more directive instructions yield better outcomes in expressive writing [@frattaroliExperimentalDisclosureIts2006; @reinholdEffectsExpressiveWriting2018].
 Indeed, WET for PTSD focuses on the most distressing traumatic event that the client has [@sloanWrittenExposureTherapy2019].
 Furthermore, WET has been found to be more effective when focusing on a single fear rather than alternating between different fears, both in GAD and PTSD [@fracalanzaTestingProceduralVariant2014; @sloanFurtherExaminationExposure2005].
-In PTSD, WET focuses on the central issue of anxiety - the traumatic event - by default .
+When administered for PTSD, WET focuses on the central source of anxiety - the traumatic event - by default .
 We propose to improve the focus of WET by explicitly focusing on core threats: the ultimate feared consequence of one's fear or anxiety [@huppertCoreFearsValues2012; @zlotnickAnatomyFearCloser2025].
 Clinicians suggest that focusing on core threats in psychological treatments improves efficacy, enhances generalizability, and reduces relapse 
 [@foaEmotionalProcessingFear1986; @gillihanCommonPitfallsExposure2012; @murrayDissectingCoreFear2016].
@@ -32,31 +30,31 @@ Indeed, IE protocols typically involve conjuring a vivid, detailed image of one'
 Furthermore, focusing on the emotional aspects in writing is more beneficial than focusing on cognitive or control conditions [@sloanDoesAlteringWriting2007].
 Moreover, individuals undergoing WET show signs of physiological distress, supporting the idea that emotional activation is necessary for successful treatment [@wiscoMechanismsChangeWritten2016].
 However, the WET protocol for PTSD emphasizes recounting traumatic experiences from a distancing perspective (e.g., "as you look back upon it now") rather than an immersed perspective [e.g., "as if it were happening right now;" @sloanWrittenExposureTherapy2019].
-This approach is based on the idea that a distanced perspective better facilitates "working through" difficult life experiences [e.g., @krossSelfdistancingTheoryResearch2017; @krossMakingMeaningOut2011].
+This approach is based on the idea that a distanced perspective better facilitates "working through" difficult life experiences [e.g., @krossSelfdistancingTheoryResearch2017].
 We argue that this approach is appropriate for PTSD, where a major aspect of the intervention is to reconstruct the traumatic narrative.
 Indeed, the WET protocol explicitly states this goal: "By repeatedly recounting the event, you will be able to correct for the splintered fashion in which the memory may have been stored." [@sloanWrittenExposureTherapy2019, pp. 53].
-We contend that for a transdiagnostic, non-traumatized population increased emotional activation is needed.
+We contend that in future-oriented IE for a transdiagnostic, non-traumatized population increased emotional activation is needed.
 Thus, we direct participants to immerse themselves in the writing by using first person, providing detailed sensory and emotional descriptions, and periodically closing their eyes and calling upon their imaginations.
 
 The primary goal of this study was to develop and validate the efficacy of future-oriented WET.
 However, it is clear that a greater understanding of the underlying mechanisms of interventions will allow more precise interventions [@nivPrecisionCognitiveBehavioral2021].
 Moreover, a holistic theory that integrates their theory is needed [@huppertCBTAnxietyDisorders2020;@brewinTHEORETICALFOUNDATIONSCOGNITIVEBEHAVIOR1996; @hofmannFutureInterventionScience2019].
-Thus, we aim to explore several potential mechanisms underlying WET's functioning [cf. @rousseauMechanismsActionUnderlying2018].
+Thus, we aim to explore several potential mechanisms underlying WET [cf. @rousseauMechanismsActionUnderlying2018].
 
 **1. Fear reduction:**
 Early studies suggested that imaginal exposure promotes habituation of pathological anxiety [e.g., @foaHabituationSubjectiveAnxiety1978].
 Repeated exposure to the same scenario may lead to fear reduction through habituation—a decreased response to the imagined scenario—or through extinction, wherein the imagined scenario becomes neutral after breaking its association with an aversive stimulus [cf. @cooperEmpiricalReviewPotential2017].
 Fear reduction was assessed through self-reported responses to the imagined scenario before and after the intervention, measured both within and across sessions [see @foaEmotionalProcessingFear1986; @ruppEmotionalProcessingTheory2017].
 
-**2. Specific reactions to memories:**
+**2. Specific reactions to flashforward images**
 While metacognitive beliefs apply to all mental events, specific memories or images may evoke distinct reactions, such as distress, intrusiveness, or avoidance.
 Changes in these reactions may occur without altering broader metacognitive beliefs.
 We measured participants' reported reactions to specific memories, assessing changes in distress, intrusiveness, and avoidance.
 
-**3. Distress tolerance (DTS):**
+**3. Distress tolerance:**
 Distress tolerance has been suggested as a critical factor in the efficacy of exposure therapy, potentially more important than fear reduction itself [@craskeOptimizingInhibitoryLearning2008; @hayesAcceptanceCommitmentTherapy1999].
 Repeated exposure to intense, negative emotional events may enhance participants' ability to tolerate distress.
-We predict that DTS will increase as a result of participants’ engagement with the WET protocol.
+We predict that distress tolerance will increase as a result of participants’ engagement with the WET protocol.
 
 **4. Thought fusion:**
 The belief that thoughts have direct causal effects on the world, behavior, and objects—referred to as thought fusion—has been linked to intrusive thoughts and OCD as well as other anxiety disorders [@rassinThoughtactionFusionCausal1999; @rassinThoughtactionFusionThought2001; @thompson-hollandsThoughtactionFusionAnxiety2013].
@@ -79,6 +77,6 @@ An additional aim is to investigate the mechanisms underlying WET’s effects, e
 More insight into mechanisms could help to fine tune theory, optimize therapeutic processes and improve outcomes [@nivPrecisionCognitiveBehavioral2021; @huppertCBTAnxietyDisorders2020].
 We measured potential mechanisms that might drive WET’s effects, focusing on both threat-specific processes (e.g., fear reduction, reactions to distressing memories) and threat-agnostic processes [e.g., distress tolerance, thought fusion, and negative metacognitions regarding memories or images; @rousseauMechanismsActionUnderlying2018].
 
-To explore these processes, we examined whether WET elicits changes in these factors and, if so, whether these changes correlate with reductions in anxiety symptoms.
+To explore these processes, we examined whether WET changes these factors and, if so, whether these changes correlate with reductions in anxiety symptoms.
 We anticipate that changes in mechanisms will align with symptom changes, supporting their role in the intervention’s therapeutic process.
 This experiment was pre-registered prior to data collection [doi.org/10.17605/OSF.IO/2CEHR](https://doi.org/10.17605/OSF.IO/2CEHR).

@@ -59,8 +59,8 @@ model.growth <- function(d, model_name, ...) {
     t = as.integer(d$wave),              # Ordinal variable for wave (time point)
     id = as.factor(d$id),                # Participant ID as a factor
     G = case_when(
-      d$Sex == 'Female' ~ 1,
-      d$Sex == 'Male' ~ -1,
+      d_x$Sex == 'Female' ~ .5,
+      d_x$Sex == 'Male' ~ -.5,
       .default = 0
     ),
     N = nrow(d),                         # Total number of observations
@@ -100,7 +100,7 @@ model.growth <- function(d, model_name, ...) {
     
     # Priors for random effects and other model parameters
     matrix[4, N_id]:Z ~ normal(0, 1),                    # Standard normal prior for latent variable Z
-    bbar_baseline[condition] ~ normal(0, 1.5),                      # Normal prior for overall intercept
+    bbar_baseline[condition] ~ normal(0, 1.5),           # Normal prior for overall intercept
     bbar_treatment[condition] ~ normal(0, 0.5),          # Normal prior for average treatment effect
     bbar_fu1[condition] ~ normal(0, 0.5),                # Normal prior for average first follow-up effect
     bbar_fu2[condition] ~ normal(0, 0.5),                # Normal prior for average second follow-up effect

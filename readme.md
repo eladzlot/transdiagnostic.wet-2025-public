@@ -15,7 +15,7 @@ This repository contains the data, scripts, and supplementary materials for the 
 - **Folder:** [`supplementary/`](supplementary/)
 - Includes:
   - Detailed outcomes of all [process models](supplementary/process.pdf).
-  - Detailed outcomes of all [mechanism models](supplementary/mechanisms.pdf).
+  - Detailed description of all [models](supplementary/models.pdf).
 
 ### 3. **Data**
 - **Folder:** [`data/`](data/)

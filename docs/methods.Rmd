@@ -5,7 +5,7 @@ Additionally, data from a waitlist control group was incorporated, collected fro
 This provided both a passive control and an active control for comparison.
 The study employed a double-blind design to ensure objectivity.
 Study personnel had no direct interaction with participants, and both experimenters and participants were unaware of group assignments until the one-week follow-up.
-The primary outcome was defined as the change in OASIS scores, with changes in WSAS scores and other proposed mechanisms serving as secondary outcomes.
+The primary outcome was defined as the change in OASIS scores, with changes in functioning (WSAS; see below) scores and other proposed mechanisms serving as secondary outcomes.
 Covariations between changes in OASIS and changes in each potential mechanism were also explored.
 
 Supplementary materials, including datasets, analysis scripts, and detailed methodological documentation, are available on GitHub at [https://github.com/eladzlot/transdiagnostic.wet-2025-public](https://github.com/eladzlot/transdiagnostic.wet-2025-public).
@@ -15,8 +15,9 @@ These resources enhance transparency and facilitate replication of the findings.
 ## Participants
 
 Participants were recruited through the Prolific platform, compensated at $\pounds 9$/hour.
-Inclusion criteria included high pathological anxiety (greater than 4 on the OASIS),
-and impaired daily function (at least one item scored above 2 on WSAS).
+
+Inclusion criteria included high pathological anxiety (OASIS score > 4)
+and impaired daily functioning (at least one WSAS item scored above 2 on a 0–8 scale).
 Exclusion criteria were severe depression [greater than 14 on the PHQ\; @kroenkePHQ8MeasureCurrent2009], post-trauma [greater than 6 on the brief PCL-5\; @zuromskiDevelopingOptimalShortform2019], or psychotic symptoms [evaluated via items 19 and 20 from the DIAMOND screener\; @tolinPsychometricPropertiesStructured2018].
 In addition, English as a fluent language was required.
 Furthermore, participants who had reported head injury or reading and writing difficulties in the Prolific system were excluded.
@@ -24,7 +25,7 @@ Finally, only experienced users on the Prolific platform with an approval rate o
 An ethnically diverse sample was requested from Prolific.
 
 A power analysis indicated that a sample size of 148 participants would provide 0.8 power, but due to financial constraints, Bayesian stopping criteria allowed for early termination.
-Recruitment continued until region of practical equivalence (ROPE) showed no significant difference could be found between WET and NIW conditions.
+Recruitment continued until the region of practical equivalence (ROPE) showed no significant difference could be found between WET and NIW conditions.
 
 Participants were randomly assigned to the treatment and control groups in a 2:1 ratio, using block randomization ($OASIS \geq 8$), aiming to ensure equal distribution of anxiety severity between groups.
 The randomization process was integrated into the experiment program code.
@@ -90,7 +91,7 @@ In our sample, the omega coefficient  was `r omega.list$ifs`, indicating excelle
 The *Brief State Anxiety Measure*  [BSAM\; @bergAreEmotionsFrightening1998] was used to assess participants' state anxiety in response to their core threat. 
 The BSAM consists of six items (relaxed, steady, strained, comfortable, worried, tense) adapted from the State-Trait Anxiety Inventory (STAI).
 These items are designed to provide a brief and efficient measure of state anxiety.
-Each item is rated on a 7-point scale (1 = Not at all, 4 = Very much so), with higher scores indicating greater levels of anxiety.
+Each item is rated on a 7-point scale (1 = Not at all, 7 = Very much so), with higher scores indicating greater levels of anxiety.
 In this study, participants were asked to imagine their core threat script for a few moments both before and after each writing session.
 They then completed the BSAM to report their current anxiety levels.
 The BSAM demonstrated excellent internal consistency in our sample, as indicated by an omega coefficient of `r omega.list$bsam`.
@@ -148,7 +149,7 @@ In the second part of the study, symptom-mechanisms covariation was examined by 
 These random effects allow us to capture individual differences in rates of change and explore how these differences relate to the proposed change-driving mechanisms.
 By modeling both fixed and random effects, we can explore not only the general efficacy of the intervention but also the individual variability in response to treatment, which may reveal underlying mechanisms.
 
-To account for follow-up measurements at varying time lags (e.g., 1 week, 2 months), we employ a **piecewise growth model**, allowing for separate slopes at different follow-up times [@bollenLatentCurveModels2006; @andersson35yearFollowInternetdeliveredCognitive2013].
+To account for follow-up measurements at varying time lags (e.g., 1 week, 2 months), we employ a *piecewise growth model*, allowing for separate slopes at different follow-up times [@bollenLatentCurveModels2006; @andersson35yearFollowInternetdeliveredCognitive2013].
 This model enables us to estimate distinct rates of change during different phases of the study.
 Combined with the measurement model described below, this is in essence a latent change score model [@cancerDynamicalPropertiesConceptual2021; @mcardleLatentVariableModeling2009].
 

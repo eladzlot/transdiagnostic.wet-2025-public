@@ -92,5 +92,5 @@ final_table %>%
     col.names = c('Characteristics', 'NIW', 'WET', 'Waitlist', 'Total'),
     col_spanners = list(Conditions = 2:4),
     note = 'Data are presented as number (percentage) of patients unless otherwise indicated.',
-    stub_indents = list(Ethnicity = 5:7, Outcomes = 8:9)
+    stub_indents = list(Ethnicity = 5:7, `Pretreatment measures` = 8:9)
   )
