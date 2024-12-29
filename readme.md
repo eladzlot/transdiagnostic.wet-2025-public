@@ -14,12 +14,21 @@ This repository contains the data, scripts, and supplementary materials for the 
 ### 2. **Supplementary Materials**
 - **Folder:** [`supplementary/`](supplementary/)
 - Includes:
-  - Detailed outcomes of all [process models](supplementary/process.pdf).
+  <!-- - Detailed outcomes of all [process models](supplementary/process.pdf). -->
+  - Intervention instructions
+    - For [written exposure therapy (WET)](supplementray/instructions/instructions.wet.html)
+    - For [neutral imagery writing (NIW)](supplementray/instructions/instructions.niw.html)
   - Detailed description of all [models](supplementary/models.pdf).
 
 ### 3. **Data**
 - **Folder:** [`data/`](data/)
 - Contains processed datasets used in the analyses presented in the manuscript.
+- Includes:
+  - **`data_long.csv`**: Long-format dataset for repeated measures or hierarchical analyses.  
+  - **`demographics.data.csv`**: Demographic information about participants (e.g., age, gender).  
+  - **`pid.condition.csv`**: Maps participant IDs to experimental conditions.  
+  - **`screening.csv`**: Data from the participant screening process.
+  - **`LICENSE`**: Specifies terms for data usage and distribution.  
 - **Note:** Raw data is not available to ensure participant confidentiality. Only de-identified and aggregated data are included.
 
 ### 4. **Manuscript**

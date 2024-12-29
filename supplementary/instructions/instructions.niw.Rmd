@@ -1,0 +1,123 @@
+---
+title: "Imagery-Focused Expressive Writing Section"
+output: html_document
+---
+
+## Some Background
+
+Imagery-focused expressive writing is a therapeutic intervention that involves writing about personal experiences, thoughts, and feelings.
+The goal of imagery-focused expressive writing is to help individuals gain control of their emotions and experiences, and eventually develop greater emotional awareness and regulation.
+
+This is achieved by developing one's capacity for eliciting vivid imagery, even of neutral situations or events.
+The importance of developing a deep and detailed image is that it can help individuals engage more fully with their experiences.
+By taking the time to vividly describe a mundane scene, individuals can immerse themselves in the present moment and become more attuned to their thoughts and feelings.
+
+It is important to avoid anxiety-provoking subjects while engaging in expressive writing.
+Instead, individuals should focus on more neutral, routine experiences, such as preparing and eating breakfast or taking a dog for a walk.
+By focusing on neutral experiences and avoiding anxiety-provoking subjects, individuals can develop greater emotional awareness and regulation, and ultimately reduce their anxiety symptoms.
+
+Research has shown that both guided imagery and expressive writing can be effective interventions for treating anxiety (e.g., Saulsman, 2019; Sloan, 2019).
+Part of the novelty of our study is that we are combining these two ideas for the first time.
+
+---
+
+### Reflection Questions
+
+How anxious do you expect to feel if you try to distract yourself from anxiety?
+
+1. Not at all anxious (1)  
+2. Slightly anxious (2)  
+3. Moderately anxious (3)  
+4. Quite anxious (4)  
+5. Extremely anxious (5)  
+
+How anxious do you expect to be if you practice imagining a neutral event for 20 straight minutes?
+
+1. Not at all anxious (1)  
+2. Slightly anxious (2)  
+3. Moderately anxious (3)  
+4. Quite anxious (4)  
+5. Extremely anxious (5)  
+
+---
+
+## Neutral Script Exercise
+
+To create a focal script for your imagery practice, please follow these instructions carefully.
+Your task is to craft a short script that will serve as the center of your imagery exercises.
+
+1. **Choose an everyday event**: Think of a simple and ordinary event that you expect to experience in the near future, such as waking up in the morning, having breakfast, or walking to work.  
+2. **Keep it emotionally neutral**: Choose an event that is emotionally neutral, meaning it doesn't have a strong positive or negative emotional charge.  
+3. **Keep it short**: Your description should be no longer than three sentences to focus on the unique characteristics of the event and avoid unnecessary details.  
+4. **Make it unique**: Come up with a specific instance of the event in mind. Highlight a feature that uniquely describes the event, such as a particular detail or sensory experience.
+
+### Examples:
+
+- As I walk down the street, I can feel the pavement under my feet. The sun is setting behind me, casting long shadows across the sidewalk, and I can hear the sound of people talking and laughing in the distance.  
+- I wake up to the sound of the alarm and drag myself out of bed. As I stumble to the kitchen, the smell of freshly brewed coffee and sizzling bacon fills the air. I crack some eggs into the pan and watch as they sizzle and cook to perfection.
+
+---
+
+## Writing Exercise: Important!
+
+The purpose of this exercise is to help you shift your attention away from anxious feelings by focusing on ordinary, everyday experiences.
+In this exercise, we ask you to write in detail about a neutral experience without worrying about grammar or spelling.
+Write exactly as you imagine it, using present tense and your own perspective to fully immerse yourself in the situation.
+
+### Guidelines:
+
+- **Describe all the little details**: What is happening? Include sensory details such as what you see, hear, smell, and touch.
+- **Picture yourself in the moment**: Pay attention to your thoughts, emotions, and bodily sensations.
+- **Avoid extreme emotions**: Keep the experience neutral, avoiding overly positive or negative tones.
+
+### Example:
+
+"I wake up in the morning and prepare for my workday. I gather my laptop, charger, a tuna sandwich for lunch, and a banana for a snack. I put everything in my car and start my commute to work."
+
+If you get stuck, close your eyes and imagine the situation. Think about what would typically happen next and let that guide your writing. Create a structured story with a clear beginning and end, or let your thoughts flow freely.
+
+---
+
+### Key Points to Remember
+
+- Fully immerse yourself in the moment by describing sensory details, thoughts, emotions, and bodily sensations.  
+- If you feel stuck or finish early, start over from the beginning and enrich the details.  
+- Take your time to explore the experience from all angles. Each writing cycle deepens the level of processing and helps you develop a new perspective on the experience.
+
+**Important:** You will be allocated 20 minutes for this exercise. If you complete a story, begin another cycle of writing. This repetition helps reinforce the practice and amplify its benefits.
+
+---
+
+## Writing About Your Experience
+
+Your writing exercise will be timed for 20 minutes.
+Make sure that you are sitting in a quiet place and that you are available to concentrate for 20 minutes straight.
+Now, take a moment to think about what you would like to write.
+Hold a specific instance in your mind so that you can experience it in full detail.
+
+When writing, you can choose to write in an organized manner or in a stream of consciousness.
+If you feel like you’re done with writing, go back to the beginning and write again until time runs out.
+Your task is to write continuously during the whole 20 minutes.
+
+When you are ready, press "Continue" to begin the timer.
+
+---
+
+## Writing Focus
+
+Following is the writing focus that you've composed:
+
+> << Insert neutral script here >>
+
+Please take 20 minutes to write about it.
+If you finish writing before the time is up, start over.
+Your task is to write continuously during the whole 20 minutes.
+
+**Here are some principles of writing to keep in mind:**
+
+1. **Pick a specific event** with a clear time and location.  
+2. Use **present tense**.  
+3. Write in **first-person perspective**.  
+4. Include **sensory experiences** such as sound, color, and scent.  
+5. Describe your **thoughts and feelings**.  
+6. **Keep writing without stopping** – let whatever comes to mind flow onto the page.

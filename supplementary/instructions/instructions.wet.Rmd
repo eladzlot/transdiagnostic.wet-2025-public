@@ -1,0 +1,133 @@
+---
+title: "WET Psychoeducation"
+output: html_document
+---
+
+## Some Background
+
+When we feel anxious or distressed, our natural response is to avoid the thing that triggers our negative feelings.
+For instance, when faced with a venomous snake, it is natural and important to immediately move away from it.
+However, we also tend to avoid thoughts and images: we don’t like imagining the things that scare us, although the thoughts themselves are not dangerous at all.
+Studies show that avoidance is exactly what maintains their power over us.
+
+There are many reasons for this.
+Among others, if we always avoid imagining frightening and unpleasant things, how can we truly know that our imagination is not dangerous?
+Or that we are capable of tolerating it?
+
+To process your anxiety and distress, we’ll do an exercise that involves imagining the things you’re afraid of “all-in,” without trying to avoid them.
+This helps you process them deeply, enabling you to step back from the anxiety and view it in a more reasonable perspective, so that the fear does not control you.
+
+### Example and Metaphor
+
+This might seem very difficult and even counterintuitive.
+Many people try hard to avoid imagining the things that trigger their negative emotions, and you are now asked to take a 180-degree turn and deliberately think about the least comfortable things.
+Why would you agree to do that?
+Others feel that they are already imagining frightening or distressing scenarios all the time, so why would going even further in that direction help?
+
+To understand the purpose of this exercise, let us use a metaphor.
+Imagine watching a horror film.
+How would you feel the first time watching it?
+Scared, right?
+But what about the third time?
+It might be a little less scary, right?
+
+And the tenth time?
+And the hundredth time?
+
+Eventually, it just becomes plain boring.
+
+This is what we are trying to achieve by using repetitive imagination in this exercise.
+In the same way that the movie ceases to be scary after watching it enough times, your personal "horror film" will gradually cease to affect you.
+
+![Horror Movie](https://lh4.googleusercontent.com/_e36SCa2bN7_JTN3vNnpxv3gMMa4Q4hF813JwsNMAeOJG925DuUv6qQypx_4Dwskzl75m0iCdZ11BFRd5NgsYS9b-Ts6mYH1vrvQkTQcrpDALMusKCmSnEJ7LZpPUqKcanO7iltLp7fPcqAns7GQwsV76wHXi_mJOwftAQPiZn4ymb3BgMyXXlEJqC3s5UU)
+
+This is what we aim to achieve by engaging in this exercise: to desensitize your fear through repeated imagination, reducing its emotional intensity over time.
+
+---
+
+### Reflection Questions
+
+How anxious do you expect to be if you deeply imagine the realization of your core threat once?
+
+1. Not at all anxious (1)  
+2. Slightly anxious (2)  
+3. Moderately anxious (3)  
+4. Quite anxious (4)  
+5. Extremely anxious (5)  
+
+How anxious do you expect to be if you deeply imagine the realization of your core threat for 20 straight minutes?
+1. Not at all anxious (1)  
+2. Slightly anxious (2)  
+3. Moderately anxious (3)  
+4. Quite anxious (4)  
+5. Extremely anxious (5)  
+
+---
+
+## Writing Exercise: Important!
+
+The purpose of this exercise is to help you fully experience and process your distress about the future event by writing about it in intense detail.
+Do not focus on grammar or spelling.
+Write about your anxiety exactly the way you fear it to be.
+Attempt to write as vividly as possible to express the full richness of the experience.
+
+### Writing Guidelines
+
+- Use **present tense** and **first-person perspective** to simulate your involvement in the situation. 
+- Describe:
+  - **Details of the event**: What happens? What are the key moments?
+  - **Sensory experiences**: What do you see, hear, smell, touch?
+  - **Thoughts and feelings**: What are you thinking and feeling in the moment?
+  - **Bodily sensations**: For example, "I can feel a choking sensation in my throat, my stomach is turning, and I feel nauseous."
+
+If you get stuck, try closing your eyes and imagining yourself in the threatening situation.
+Pay attention to the sensations and feelings that come up, and start describing them in your text.
+At any point, you can ask yourself: “What is the worst thing that could happen at this point?”
+
+If you feel like you’re done writing, start over from the beginning and try to enrich and extend your story.
+
+**Important:** As you write, you may notice an increase in your anxiety and distress levels.
+This is completely normal and expected – it means you are confronting the things that trouble you.
+This is your chance to process and better understand your fear.
+
+---
+
+## Writing About Your Experience
+
+Your writing exercise will be timed for 20 minutes.
+Make sure that you are sitting in a quiet place and that you are available to concentrate for 20 minutes straight.
+Now, take a moment to think about what you would like to write.
+Hold a specific instance in your mind so that you can experience it in full detail.
+
+When writing, you can choose to write in an organized manner or in a stream of consciousness.
+If you feel like you’re done with writing, go back to the beginning and write again until time runs out.
+Your task is to write continuously during the whole 20 minutes.
+
+When you are ready, press "Continue" to begin the timer.
+
+---
+
+
+## Writing Focus
+
+
+Following is the Fear Script You Composed
+
+> << Insert fear script here >>
+
+**Please take 20 minutes to write about it.** If you finish writing before the time is up, start over.
+Your task is to write continuously for the entire 20 minutes.
+
+When writing, make sure you refer to the following three stages:
+
+1. **Take a Risk**: Imagine doing something you would generally choose to avoid.
+2. **Suffer Consequences**: Describe what you fear might happen.
+3. **Catastrophe**: Provide detailed descriptions of how your core threat comes to be.
+
+**Here are some principles of writing to keep in mind:**
+
+- Use **present tense**.  
+- Write in **first-person perspective**.  
+- Include **sensory experiences** such as sound, color, and scent.  
+- Describe your **thoughts and feelings**.  
+- **Keep writing without stopping** – let whatever comes to mind flow onto the page.
