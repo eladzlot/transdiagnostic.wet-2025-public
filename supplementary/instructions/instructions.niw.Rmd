@@ -1,6 +1,6 @@
 ---
 title: "Imagery-Focused Expressive Writing Section"
-output: html_document
+output: pdf_document
 ---
 
 ## Some Background
@@ -121,3 +121,18 @@ Your task is to write continuously during the whole 20 minutes.
 4. Include **sensory experiences** such as sound, color, and scent.  
 5. Describe your **thoughts and feelings**.  
 6. **Keep writing without stopping** – let whatever comes to mind flow onto the page.
+
+## Follow up questions:
+
+Did you learn anything about yourself or your fears while writing? Did it give you a new perspective or a new way of thinking about things? If so, What did you learn?
+
+`________________________________________________________________`
+
+Did you notice anything surprising, or something that did not make sense in what you wrote? If so, What was it?
+
+`________________________________________________________________`  
+
+If you had to do a writing task like this again, would you do anything different? What would it be? (Would you focus on something else? Would you change your style?)
+
+`________________________________________________________________`  
+

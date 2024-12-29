@@ -16,8 +16,9 @@ This repository contains the data, scripts, and supplementary materials for the 
 - Includes:
   <!-- - Detailed outcomes of all [process models](supplementary/process.pdf). -->
   - Intervention instructions
-    - For [written exposure therapy (WET)](supplementray/instructions/instructions.wet.html)
-    - For [neutral imagery writing (NIW)](supplementray/instructions/instructions.niw.html)
+    - For [written exposure therapy (WET)](supplementray/instructions/instructions.wet.pdf)
+    - For [neutral imagery writing (NIW)](supplementray/instructions/instructions.niw.pdf)
+    - For [core threat structured interview (CTSI)](supplementray/instructions/ctsi.pdf)
   - Detailed description of all [models](supplementary/models.pdf).
 
 ### 3. **Data**

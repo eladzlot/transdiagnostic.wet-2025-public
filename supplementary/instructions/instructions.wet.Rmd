@@ -1,6 +1,6 @@
 ---
 title: "WET Psychoeducation"
-output: html_document
+output: pdf_document
 ---
 
 ## Some Background
@@ -38,8 +38,6 @@ Eventually, it just becomes plain boring.
 
 This is what we are trying to achieve by using repetitive imagination in this exercise.
 In the same way that the movie ceases to be scary after watching it enough times, your personal "horror film" will gradually cease to affect you.
-
-![Horror Movie](https://lh4.googleusercontent.com/_e36SCa2bN7_JTN3vNnpxv3gMMa4Q4hF813JwsNMAeOJG925DuUv6qQypx_4Dwskzl75m0iCdZ11BFRd5NgsYS9b-Ts6mYH1vrvQkTQcrpDALMusKCmSnEJ7LZpPUqKcanO7iltLp7fPcqAns7GQwsV76wHXi_mJOwftAQPiZn4ymb3BgMyXXlEJqC3s5UU)
 
 This is what we aim to achieve by engaging in this exercise: to desensitize your fear through repeated imagination, reducing its emotional intensity over time.
 
@@ -107,7 +105,6 @@ When you are ready, press "Continue" to begin the timer.
 
 ---
 
-
 ## Writing Focus
 
 
@@ -131,3 +128,18 @@ When writing, make sure you refer to the following three stages:
 - Include **sensory experiences** such as sound, color, and scent.  
 - Describe your **thoughts and feelings**.  
 - **Keep writing without stopping** – let whatever comes to mind flow onto the page.
+
+## Follow up questions:
+
+Did you learn anything about yourself or your fears while writing? Did it give you a new perspective or a new way of thinking about things? If so, What did you learn?
+
+`________________________________________________________________`
+
+Did you notice anything surprising, or something that did not make sense in what you wrote? If so, What was it?
+
+`________________________________________________________________`  
+
+If you had to do a writing task like this again, would you do anything different? What would it be? (Would you focus on something else? Would you change your style?)
+
+`________________________________________________________________`  
+
