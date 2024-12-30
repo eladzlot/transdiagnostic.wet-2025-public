@@ -1,0 +1,72 @@
+---
+title: "Procceses Growth Models"
+author: "Elad Zlotnick"
+date: "`r format(Sys.time(), '%d-%m-%Y %H:%M')`"
+output: pdf_document
+header-includes:
+  - \usepackage{pdflscape}
+toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,warning = FALSE, message = FALSE)
+library(tidyverse)
+library(rethinking)
+library(here)
+library(glue)
+library(papaja)
+library(kableExtra)
+source(here::here('scripts', 'load_data.R'))
+source(here::here('scripts', 'helpers.R'))
+source(here::here('supplementary', 'processes', 'helpers.processes.R'))
+source(here::here('scripts', 'model.change.R'))
+if (!exists('process_models')) source(here('scripts','run.processes.R'))
+models_list = c('dts','scs','ifs', 'taf_m','taf_l', 'bcss_self_neg', 'bcss_other_neg','bcss_self_pos', 'bcss_other_pos', 'mcq_confidence','mcq_worry','mcq_self','mcq_danger','mcq_control')
+```
+\begin{landscape}
+
+```{r, echo=FALSE}
+table_data = purrr::map(models_list, function(mname){
+  proc = process_models[[mname]]
+  
+  delta.wet = (proc$wet[,1]-proc$wet[,2])/proc$sd.wet
+  delta.ew = (proc$ew[,1]-proc$ew[,2])/proc$sd.ew
+  delta = delta.wet - delta.ew
+
+  return(data.frame(
+    name = mname,
+    WET.E = mean(delta.wet),
+    WET.CI = sprintf("[%.2f,%.2f]", quantile(delta.wet, .055), quantile(delta.wet, .945)),
+    WET.p = mean(delta.wet>0) %>% p_star(),
+    ew.E = mean(delta.ew),
+    ew.CI = sprintf("[%.2f,%.2f]", quantile(delta.ew, .055), quantile(delta.ew, .945)),
+    ew.p = mean(delta.ew>0) %>% p_star(),
+    diff.E = mean(delta),
+    diff.CI = sprintf("[%.2f,%.2f]", quantile(delta, .055), quantile(delta, .945)),
+    diff.p = mean(delta>0) %>% p_star()
+  ))
+}) %>% bind_rows
+
+table_data %>%
+  mutate(name = map_name(name)) %>%
+  apa_table(
+    caption = 'Process estimates for each of the proposed mechanisms in WET.',
+    col.names = c('Measure','$d$','89\\% CI', 'P(>0)', '$d$','89\\% CI', 'P(>0)','$d$','89\\% CI', 'P(>0)'),
+    col_spanners = list(WET = c(2,4), NIW = c(5,7), Change = c(8,10 )),
+    stub_indents = list(TAF = 4:5, BCSS = 6:9, MCQ = 10:14),
+    span_text_columns = TRUE,
+    note = " † Indicates a measure of strength or positive attributes and negative change should be interpreted as improvement",
+    escape = TRUE
+  )
+```
+
+\end{landscape}
+
+```{r, echo=FALSE, results='asis'}
+src = lapply(models_list, function(mname) {
+  knitr::knit_expand(here('supplementary', 'processes','processes.template.Rmd'),mname=mname)
+})
+
+res = knitr::knit_child(text = unlist(src), quiet = TRUE)
+cat(res, sep = '\n')
+```

@@ -1,0 +1,32 @@
+\newpage
+
+## Change model `r map_name('{{mname}}')`
+
+```{r include=FALSE}
+  mname = '{{mname}}'
+  
+  proc = process_models[[mname]]
+  d = data_long %>% filter(measure == mname, !is.na(value), wave>0)
+
+  means = d %>% group_by(condition, wave, id) %>% summarise(v = sum(value))
+  means.pre.wet = means %>% filter(condition == 'treatment', wave == 1) %>% pull(v)
+  means.post.wet = means %>% filter(condition == 'treatment', wave == 4) %>% pull(v)
+  means.pre.niw = means %>% filter(condition == 'control', wave == 1) %>% pull(v)
+  means.post.niw = means %>% filter(condition == 'control', wave == 4) %>% pull(v)
+```
+
+Table: (\#tab:{{mname}}) Raw means for `r map_name('{{mname}}')`.
+
+Condition | Pre | Post
+--------- | --- | ----
+WET       | `r format_mean_sd(means.pre.wet)` | `r format_mean_sd(means.post.wet)` 
+NIW       | `r format_mean_sd(means.pre.niw)` | `r format_mean_sd(means.post.niw)` 
+  
+```{r change-{{mname}}}
+# Set up plotting area: 2 rows, 2 columns (fills by row)
+plot_change_model(mname, proc)
+
+precis(proc$m, depth=2, pars = c('bbar_baseline','bbar_treatment')) %>% plot(main = 'Change parameters')
+
+traceplot(proc$m, pars = c('bbar_baseline','bbar_treatment[1]', 'bbar_treatment[2]'))
+```

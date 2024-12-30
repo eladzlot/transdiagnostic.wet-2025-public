@@ -14,7 +14,7 @@ This repository contains the data, scripts, and supplementary materials for the 
 ### 2. **Supplementary Materials**
 - **Folder:** [`supplementary/`](supplementary/)
 - Includes:
-  <!-- - Detailed outcomes of all [process models](supplementary/process.pdf). -->
+  - Detailed outcomes of all [process models](supplementary/processes/processes.pdf).
   - Intervention instructions
     - For [written exposure therapy (WET)](supplementary/instructions/instructions.wet.pdf)
     - For [neutral imagery writing (NIW)](supplementary/instructions/instructions.niw.pdf)

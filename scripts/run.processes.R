@@ -7,7 +7,7 @@ if (!exists('data_long')) source(here('scripts','load_data.R'))
 
 process_models = list()
 
-models_list = c('dts','scs','tiii','ifs', 'taf_m','taf_l', 'bcss_self_neg', 'bcss_other_neg','bcss_self_pos', 'bcss_other_pos', 'mcq_confidence','mcq_worry','mcq_self','mcq_danger','mcq_control')
+models_list = c('dts','scs','ifs', 'taf_m','taf_l', 'bcss_self_neg', 'bcss_other_neg','bcss_self_pos', 'bcss_other_pos', 'mcq_confidence','mcq_worry','mcq_self','mcq_danger','mcq_control')
 for (mname in models_list){
   d = data_long %>% filter(measure == mname, !is.na(value),condition != 'waitlist', wave>0)
   m = model.change(d, model_name = mname, force=FALSE)
