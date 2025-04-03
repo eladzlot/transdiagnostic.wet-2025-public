@@ -13,7 +13,7 @@ This raises potential for the incorporation of WET in transdiagnostic or specifi
 
 In a meta-analysis of online unguided self-help interventions, Wang and colleagues [-@wangSystematicReviewMetaanalysis2023]
 reported small effects when treating anxiety ($d = 0.35$, 95% CI [0.22, 0.48]).
-Whereas in the current study, WET demonstrated a small effect size on anxiety during treatment ($d = `r mean(delta.treatment.wet - delta.treatment.wl)`$) that developed into a medium effect size at one week follow-up ($d = `r mean(delta.wet/sd.wet - delta.wl/sd.wl)`$) and kept improving  at the two month followup ($`r mean(delta.all.wet - delta.all.wl)`$).
+Whereas in the current study, WET demonstrated a small effect size compared to waitlist control during treatment ($d = `r mean(delta.treatment.wet - delta.treatment.wl)`$) it developed into a medium effect size at one week follow-up ($d = `r mean(delta.wet/sd.wet - delta.wl/sd.wl)`$) and kept improving  at the two month followup ($`r mean(delta.all.wet - delta.all.wl)`$).
 This change corresponds to approximately $`r mean(delta.all.wet*sd.wet)`$ points on the OASIS, which is more than half the reliable change threshold of $4.41$ [@moorePsychometricEvaluationOverall2015].
 Alongside the reduction in anxiety, we observed a small but significant improvement in functional impairment, corroborating the clinical relevance of the intervention.
 These results suggest that while the current version of future-oriented WET is effective, it should not be viewed as a standalone intervention.
@@ -24,7 +24,8 @@ For example, Sloan and Marx demonstrated (when focusing on a past trauma) non-in
 Similarly, future-oriented WET has shown promise for treating generalized anxiety disorder [@ovanessianPreliminaryTestTherapeutic2019; @goldmanImpactWrittenExposure2007].
 Our findings extend these principles to anxiety as a transdiagnostic phenomenon.
 Moreover, consistent with previous studies [@sloanBriefExposureBasedTreatment2018; @thompson-hollandsLongtermTreatmentGains2018], we observed continued improvements post-intervention, highlighting WET's potential for sustained effects.
-
+The diversity of our sample and standardized online delivery suggest these findings should generalize well to other populations.
+However, our unusually low dropout rates may be influenced by participant compensation, and cultural differences or technology limitations could affect the intervention's effectiveness in other contexts.
 
 The effectiveness of WET supports the notion that writing about one's future threats enables emotional processing.
 Furthermore, it highlights that individuals are capable of engaging in this process without the active guidance of a therapist.
@@ -93,11 +94,9 @@ It is clear that a greater understanding of the underlying mechanisms of interve
 The current study aims to advance our understanding of treatment mechanisms by identifying potential mediators.
 Kraemer [-@kraemerMediatorsModeratorsTreatment2002] emphasizes that mediators are potential pathways linking treatment to outcomes, though not all mediators qualify as true causal mechanisms.
 
-Rather than focusing on a specific process, we surveyed a range of potential mechanisms in order to identify candidates for mechanisms of change in WET.
-Of these, we focused on the processes that were found to change significantly in WET: distress tolerance, positive self-schema, perceived impact of future events, and metacognitive processes, including lack of cognitive confidence and negative beliefs about uncontrollability and danger.
-These processes were carried forward to investigate their roles in symptom reduction.
-Of these, only distress tolerance was significantly correlated with symptom change in WET, providing evidence that distress tolerance may serve as a key mechanism.
-Additionally, change in the anxious response to core threats was found to predict symptom change.
+We surveyed multiple potential mechanisms to identify candidates for change in WET.
+Among those that significantly changed—distress tolerance, positive self-schema, perceived impact of future events, and metacognitive processes (lack of cognitive confidence, negative beliefs about uncontrollability and danger)—only distress tolerance was significantly correlated with symptom reduction, suggesting it as a key mechanism.
+Additionally, change in the anxious response to core threats predicted symptom change.
 
 ### Distress Tolerance
 
@@ -110,17 +109,16 @@ Our findings suggest that WET fosters distress tolerance presumably by encouragi
 While these results support the role of distress tolerance as a mechanism of change in WET, further research is needed to establish a causal connection between changes in DTS and symptom reduction [@kraemerMediatorsModeratorsTreatment2002].
 Specifically, longitudinal studies could clarify whether improvements in distress tolerance precede or occur concurrently with symptom changes.
 
-Research suggests that specific subtypes of distress tolerance, such as intolerance of uncertainty and anxiety sensitivity, are stronger predictors of change than general DTS [@michelEmotionalDistressTolerance2016].
-This underscores the importance of refining our understanding of both the effects of WET on distress tolerance and the role of distress tolerance in symptom reduction.
-Future studies would do well to investigate these subdomains, so that we can better delineate how WET enhances specific facets of distress tolerance and how these improvements contribute to therapeutic outcomes.
-Breaking distress tolerance into its components offers a more nuanced perspective, potentially revealing differential pathways through which WET drives change.
-Such insights could guide the development of tailored interventions that maximize the impact of distress tolerance improvements across diverse emotional disorders.
+Research suggests that specific subtypes of distress tolerance, such as intolerance of uncertainty and anxiety sensitivity, predict change better than general DTS [@michelEmotionalDistressTolerance2016].
+This highlights the need to refine our understanding of how WET influences distress tolerance and its role in symptom reduction.
+Future research should explore these subdomains to clarify how WET enhances specific facets of distress tolerance and their contribution to therapeutic outcomes.
+A more nuanced approach may reveal distinct pathways of change, informing tailored interventions that maximize impact across emotional disorders.
 
 ### Responses to Core Threats
 
 Central to pathological fear is the inflated sense of threat, making perceived threat reduction a key mechanism for alleviating anxiety symptoms [@zlotnickAnatomyFearCloser2025].
 Our findings showed that WET not only reduced response to core threats but did so more effectively than NIW.
-Notably, the rate of threat reduction between the first and second sessions predicted symptom improvement by the fourth session, supporting the idea of a causal relationship.
+Notably, the rate of threat reduction between the first and second sessions predicted symptom improvement by the fourth session, supporting the idea of temporal precedence.
 
 The majority of threat reduction in WET occurred between sessions one and two, with minimal change thereafter despite ongoing symptom improvements.
 This pattern suggests that repeated engagement with the core threat might exert its effects through other mechanisms, such as distress tolerance as seen above.
@@ -139,7 +137,7 @@ In contrast, NIW provided short-term threat-response relief with smaller long-te
 This highlights the importance of targeting core threats in interventions designed to reduce anxiety.
 
 Changes in both response to threats and distress tolerance predicted symptom reduction.
-It might be hypothesized that these two processes are related—for example, that a decrease in threat response results from an increase in distress tolerance.
+It could be hypothesized that these two processes are related—for example, that a decrease in threat response results from an increase in distress tolerance.
 However, we found no significant correlation between these variables, suggesting that they operate as independent processes.
 This distinction highlights two complementary mechanisms underlying WET.
 First, distress tolerance represents a generic skill that applies across a wide range of distressing situations.
@@ -163,9 +161,3 @@ Furthermore, the study identified two potential mechanisms through which WET app
 By extending WET’s reach and accessibility, this research extends existing literature while suggesting ways to enhance its effectiveness by further targeting potential mechanisms.
 WET enables researchers to investigate both processes and outcomes across diverse populations and settings.
 It thus moves the field closer to realizing the vision of process-focused, mechanism-driven research [@hofmannFutureInterventionScience2019] while offering a scalable, accessible transdiagnostic intervention.
-
-
-
-
-
-

@@ -1,6 +1,7 @@
 ---
-title             : "Transdiagnostic Written Exposure Therapy: Piloting an Online Intervention"
-shorttitle        : "WET"
+title             : "Written Exposure Therapy for Transdiagnostic Anxiety: Treatment Efficacy and Mechanisms of Change"
+
+shorttitle        : "Transdiagnostic WET"
 
 author: 
   - name          : "Elad Zlotnick"
@@ -10,51 +11,45 @@ author:
       Department of Psychology, The Hebrew University of Jerusalem, Mount Scopus,
       Jerusalem 91905, Israel
     email         : "elad.zlotnick@mail.huji.ac.il"
-    role: # Contributorship roles (e.g., CRediT, https://credit.niso.org/)
-      - "Conceptualization"
-      - "Writing - Original Draft Preparation"
-      - "Writing - Review & Editing"
+    #role: # Contributorship roles (e.g., CRediT, https://credit.niso.org/)
+      #- "Conceptualization"
+      #- "Writing - Original Draft Preparation"
+      #- "Writing - Review & Editing"
 
   - name          : "Hila Sorka"
     affiliation   : "1"
-    role:
-      - "Conceptualization"
-      - "Writing - Original Draft Preparation"
-      - "Writing - Review & Editing"
+    #role:
+      #- "Conceptualization"
+      #- "Writing - Review & Editing"
 
   - name          : "Snir Barzilay"
     affiliation   : "1"
-    role:
-      - "Conceptualization"
-      - "Writing - Original Draft Preparation"
-      - "Writing - Review & Editing"
+    #role:
+      #- "Conceptualization"
+      #- "Writing - Review & Editing"
 
   - name          : "Jonathan D. Huppert"
     affiliation   : "1"
-    role:
-      - "Conceptualization"
-      - "Writing - Review & Editing"
-      - "Supervision"
+    #role:
+      #- "Conceptualization"
+      #- "Writing - Review & Editing"
+      #- "Supervision"
 
 affiliation:
   - id            : "1"
     institution   : "The Hebrew University of Jerusalem"
 
-authornote: |
-  This work was supported by ISF 1905/20 awarded to Jonathan Huppert, Sam and Helen Beber Chair of Clinical Psychology, and by SPR small research grant 2023 awarded to Elad Zlotnick.
+#authornote: |
+  #This work was supported by ISF 1905/20 awarded to Jonathan Huppert, Sam and Helen Beber Chair of Clinical Psychology, and by SPR small research grant 2023 awarded to Elad Zlotnick.
 
 abstract: |
-  Written Exposure Therapy (WET) is a structured, evidence-based intervention initially developed for PTSD.
-  This study introduces Transdiagnostic WET, a future-oriented adaptation designed to address anxiety by focusing exposure on core threats and encouraging immersive emotional engagement.
-  The primary goals were to validate the efficacy of Transdiagnostic WET in reducing anxiety symptoms and to investigate mechanisms driving such changes.
-
-  To achieve this, we conducted a randomized controlled trial (RCT) comparing WET to a neutral imagery writing task and a waitlist control group, with all interventions fully self-administered.
-  Outcomes were analyzed using Bayesian multilevel linear IRT models.
-  The results demonstrated that WET was highly effective, with an effect size of *d* = 0.85 compared to waitlist at two-months follow-up, and that changes in distress tolerance (*r* = 0.37) and anxiety regarding core threats (*r* = 0.39) correlated with symptom reduction.
-
-  These findings suggest that future-oriented WET is a scalable and effective intervention for treating transdiagnostic anxiety.
-  Additionally, the results highlight key mechanisms of change that warrant further exploration, including distress tolerance and threat-specific anxiety.
-  The scalability and flexibility of this intervention make it a promising candidate for integration into internet-based cognitive-behavioral therapy (iCBT) programs and a powerful tool for investigating therapeutic mechanisms under varied conditions.
+  This study investigates mechanisms underlying Transdiagnostic Written Exposure Therapy (WET), a novel, scalable online intervention for anxiety disorders.
+  In a randomized controlled trial with 89 participants, WET produced significant anxiety reduction that continued through two-month follow-up.
+  Examining multiple potential mechanisms, we identified two that were both significantly affected by treatment and correlated with symptom improvement: enhanced distress tolerance (r = -0.35) and decreased anxious responses to core threats (r = 0.39).
+  This suggests exposure therapy operates through dual pathways: developing adaptive emotional regulation skills while simultaneously recalibrating threat appraisals.
+  Neither pathway mediated the other's effects, supporting a dual-process model of exposure.
+  Interestingly, a neutral imagery control condition showed immediate but non-sustained anxiety reduction and actually decreased distress tolerance, revealing distinct therapeutic trajectories and mechanisms between distraction-based versus exposure-based interventions.
+  This research advances theoretical understanding of therapeutic mechanisms while highlighting specific targets for enhancing interventions.
 
 keywords          :
   - Core threats
@@ -66,7 +61,7 @@ keywords          :
 bibliography: "`r normalizePath('~/projects/zettlr/zotero.json')`"
 
 floatsintext      : yes
-linenumbers       : yes
+linenumbers       : no
 draft             : no
 mask              : no
 
@@ -117,6 +112,11 @@ library('here')
 ```
 
 ```{r, child=c(here('docs', c('discussion.Rmd')))}
+```
+
+\newpage
+
+```{r, child=c(here('docs', c('extras.Rmd')))}
 ```
 
 \newpage
