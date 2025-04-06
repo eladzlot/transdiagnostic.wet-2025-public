@@ -1,0 +1,14 @@
+### Author Contributions
+
+* **Elad Zlotnick:** Conceptualization, Methodology, Data collection, Formal analysis, Writing - Original Draft Preparation, Writing - Review & Editing
+* **Hila Sorka:** Conceptualization, Data collection, Writing - Review & Editing
+* **Snir Barzilay:** Conceptualization, Writing - Review & Editing
+* **Jonathan D. Huppert:** Conceptualization, Supervision, Resources, Writing - Review & Editing, Funding acquisition
+
+### Conflicts of Interest
+
+The authors declare that there were no conflicts of interest with respect to the authorship or the publication of this article.
+
+### Funding
+
+This work was supported by the Israel Science Foundation (ISF 1905/20) awarded to Jonathan Huppert, Sam and Helen Beber Chair of Clinical Psychology, and by the Society for Psychotherapy Research (SPR) small research grant 2023 awarded to Elad Zlotnick.
