@@ -43,13 +43,13 @@ affiliation:
   #This work was supported by ISF 1905/20 awarded to Jonathan Huppert, Sam and Helen Beber Chair of Clinical Psychology, and by SPR small research grant 2023 awarded to Elad Zlotnick.
 
 abstract: |
-  This study investigates mechanisms underlying Transdiagnostic Written Exposure Therapy (WET), a novel, scalable online intervention for anxiety disorders.
-  In a randomized controlled trial with 89 participants, WET produced significant anxiety reduction that continued through two-month follow-up.
-  Examining multiple potential mechanisms, we identified two that were both significantly affected by treatment and correlated with symptom improvement: enhanced distress tolerance (r = -0.35) and decreased anxious responses to core threats (r = 0.39).
-  This suggests exposure therapy operates through dual pathways: developing adaptive emotional regulation skills while simultaneously recalibrating threat appraisals.
-  Neither pathway mediated the other's effects, supporting a dual-process model of exposure.
-  Interestingly, a neutral imagery control condition showed immediate but non-sustained anxiety reduction and actually decreased distress tolerance, revealing distinct therapeutic trajectories and mechanisms between distraction-based versus exposure-based interventions.
-  This research advances theoretical understanding of therapeutic mechanisms while highlighting specific targets for enhancing interventions.
+  This study investigates mechanisms underlying Transdiagnostic Written Exposure Therapy (WET), a novel, scalable online intervention for pathological anxiety.
+  In a randomized controlled trial with 89 participants, WET produced significant anxiety reduction that continued through two-month follow-up (SMD=0.85).
+  We systematically evaluated multiple potential mechanisms across cognitive, emotional, and behavioral domains.
+  From this broad assessment, two mechanisms emerged as both significantly affected by treatment and correlated with symptom improvement: enhanced distress tolerance (r = -0.35) and decreased anxious responses to core threats (r = 0.39).
+  This suggests exposure therapy operates through dual pathways: improving distress tolerance and reducing anxious responses.
+  Interestingly, a neutral imagery control condition showed immediate but non-sustained anxiety reduction and actually decreased distress tolerance, revealing distinct therapeutic trajectories between neutral imagery-based versus exposure-based interventions.
+  This research advances understanding of mechanisms of exposure while highlighting specific targets for enhancing interventions.
 
 keywords          :
   - Core threats

@@ -76,7 +76,7 @@ Study completion rates did not differ between treatment (`r format_perc(N.comple
 Female participants had a significantly lower attrition rate (`r format_perc(completed.sex.table[1, 1], sum(completed.sex.table[, 1]))`) compared to males (`r format_perc(completed.sex.table[1, 2], sum(completed.sex.table[, 2]))`); `r apa_print.fisher(fisher.test(completed.sex.table))`.
 Fisher’s exact and Wilcoxon tests revealed no significant differences between study completers and non-completers in terms of age, ethnicity, or symptom measures ($ps > `r completed.demog.ps`$).
 
-(ref:demographics) Pre-treatment and Demographic Characteristics of Intent-to-Treat Sample. WET = Written Exposure, NIW = Neutral Imagery Writing, Waitlist group were added as a reference from a different study [@sorkaTransdiagnosticSelfGuidedImageryinpreparation].
+(ref:demographics) Pre-treatment and Demographic Characteristics of Sample.
 
 ```{r demographics, file=here('scripts','tables.demographics.R'), echo=FALSE, message=FALSE, warning=FALSE,cache=TRUE}
 ```

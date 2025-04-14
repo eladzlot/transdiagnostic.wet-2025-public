@@ -63,8 +63,8 @@ pid.condition = bind_rows(
 raw.followup = get_qualtrics('raw/wet.followup.csv') %>% get_valid_pid %>% left_join(pid.condition)
 
 raw.demographics = rbind(
-  read_csv(here('raw','demog.csv')) %>% select(id = `Participant id`, Age, Sex, Ethnicity = `Ethnicity simplified`),
-  read_csv(here('raw','waitlist.demog.csv')) %>% select(id = `Participant id`, Age, Sex, Ethnicity = `Ethnicity simplified`)
+  read_csv(here('raw','demog.csv')) %>% select(id = `Participant id`, Age, Sex, Ethnicity = `Ethnicity simplified`, Country = `Country of residence`, Employment = `Employment status`),
+  read_csv(here('raw','waitlist.demog.csv')) %>% select(id = `Participant id`, Age, Sex, Ethnicity = `Ethnicity simplified`, Country = `Country of residence`, Employment = `Employment status`)
 ) %>%
   inner_join(pid.condition, by=join_by(id == prolific_pid)) %>%
   mutate(Age = as.numeric(Age))
@@ -191,4 +191,3 @@ write_csv(data_long, here('data', 'data_long.csv'))
 write_csv(demographics.data, here('data', 'demographics.data.csv'))
 write_csv(screening, here('data', 'screening.csv'))
 write_csv(pid.condition, here('data', 'pid.condition.csv'))
-

@@ -59,8 +59,8 @@ model.growth <- function(d, model_name, ...) {
     t = as.integer(d$wave),              # Ordinal variable for wave (time point)
     id = as.factor(d$id),                # Participant ID as a factor
     G = case_when(
-      d_x$Sex == 'Female' ~ .5,
-      d_x$Sex == 'Male' ~ -.5,
+      d$Sex == 'Female' ~ .5,
+      d$Sex == 'Male' ~ -.5,
       .default = 0
     ),
     N = nrow(d),                         # Total number of observations

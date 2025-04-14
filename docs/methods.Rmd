@@ -1,12 +1,19 @@
 # Transparency and Openness
 
+## Preregistration:
 This study was preregistered prior to data collection at [doi.org/10.17605/OSF.IO/2CEHR](doi.org/10.17605/OSF.IO/2CEHR).
 We deviated from the preregistration by adding a passive control group and a two-month follow-up assessment.
 These modifications were implemented to strengthen the research design—the waitlist control group provided a baseline comparison for natural recovery, while the extended follow-up allowed us to assess the durability of treatment effects.
+
+## Data, materials, code, and online resources:
 Data, analysis scripts, and methodological documentation are available at [https://github.com/eladzlot/transdiagnostic.wet-2025-public](https://github.com/eladzlot/transdiagnostic.wet-2025-public).
 Datasets include only quantitative information to protect participant confidentiality.
-We report all sample size determinations, data exclusions, manipulations, and measures.
+
+## Reporting:
+We report how we determined our sample size, all data exclusions, all manipulations, and all measures in the study.
 A power analysis indicated a target of 148 participants, with Bayesian stopping criteria allowing for early termination when ROPE showed no significant difference between conditions during the intervention phase.
+
+## Ethical approval:
 This research was approved by the Ethics Committee of The Hebrew University of Jerusalem.
 All participants provided informed consent.
 
@@ -42,7 +49,7 @@ The randomization process was integrated into the experiment program code.
 
 ## Measures
 
-```{r include=FALSE, warning=FALSE, message=FALSE, cache=TRUE}
+```{r reliability, include=FALSE, warning=FALSE, message=FALSE, cache=TRUE}
 library(psych)
 source(here('scripts','helpers.R'))
 if (!exists('data_long')) source(here('scripts','load_data.R'))

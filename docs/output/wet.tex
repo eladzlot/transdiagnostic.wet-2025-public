@@ -202,13 +202,13 @@ Correspondence concerning this article should be addressed to Elad Zlotnick, Dep
 \affiliation{\vspace{0.5cm}\textsuperscript{1} The Hebrew University of Jerusalem}
 
 \abstract{%
-This study investigates mechanisms underlying Transdiagnostic Written Exposure Therapy (WET), a novel, scalable online intervention for anxiety disorders.
-In a randomized controlled trial with 89 participants, WET produced significant anxiety reduction that continued through two-month follow-up.
-Examining multiple potential mechanisms, we identified two that were both significantly affected by treatment and correlated with symptom improvement: enhanced distress tolerance (r = -0.35) and decreased anxious responses to core threats (r = 0.39).
-This suggests exposure therapy operates through dual pathways: developing adaptive emotional regulation skills while simultaneously recalibrating threat appraisals.
-Neither pathway mediated the other's effects, supporting a dual-process model of exposure.
-Interestingly, a neutral imagery control condition showed immediate but non-sustained anxiety reduction and actually decreased distress tolerance, revealing distinct therapeutic trajectories and mechanisms between distraction-based versus exposure-based interventions.
-This research advances theoretical understanding of therapeutic mechanisms while highlighting specific targets for enhancing interventions.
+This study investigates mechanisms underlying Transdiagnostic Written Exposure Therapy (WET), a novel, scalable online intervention for pathological anxiety.
+In a randomized controlled trial with 89 participants, WET produced significant anxiety reduction that continued through two-month follow-up (SMD=0.85).
+We systematically evaluated multiple potential mechanisms across cognitive, emotional, and behavioral domains.
+From this broad assessment, two mechanisms emerged as both significantly affected by treatment and correlated with symptom improvement: enhanced distress tolerance (r = -0.35) and decreased anxious responses to core threats (r = 0.39).
+This suggests exposure therapy operates through dual pathways: improving distress tolerance and reducing anxious responses.
+Interestingly, a neutral imagery control condition showed immediate but non-sustained anxiety reduction and actually decreased distress tolerance, revealing distinct therapeutic trajectories between neutral imagery-based versus exposure-based interventions.
+This research advances understanding of mechanisms of exposure while highlighting specific targets for enhancing interventions.
 }
 
 
@@ -289,13 +289,24 @@ We anticipated that changes in mechanisms will align with symptom changes, suppo
 
 \section{Transparency and Openness}\label{transparency-and-openness}
 
+\subsection{Preregistration:}\label{preregistration}
+
 This study was preregistered prior to data collection at \url{doi.org/10.17605/OSF.IO/2CEHR}.
 We deviated from the preregistration by adding a passive control group and a two-month follow-up assessment.
 These modifications were implemented to strengthen the research design---the waitlist control group provided a baseline comparison for natural recovery, while the extended follow-up allowed us to assess the durability of treatment effects.
+
+\subsection{Data, materials, code, and online resources:}\label{data-materials-code-and-online-resources}
+
 Data, analysis scripts, and methodological documentation are available at \url{https://github.com/eladzlot/transdiagnostic.wet-2025-public}.
 Datasets include only quantitative information to protect participant confidentiality.
-We report all sample size determinations, data exclusions, manipulations, and measures.
+
+\subsection{Reporting:}\label{reporting}
+
+We report how we determined our sample size, all data exclusions, all manipulations, and all measures in the study.
 A power analysis indicated a target of 148 participants, with Bayesian stopping criteria allowing for early termination when ROPE showed no significant difference between conditions during the intervention phase.
+
+\subsection{Ethical approval:}\label{ethical-approval}
+
 This research was approved by the Ethics Committee of The Hebrew University of Jerusalem.
 All participants provided informed consent.
 
@@ -532,12 +543,10 @@ Fisher's exact and Wilcoxon tests revealed no significant differences between st
 \begin{center}
 \begin{threeparttable}
 
-\caption{\label{tab:demographics}Pre-treatment and Demographic Characteristics of Intent-to-Treat Sample. WET = Written Exposure, NIW = Neutral Imagery Writing, Waitlist group were added as a reference from a different study (Sorka et al., in preparation).}
+\caption{\label{tab:demographics}Pre-treatment and Demographic Characteristics of Sample.}
 
 \begin{tabular}{lllll}
 \toprule
- & \multicolumn{2}{c}{Conditions}  &\\
-\cmidrule(r){2-4}
 Characteristics & NIW & WET & Waitlist & Total\\
 \midrule
 N & 29 & 60 & 73 & 162\\
@@ -548,6 +557,19 @@ Ethnicity &  &  &  & \\
 \ \ \ Asian & 3 (10.3\%) & 7 (11.7\%) & 3 (4.1\%) & 13 (8\%)\\
 \ \ \ Black & 4 (13.8\%) & 2 (3.3\%) & 1 (1.4\%) & 7 (4.3\%)\\
 \ \ \ White & 22 (75.9\%) & 51 (85\%) & 69 (94.5\%) & 142 (87.7\%)\\
+Country &  &  &  & \\
+\ \ \ Australia & 2 (6.9\%) & 0 & 0 & 2 (1.2\%)\\
+\ \ \ Canada & 2 (6.9\%) & 0 & 0 & 2 (1.2\%)\\
+\ \ \ South Africa & 4 (13.8\%) & 0 & 1 (1.4\%) & 5 (3.1\%)\\
+\ \ \ United Kingdom & 20 (69\%) & 59 (98.3\%) & 65 (89\%) & 144 (88.9\%)\\
+\ \ \ United States & 1 (3.4\%) & 0 & 6 (8.2\%) & 7 (4.3\%)\\
+\ \ \ Ireland & 0 & 1 (1.7\%) & 1 (1.4\%) & 2 (1.2\%)\\
+Employment &  &  &  & \\
+\ \ \ Full-Time & 17 (58.6\%) & 19 (31.7\%) & 41 (56.2\%) & 77 (47.5\%)\\
+\ \ \ Part-Time & 5 (17.2\%) & 17 (28.3\%) & 11 (15.1\%) & 33 (20.4\%)\\
+\ \ \ Job Seeking & 1 (3.4\%) & 4 (6.7\%) & 3 (4.1\%) & 8 (4.9\%)\\
+\ \ \ Not in Workforce & 4 (13.8\%) & 12 (20\%) & 12 (16.4\%) & 28 (17.3\%)\\
+\ \ \ No Data & 2 (6.9\%) & 8 (13.3\%) & 6 (8.2\%) & 16 (9.9\%)\\
 Pretreatment measures &  &  &  & \\
 \ \ \ OASIS M (SD) & 8.3 (3) & 7.6 (2.7) & 7.8 (2.8) & 7.8 (2.8)\\
 \ \ \ WSAS M (SD) & 15.3 (6.8) & 12.5 (6.4) & 12.5 (6.4) & 13 (6.5)\\
@@ -556,7 +578,7 @@ Pretreatment measures &  &  &  & \\
 \end{tabular}
 
 \begin{tablenotes}[para]
-\normalsize{\textit{Note.} Data are presented as number (percentage) of patients unless otherwise indicated.}
+\normalsize{\textit{Note.} Data presented as number (\%) of patients unless otherwise indicated.}
 \end{tablenotes}
 
 \end{threeparttable}
@@ -940,17 +962,16 @@ Exploring these complementary aspects could provide broader insights into therap
 
 \subsection{Advancing Mechanism-Driven Research with Transdiagnostic WET}\label{advancing-mechanism-driven-research-with-transdiagnostic-wet}
 
-As clinical psychology shifts from observational studies primarily focused on intervention outcomes to hypothesis-driven research targeting specific mechanisms (see Hofmann \& Hayes, 2019), there is an increasing demand for scalable, flexible methodologies capable of exploring these mechanisms in depth.
-To address this need, the current study applies WET---an existing intervention designed to treat specific disorders---to a transdiagnostic phenomenon: anxiety.
-Transdiagnostic WET represents a significant advancement by offering a concise, self-administered intervention that is easily delivered online.
-Beyond its proven effectiveness in reducing anxiety and functional impairment, WET's adaptability is its true strength.
-Its structured yet flexible instructions can be tailored to test various interventions, target different mechanisms, and assess their effects on a range of outcomes, positioning it as a valuable tool for mechanism-focused research.
-
-In conclusion, this study demonstrates the efficacy of self-guided, online transdiagnostic WET, showing its superiority over both a waitlist control and an active writing control condition.
+This study demonstrates the efficacy of self-guided, online transdiagnostic WET, showing its superiority over both a waitlist control and an active writing control condition.
 With just four 20-minute writing sessions, WET achieved large effect sizes at follow-up.
 Furthermore, the study identified two potential mechanisms through which WET appears to work: increasing distress tolerance and reducing distress associated with activated core threats.
 
-By extending WET's reach and accessibility, this research extends existing literature while suggesting ways to enhance its effectiveness by further targeting potential mechanisms.
+As clinical psychology shifts from studies focused on outcomes to hypothesis-driven research targeting specific mechanisms (see Hofmann \& Hayes, 2019), there is an increasing demand for scalable, flexible methodologies capable of exploring these mechanisms in depth.
+To address this need, the current study applies WET to a transdiagnostic phenomenon: anxiety.
+Transdiagnostic WET is a concise, self-administered intervention that is easily delivered online.
+Beyond its proven effectiveness in reducing anxiety and functional impairment, WET's adaptability is its true strength.
+Its structured yet flexible instructions can be tailored to test various interventions, target different mechanisms, and assess their effects on a range of outcomes, positioning it as a valuable tool for mechanism-focused research.
+
 WET enables researchers to investigate both processes and outcomes across diverse populations and settings.
 It thus moves the field closer to realizing the vision of process-focused, mechanism-driven research (Hofmann \& Hayes, 2019) while offering a scalable, accessible transdiagnostic intervention.
 
