@@ -142,34 +142,23 @@ Full instructions for both WET and NIW, including psychoeducation materials, are
 
 ### Change Model
 
-In this study, we employ a multilevel ANCOVA design to account for the nested structure of the data, where anxiety responses are measured repeatedly within individuals over time [@bodnerDetectingDifferentiatingDirection2018; @vanbreukelenANCOVACHANGEBaseline2013].
-The data collected is hierarchical in nature, with multiple measurements nested within each individual.
-This nested structure can lead to dependencies among observations within the same individual, violating the assumption of independence in traditional ANCOVA.
-For example, rate of change during the treatment is likely correlated to baseline symptom levels.
-Multilevel modeling, addresses these dependencies by incorporating random effects to capture the variability within and between individuals.
-By accounting for both within- and between-subject variability, multilevel modeling reduces bias that could arise from unaccounted dependencies in repeated measures, thus providing more precise estimates of the treatment effects.
+We employ a multilevel ANCOVA design to account for the nested structure of the data, where anxiety is measured repeatedly within individuals [@bodnerDetectingDifferentiatingDirection2018; @vanbreukelenANCOVACHANGEBaseline2013].
+By accounting for both within- and between-subject variability, multilevel modeling reduces bias providing more precise estimates of treatment effects.
 Furthermore, it becomes possible to investigate individual as well as group level effects [@raudenbushHierarchicalLinearModels2002].
 
-To understand change, the estimand is the group level rate of change at each time point.
-In the first part of the study, efficacy was examined by the *fixed effects* — the average rates of change across individuals.
-These fixed effects allow us to assess the overall population-level impact of the interventions on anxiety symptoms and mechanisms at different time points.
-
-In the second part of the study, symptom-mechanisms covariation was examined by modeling the *random effects* — the individual deviations from the group-level trends.
-These random effects allow us to capture individual differences in rates of change and explore how these differences relate to the proposed change-driving mechanisms.
-By modeling both fixed and random effects, we can explore not only the general efficacy of the intervention but also the individual variability in response to treatment, which may reveal underlying mechanisms.
-
-To account for follow-up measurements at varying time lags (e.g., 1 week, 2 months), we employ a *piecewise growth model*, allowing for separate slopes at different follow-up times [@bollenLatentCurveModels2006; @andersson35yearFollowInternetdeliveredCognitive2013].
-This model enables us to estimate distinct rates of change during different phases of the study.
+To understand treatment efficacy we examined the *fixed effects* — the average rates of change across individuals.
+As described bellow, to understand covariation between symptoms and processes we examined the *random effects* — the individual deviations from the group-level trends.
+To account for follow-up measurements at varying time lags (e.g., 1 week, 2 months), we employ a piecewise growth model, allowing for separate slopes at different follow-up times [@bollenLatentCurveModels2006; @andersson35yearFollowInternetdeliveredCognitive2013].
 Combined with the measurement model described below, this is in essence a latent change score model [@cancerDynamicalPropertiesConceptual2021; @mcardleLatentVariableModeling2009].
 
-The equation for this linear model is as follows:
+The equation used is:
 
 $$\theta_{ti} = \beta_{0i} + \beta_{1i} \cdot \min(t-1, 3) \cdot 1_{\{t > 1\}} + \beta_{2i} \cdot 1_{\{t > 5\}} + \beta_{3i} \cdot 1_{\{t=6\}}$$
 $$\beta_{ji} = \bar{\beta}_{j,\text{condition}} + u_{ji}$$
 
-The latent symptom severity ($\theta$) is linearly modeled as a baseline effect ($\beta_{0i}$) for each individual and the rate of change after the first session and up to the fourth session ($\beta_{1i}$).
-Separate terms ($\beta_{2i}$) and ($\beta_{3i}$) represent the rate of change at follow-up (1 week, 2 months), allowing for flexible modeling of changes at different time intervals.
-The individual-specific effects, ($\beta_{ji}$), are modeled as deviations from the group-level effects, ($\bar{\beta}_{j,\text{condition}}$), to capture both individual and group variability.
+The latent symptom severity ($\theta$) is linearly modeled as a baseline effect ($\beta_{0i}$) for each individual and the rate of change between the first and fourth sessions ($\beta_{1i}$).
+Separate terms ($\beta_{2i}$) and ($\beta_{3i}$) represent the rate of change at follow-up (1 week, 2 months).
+The individual-specific effects, ($\beta_{ji}$), are modeled as deviations from the group-level effects, ($\bar{\beta}_{j,\text{condition}}$).
 
 ### Measurement Model
 
@@ -193,23 +182,23 @@ $$R_{itq} \sim \text{Ordered-logit}(\phi_{itq}, \kappa)$$
 $$\phi_{itq} = \alpha_q \cdot (\theta_{it} - \beta_q)$$
 
 Here, the likelihood function represents the probability of observing the ordinal response ($R$), given the latent symptom severity  ($\theta$).
-The IRT model specifies the relationship between the latent trait and the item parameters, providing a comprehensive approach to modeling anxiety across individuals.
+The IRT model specifies the relationship between the latent trait and the item parameters.
 Detailed specifications for this model and the full code is available in the supplementary materials.
 
 ### Mechanisms
 
 Our second research question investigates the role of mechanisms in change in pathological anxiety.
-While establishing causality is notoriously difficult, particularly in psychological research [@eronenCausalDiscoveryProblem2020], our goal is to identify correlations that may signal possible causal relationships.
+While establishing causality is difficult [see @eronenCausalDiscoveryProblem2020], our goal is to identify correlations that may signal causal relationships.
 
-Mechanisms of change in psychotherapy refer to the processes or events through which psychological interventions achieve their effects on symptoms or functioning.
-Demonstrating that an intervention causes a change, does not explain *why* these changes came about.
-Establishing that a process is a mechanism requires strong association between the intervention and process, and between the process and the symptoms [@kazdinMediatorsMechanismsChange2007].
+Mechanisms of change in psychotherapy are processes or events through which psychological interventions affect symptoms or functioning.
+Demonstrating that an intervention causes change does not explain *why* this change came about.
+Establishing that a process is a mechanism requires association between the intervention and process, and between the process and the symptoms [@kazdinMediatorsMechanismsChange2007].
 Thus, we first establish which processes are affected by the intervention.
 Next, we examine the relationship between the process and the outcome.
 
-The question here focuses on the process of change, thus we're interested in an association between *changes* in processes and symptoms
-We use multivariate latent curve models to examine the association between symptoms and process as they change through time [@maccallumStudyingMultivariateChange1997; @damianDoesVariabilityHuman2010; @baldwinAnalyzingMultipleOutcomes2014].
-This approach extends common univariate growth models by allowing the simultaneous examination of multiple outcomes, capturing both the relationships between individual processes and how they evolve over time.
+We focus on the process of change, thus we're interested in the association between *changes* in processes and *changes* in symptoms.
+To examine this association we use multivariate latent curve models [@maccallumStudyingMultivariateChange1997; @damianDoesVariabilityHuman2010; @baldwinAnalyzingMultipleOutcomes2014].
+This approach extends  univariate growth models by allowing the simultaneous examination of multiple outcomes, capturing both the relationships between individual processes and how they evolve over time.
 Specifically, we model both anxiety (as measured by the OASIS) and the process of interest in parallel, using a single covariance matrix to estimate the random effects for both processes.
 By incorporating a shared covariance matrix, we capture the correlations between baseline values (intercepts) and changes (slopes) both within and across the two outcomes.
 This enables us to estimate the correlation between changes controlling for baseline values and accounting for measurement error.
