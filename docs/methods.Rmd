@@ -2,8 +2,11 @@
 
 ## Preregistration:
 This study was preregistered prior to data collection at [doi.org/10.17605/OSF.IO/2CEHR](doi.org/10.17605/OSF.IO/2CEHR).
-We deviated from the preregistration by adding a passive control group and a two-month follow-up assessment.
-These modifications were implemented to strengthen the research design—the waitlist control group provided a baseline comparison for natural recovery, while the extended follow-up allowed us to assess the durability of treatment effects.
+We deviated from the preregistration by adding a passive waitlist control group and a two-month follow-up assessment.
+These modifications were implemented to strengthen the research design—the waitlist control group provided a benchmark for natural recovery under identical inclusion, exclusion, and procedural criteria, and was collected approximately six months before the present study.
+Because participants were recruited from the same platform using identical screening, compensation, and measurement procedures, systematic bias other than time effects is unlikely.
+The extended follow-up further allowed assessment of the durability of treatment effects.
+Nonetheless, as the waitlist group was not randomized concurrently with the intervention arms, results involving it should be interpreted as comparative rather than inferential.
 
 ## Data, materials, code, and online resources:
 Data, analysis scripts, and methodological documentation are available at [https://github.com/eladzlot/transdiagnostic.wet-2025-public](https://github.com/eladzlot/transdiagnostic.wet-2025-public).
@@ -188,6 +191,7 @@ Detailed specifications for this model and the full code is available in the sup
 ### Mechanisms
 
 Our second research question investigates the role of mechanisms in change in pathological anxiety.
+Following Kazdin’s [-@kazdinMediatorsMechanismsChange2007] framework for mechanisms research, the present study intentionally employed a broad exploratory approach to identify potential targets for future confirmatory work.
 While establishing causality is difficult [see @eronenCausalDiscoveryProblem2020], our goal is to identify correlations that may signal causal relationships.
 
 Mechanisms of change in psychotherapy are processes or events through which psychological interventions affect symptoms or functioning.

@@ -21,3 +21,4 @@ tmp
 *_cache
 *.rds
 data/models/**/*.csv
+data/models/**/*.json

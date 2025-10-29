@@ -46,6 +46,6 @@ table_data %>%
                   '89\\% CI',
                   'P(>0)'),
     col_spanners = list(Treatment = c(2,4), Followup = c(5,7)),
-    note = " † Indicates a measure of strength or positive attributes, and negative correlation should be interpreted as alignment",
+    note = "DTS = distress tolerance; IFES = impact of future events; BCSS = beliefs about self and others. Higher scores indicate greater symptom severity, except for measures marked with †, which are strength-based.",
     escape = TRUE
   )

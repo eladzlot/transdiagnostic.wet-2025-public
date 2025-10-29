@@ -101,15 +101,22 @@ A nuanced approach may reveal distinct change pathways, informing tailored inter
 
 ### Responses to Core Threats
 
-Central to pathological fear is an inflated sense of threat, making perceived threat reduction key to alleviating anxiety [@zlotnickAnatomyFearCloser2025].
+Central to pathological fear is an inflated sense of threat, making perceived threat reduction key to alleviating anxiety [@zlotnickMotivationalAnatomyFear2025].
 Our findings showed WET reduced response to core threats more effectively than NIW.
-The rate of threat reduction between sessions one and two predicted symptom improvement by session four, supporting temporal precedence.
+The rate of threat-response reduction between Sessions 1 and 2 predicted symptom improvement by Session 4, supporting temporal precedence.
 
-Most threat reduction occurred early, with minimal change thereafter despite ongoing symptom improvements.
-This suggests repeated threat engagement might work through other mechanisms like distress tolerance, or that there is unique benefit from continued threat activation.
-Future research should explore whether improving writing scripts to target "hot spots" could enhance threat reduction across sessions, similar to WET practices for PTSD where scripts are progressively refined [@sloanWrittenExposureTherapy2019].
+Most change in core-threat responses occurred early, with minimal additional reduction thereafter despite continued symptom improvements.
+This pattern suggests that early engagement with feared material may rapidly reduce perceived threat, while later sessions might improve these gains through processes such as distress tolerance or mastery.
+Future research should test the dose–response relationship between intervention exposure and the degree of core-threat reduction, and determine whether such early mechanism change is sufficient to produce enduring symptom improvement.
+Additionally, future iterations could examine whether refining writing scripts to better target “hot spots”—as done in WET for PTSD [@sloanWrittenExposureTherapy2019]—enhances the maintenance or magnitude of threat-reduction effects.
 
-Emotional engagement seems to be a prime target for improvement.
+A trained judge also rated whether participants meaningfully engaged with their identified core threat at any point across the four writing sessions.
+Thirty-one of fifty participants were judged to have engaged with their core threat.
+Participants who engaged tended to show greater improvement, particularly at the two-month follow-up.
+Although this analysis was exploratory and not preregistered, it suggests that enhancing engagement—for example, through adaptive or self-feedback mechanisms—may strengthen treatment effects.
+Future work will evaluate inter-rater reliability and imagery immersion (e.g., present-tense, sensory, and emotional content) as complementary markers of engagement quality.
+
+Emotional engagement itself may represent a key driver of therapeutic change
 Focusing on emotional rather than cognitive aspects of writing enhances outcomes in PTSD [@sloanDoesAlteringWriting2007].
 Future iterations of WET could deepen emotional processing at each session by explicitly encouraging emotional engagement or enhancing imagery realism [@holmesMentalImageryEmotion2010; @holmesMentalImageryEmotion2005].
 Furthermore, improving the threat script by better reflecting the core threat and decreasing avoidance may also be important [@zlotnickAnatomyFearCloser2025].
@@ -124,6 +131,13 @@ One might hypothesize these processes are related—perhaps decreased threat res
 However, we found no significant correlation between these variables, suggesting they operate independently.
 This distinction highlights two complementary WET mechanisms: distress tolerance as a generic skill applicable across distinct threats, and threat response changes that address specific threats manifesting across various contexts.
 Future research should investigate how these processes interact and complement each other to influence treatment outcomes, potentially providing broader insights into therapeutic mechanisms beyond WET.
+
+Several limitations should be noted.
+The waitlist group was drawn from a prior study rather than randomized concurrently, which may introduce time-related bias despite identical criteria.
+Although mechanisms were preregistered, the analyses do not establish causality, and the number of exploratory tests increases the risk of false positives.
+Engagement ratings were based on a single judge, and all measures were self-reported online, limiting external verification.
+Participants were paid volunteers recruited through an online platform and likely more technologically oriented than typical clinical populations, which may restrict generalizability.
+These limitations are balanced by preregistration, consistent methodology across cohorts, and replication of key effects in independent samples.
 
 ## Advancing Mechanism-Driven Research with Transdiagnostic WET
 

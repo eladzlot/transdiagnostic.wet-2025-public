@@ -149,6 +149,6 @@ final_table %>%
     caption = '(ref:demographics)',
     col.names = c('Characteristics', 'NIW', 'WET', 'Waitlist', 'Total'),
     #col_spanners = list(Conditions = 2:4),
-    note = 'Data presented as number (%) of patients unless otherwise indicated.',
+    note = "Data presented as number (%) of patients unless otherwise indicated. OASIS = transdiagnostic anxiety severity; WSAS = functional impairment.",
     stub_indents = list(Ethnicity = 5:7, Country = 8:13, Employment = 14:18, `Pretreatment measures` = 19:20)
   )
