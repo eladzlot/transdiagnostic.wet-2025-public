@@ -1,6 +1,6 @@
 # Discussion
 
-This study suggests that self-guided, future-oriented WET is an effective and scalable intervention for treating transdiagnostic anxiety.
+This study suggests that self-guided, future-oriented WET is an effective and scalable intervention for treating transdiagnostic anxiety symptoms.
 Moreover, it highlights distress tolerance and anxiety levels regarding one's core threat as key mechanisms of change.
 
 ## Effectiveness of WET
@@ -48,6 +48,8 @@ WET addresses this issue by creating a concrete, written record of participants'
 Clinically, this written documentation provides valuable feedback, allowing therapists to guide participants on specific aspects to enhance (for example, advising them to focus more on physical sensations if needed).
 The written records are also useful for research, enabling analysis of factors like exposure duration, narrative detail, and the specific language used to describe the threat.
 
+
+
 ## NIW as an Intervention
 
 WET did not appear to improve immediate outcomes relative to the control condition.
@@ -74,6 +76,8 @@ NIW shows promise as a therapeutic tool for training distancing, distraction, an
 However, we found contrasting trajectories with WET: NIW produced rapid initial anxiety reduction but plateaued over time, while WET showed slower initial progress but continued steady symptom reduction, ultimately achieving superior long-term effectiveness.
 This suggests that NIW may offer immediate symptom relief, while WET provides more sustained benefits.
 The small sample size in the NIW condition (29 participants) limits generalizability, emphasizing the need for further research to confirm these effects and determine optimal contexts for each approach.
+
+
 
 ## How WET Works
 
@@ -105,9 +109,9 @@ Central to pathological fear is an inflated sense of threat, making perceived th
 Our findings showed WET reduced response to core threats more effectively than NIW.
 The rate of threat-response reduction between Sessions 1 and 2 predicted symptom improvement by Session 4, supporting temporal precedence.
 
-Most change in core-threat responses occurred early, with minimal additional reduction thereafter despite continued symptom improvements.
+Most change in core threat responses occurred early, with minimal additional reduction thereafter despite continued symptom improvements.
 This pattern suggests that early engagement with feared material may rapidly reduce perceived threat, while later sessions might improve these gains through processes such as distress tolerance or mastery.
-Future research should test the dose–response relationship between intervention exposure and the degree of core-threat reduction, and determine whether such early mechanism change is sufficient to produce enduring symptom improvement.
+Future research should test the dose–response relationship between intervention exposure and the degree of core threat reduction, and determine whether such early mechanism change is sufficient to produce enduring symptom improvement.
 Additionally, future iterations could examine whether refining writing scripts to better target “hot spots”—as done in WET for PTSD [@sloanWrittenExposureTherapy2019]—enhances the maintenance or magnitude of threat-reduction effects.
 
 A trained judge also rated whether participants meaningfully engaged with their identified core threat at any point across the four writing sessions.
@@ -119,7 +123,7 @@ Future work will evaluate inter-rater reliability and imagery immersion (e.g., p
 Emotional engagement itself may represent a key driver of therapeutic change
 Focusing on emotional rather than cognitive aspects of writing enhances outcomes in PTSD [@sloanDoesAlteringWriting2007].
 Future iterations of WET could deepen emotional processing at each session by explicitly encouraging emotional engagement or enhancing imagery realism [@holmesMentalImageryEmotion2010; @holmesMentalImageryEmotion2005].
-Furthermore, improving the threat script by better reflecting the core threat and decreasing avoidance may also be important [@zlotnickAnatomyFearCloser2025].
+Furthermore, improving the threat script by better reflecting the core threat and decreasing avoidance may also be important [@zlotnickMotivationalAnatomyFear2025].
 
 The distinct threat-response trajectories in WET and NIW illustrate their divergent mechanisms.
 In WET, sessions elevated threat-response, but the between-session reduction led to lower overall threat-response.
@@ -136,8 +140,12 @@ Several limitations should be noted.
 The waitlist group was drawn from a prior study rather than randomized concurrently, which may introduce time-related bias despite identical criteria.
 Although mechanisms were preregistered, the analyses do not establish causality, and the number of exploratory tests increases the risk of false positives.
 Engagement ratings were based on a single judge, and all measures were self-reported online, limiting external verification.
-Participants were paid volunteers recruited through an online platform and likely more technologically oriented than typical clinical populations, which may restrict generalizability.
+Participants were paid volunteers recruited through an online platform and likely less symptomatic and more technologically oriented than typical clinical populations, limiting generalizability to more severe or high-risk groups where assessment of suicidality and clinical management are essential.
 These limitations are balanced by preregistration, consistent methodology across cohorts, and replication of key effects in independent samples.
+
+Finally, the intervention targeted a single core threat identified by each participant.
+We believe this approach captures the central motivational theme underlying multiple situational fears and thus provides efficient coverage of the broader threat system.
+Nevertheless, a single-target design cannot encompass all personally relevant threats, and future studies should examine whether addressing multiple core threats sequentially or hierarchically yields added benefit.
 
 ## Advancing Mechanism-Driven Research with Transdiagnostic WET
 

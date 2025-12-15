@@ -8,7 +8,7 @@ Originally developed as a variation of imaginal exposure, WET was created to off
 WET yields strong effects for PTSD, comparable to established treatments like Cognitive Processing Therapy and Prolonged Exposure [@thompson-hollandsBriefNovelTherapies2019; @sloanWrittenExposureTherapy2019; @sloanWrittenExposureIntervention2012; @sloanWrittenExposureTherapy2023].
 While WET has traditionally been applied specifically to PTSD, it has been extended to generalized anxiety disorder by focusing on future-oriented feared outcomes [@goldmanImpactWrittenExposure2007; @ovanessianPreliminaryTestTherapeutic2019] including in an online format [@roch-gagneFeasibilityOpenTrial2019], indicating its potential for broader, transdiagnostic applications.
 
-This paper introduces transdiagnostic WET, a future oriented version of WET tailored for a transdiagnostic population.
+This paper introduces transdiagnostic WET, a future oriented version of WET tailored for a population with transdiagnostic anxiety symptoms.
 Since WET integrates elements of both imaginal exposure (IE) and expressive writing, we address the foundations of each approach to fine-tune transdiagnostic WET.
 Two key insights drive the modifications that have been made: exposure needs to be a) focused and b) immersive.
 
@@ -16,7 +16,7 @@ Directive instructions yield better outcomes in expressive writing [@frattaroliE
 Indeed, WET for PTSD focuses on the most distressing traumatic event that the client has [@sloanWrittenExposureTherapy2019].
 Furthermore, WET has been found to be more effective when focusing on a single fear rather than alternating between different fears, in both GAD and PTSD [@fracalanzaTestingProceduralVariant2014; @sloanFurtherExaminationExposure2005].
 In PTSD, WET focuses on the central source of anxiety - the traumatic event.
-We propose that transdiagnostic WET should focus on core threats: the ultimate feared consequence of one's fear or anxiety [@huppertCoreFearsValues2012; @zlotnickAnatomyFearCloser2025].
+We propose that transdiagnostic WET should focus on core threats: the ultimate feared consequence of one's fear or anxiety [@huppertCoreFearsValues2012;@zlotnickMotivationalAnatomyFear2025].
 Clinicians suggest that focusing on core threats improves efficacy, enhances generalizability, and reduces relapse 
 [@foaEmotionalProcessingFear1986; @gillihanCommonPitfallsExposure2012; @murrayDissectingCoreFear2016].
 We have developed an online questionnaire to reliably identify core threats [@zlotnickCoreThreatStructured2025].
@@ -35,26 +35,20 @@ Indeed, the WET protocol explicitly states this goal: "By repeatedly recounting 
 We contend that in future-oriented WET for a non-traumatized population increased emotional activation is needed.
 Thus, we direct participants to immerse themselves in the writing by using first person, providing detailed sensory and emotional descriptions, and periodically closing their eyes and calling upon their imaginations.
 
-The first goal of this study was to develop and validate the transdiagnostic WET.
-However, we also aim to explore several potential mechanisms [cf. @rousseauMechanismsActionUnderlying2018] as such knowledge may allow more precise interventions [@nivPrecisionCognitiveBehavioral2021].
-To provide better understanding of how WET operates, we adopted a systematic approach.
-Rather than focusing on a single process, we evaluated multiple processes spanning cognitive, emotional, and behavioral domains.
-By casting a wide net in our investigation, we aimed to identify the pathways through which WET works, thereby advancing theoretical models of exposure therapy while also highlighting  targets for enhancing clinical outcomes.
+The first goal of this study was to develop and validate transdiagnostic WET.
+Our second goal was to explore several theory-guided mechanisms of change [cf. @rousseauMechanismsActionUnderlying2018], as understanding mechanisms can inform more precise interventions [@nivPrecisionCognitiveBehavioral2021].
+Following Kazdin’s framework [@kazdinMediatorsMechanismsChange2007], this study intentionally adopted an exploratory approach to map multiple processes spanning emotional, cognitive, and behavioral domains.
 
-**1. Fear reduction:** Imaginal exposure may reduce fear through habituation (decreased response to repeated exposure) or extinction (breaking associations between scenarios and aversive responses) [@foaHabituationSubjectiveAnxiety1978; @cooperEmpiricalReviewPotential2017].
-We assessed this by measuring self-reported anxiety in response to imagined scenarios both within and across sessions [@foaEmotionalProcessingFear1986; @ruppEmotionalProcessingTheory2017].
+Specifically, we examined:
 
-**2. Specific reactions to flashforward images:** Anxiety-provoking images can trigger specific responses (distress, intrusiveness, avoidance) distinct from general metacognitive beliefs.
-We measured these specific reactions to assess whether they change independently of broader cognitive patterns.
+1. **Fear reduction:** Exposure may reduce perceived threat by updating how feared situations are interpreted. This shift can occur through various learning processes, including habituation, extinction, or inhibitory learning [@foaEmotionalProcessingFear1986; @craskeOptimizingInhibitoryLearning2008].
+2. **Distress tolerance:** The ability to withstand negative emotional states may be more critical to exposure therapy success than fear reduction itself [@craskeOptimizingInhibitoryLearning2008; @hayesAcceptanceCommitmentTherapy1999].
+3. **Thought-action fusion:** The belief that thoughts directly influence reality is associated with anxiety disorders and OCD [@rassinThoughtactionFusionCausal1999; @thompson-hollandsThoughtactionFusionAnxiety2013]. We hypothesized that experiencing negative imagery without consequences would reduce thought fusion, improving outcomes.
+4. **Negative beliefs about imagery and memory:** Beliefs that engaging with distressing content is dangerous can sustain avoidance. WET may challenge these beliefs by promoting safe emotional engagement with feared scenarios, thereby facilitating cognitive restructuring.
+5. **Reactions to future imagery:** Personally feared future scenarios can evoke distress, intrusiveness, and avoidance distinct from general anxiety or metacognitive beliefs. Assessing these reactions clarifies whether WET changes emotional responses to feared future events themselves—such as distress when imagining failure, loss, or rejection—rather than only broader cognitive appraisals.
+6. **Self-compassion:** A capacity for non-judgmental acceptance of one’s emotional experience that can counter self-criticism and avoidance, promoting approach toward feared emotions.
 
-**3. Distress tolerance:** The ability to withstand negative emotional states may be more critical to exposure therapy success than fear reduction itself [@craskeOptimizingInhibitoryLearning2008; @hayesAcceptanceCommitmentTherapy1999].
-We predicted that repeated engagement with distressing scenarios would enhance participants' distress tolerance.
-
-**4. Thought fusion:** The belief that thoughts directly influence reality is associated with anxiety disorders and OCD [@rassinThoughtactionFusionCausal1999; @thompson-hollandsThoughtactionFusionAnxiety2013].
-We hypothesized that experiencing negative imagery without consequences would reduce thought fusion, improving outcomes.
-
-**5. Negative beliefs about images and memories:** Beliefs that engaging with distressing content is dangerous can maintain avoidance patterns.
-WET may challenge these beliefs by facilitating safe engagement with feared scenarios, promoting cognitive restructuring.
+Together, these mechanisms represent distinct but complementary processes that may underlie the effects of imaginal exposure.
 
 This study aims to extend WET in three ways: a) applying it to a transdiagnostic population; b) exploring its utility for coping with future threats rather than past events; and c) assessing its effectiveness as a self-administered, online intervention.
 To date, WET has not been widely tested within this type of sample or setting.

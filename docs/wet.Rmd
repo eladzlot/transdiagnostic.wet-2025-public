@@ -43,7 +43,7 @@ affiliation:
   #This work was supported by ISF 1905/20 awarded to Jonathan Huppert, Sam and Helen Beber Chair of Clinical Psychology, and by SPR small research grant 2023 awarded to Elad Zlotnick.
 
 abstract: |
-  This study investigates mechanisms underlying Transdiagnostic Written Exposure Therapy (WET), a novel, scalable online intervention for pathological anxiety.
+  This study investigates mechanisms underlying Transdiagnostic Written Exposure Therapy (WET), a novel, scalable online intervention for pathological anxiety symptoms.
   In a randomized controlled trial with 89 participants, WET produced significant anxiety reduction that continued through two-month follow-up (SMD=0.85).
   We systematically evaluated multiple potential mechanisms across cognitive, emotional, and behavioral domains.
   From this broad assessment, two mechanisms emerged as both significantly affected by treatment and correlated with symptom improvement: enhanced distress tolerance (r = -0.35) and decreased anxious responses to core threats (r = 0.39).
@@ -89,8 +89,8 @@ header-includes:
 csl               : "`r system.file('rmd', 'apa7.csl', package = 'papaja')`"
 documentclass     : "apa7"
 
-output            : papaja::apa6_pdf
-#output            : papaja::apa6_docx
+#output            : papaja::apa6_pdf
+output            : papaja::apa6_docx
 
 # output files should go to "out"
 knit: (function(inputFile, encoding) {

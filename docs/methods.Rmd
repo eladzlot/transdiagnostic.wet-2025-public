@@ -129,11 +129,13 @@ Symptoms, measured using the OASIS, were assessed before each writing session, e
 Additionally, symptoms were measured at both follow-up sessions.
 Functioning, measured using the WSAS, was assessed at pre-intervention, post-intervention, and both follow-ups.
 Mechanisms were evaluated at pre-intervention (before the first writing session) and post-intervention (after the fourth writing session) to observe the dynamics of change [see @kazdinMediatorsMechanismsChange2007].
-Before the first writing session, participants identified their core threats.
-They then developed a concise script creating a clear narrative of how these threats were expected to unfold from their proximal threats.
+Before the first writing session, participants identified their primary core threat using the Core Threat Structured Interview (CTSI).
+The CTSI is a structured and psychometrically validated online assessment designed to elicit the individual’s ultimate feared outcome underlying anxiety or avoidance [@zlotnickCoreThreatStructured2025].
+It guides participants through examples and clarification prompts to ensure that the selected threat is personally meaningful and specific enough to serve as the focus for the writing exercises.
+Finally, participants developed a concise script creating a clear narrative of how these threats were expected to unfold from their proximal threats.
 
 Participants were divided into three groups: WET, NIW, and waitlist.
-The WET group received standard exposure-based psychoeducation, which emphasized how confronting distressing material could reduce emotional impact over time.
+The WET group received exposure-based psychoeducation, which emphasized how confronting distressing material could reduce emotional impact over time.
 They were then instructed to expand upon their threat script, focusing on repeated and detailed exposure to distressing content.
 In contrast, the NIW group received psychoeducation highlighting the value of distraction and mental control in fostering emotional regulation,
 and then guided to identify and describe a neutral situation emphasizing sensory details without emotional valence.
@@ -199,6 +201,13 @@ Demonstrating that an intervention causes change does not explain *why* this cha
 Establishing that a process is a mechanism requires association between the intervention and process, and between the process and the symptoms [@kazdinMediatorsMechanismsChange2007].
 Thus, we first establish which processes are affected by the intervention.
 Next, we examine the relationship between the process and the outcome.
+
+To identify processes that may mediate change, we examined both fear-specific and fear-agnostic mechanisms previously linked to exposure-based interventions.
+Reductions in perceived threat, indexed by state anxiety during imagining the core threat [BSAM; @bergAreEmotionsFrightening1998], reflect habituation or extinction processes.
+Broader regulatory and cognitive mechanisms included distress tolerance [DTS; @simonsDistressToleranceScale2005], reflecting the ability to endure negative emotion, self-compassion [SCS; @raesConstructionFactorialValidation2011], representing adaptive self-relating and emotional regulation; and thought–action fusion [TAF-R; @shafranThoughtactionFusionObsessive1996], the belief that thoughts can cause or prevent real outcomes.
+Metacognitive beliefs [MCQ-30; @wellsShortFormMetacognitions2004] and core schemas [BCSS; @fowlerBriefCoreSchema2006] indexed higher-order beliefs about control, self, and others.
+Finally, imagery-specific reactions [IFES; @deeproseMeasuringIntrusiveProspective2011] captured distress, intrusiveness, and avoidance in response to personally salient imagery.
+Together, these constructs span both targeted and transdiagnostic mechanisms, allowing a comprehensive view of how WET may promote change across emotional, cognitive, and regulatory domains.
 
 We focus on the process of change, thus we're interested in the association between *changes* in processes and *changes* in symptoms.
 To examine this association we use multivariate latent curve models [@maccallumStudyingMultivariateChange1997; @damianDoesVariabilityHuman2010; @baldwinAnalyzingMultipleOutcomes2014].

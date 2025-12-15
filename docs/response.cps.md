@@ -1,10 +1,11 @@
+# Response to Reviewers
 
-If we go above word limit need to include in response
+We thank the editor and reviewers for their thoughtful and constructive feedback.
+We were encouraged by the overall positive evaluation of the study’s contribution and the reviewers’ engagement with its theoretical and methodological aspects.
+In revising the manuscript, we have addressed each comment carefully and made substantial clarifications to strengthen conceptual precision, methodological transparency, and interpretability of results.
+Below, we respond point-by-point, noting all textual changes and the specific sections in which they were implemented.
 
-Both reviewers commented on the novelty of the study and enjoyed reading the paper.
-However, they do raise some concerns that are described in detail below.
-
-### Editor Comments
+## Editor Comments
 
 **Editor Comment 1:**
 
@@ -36,13 +37,11 @@ These findings indicate that the intervention was acceptable and generally well-
 
 ---
 
-### Reviewer: 1
+## Reviewer: 1
 
-Comments to the Author
+**Reviewer #1 Comment 1:**
 
-** Reviewer #1 Comment 1: **
-
-*First, the study's design appears somewhat "patchy," as the waitlist control (WL) is not randomized like the WET and neutral imagery training (NIT) groups, which could affect the comparability of results.*
+*First, the study's design appears somewhat "patchy," as the waitlist control (WL) is not randomized like the WET and neutral imagery training (NIW) groups, which could affect the comparability of results.*
 
 **Author response:**
 
@@ -64,7 +63,8 @@ Nonetheless, as the waitlist group was not randomized concurrently with the inte
 ---
 
 **Reviewer #1 Comment 2: **
-Additionally, while the exploration of mechanisms is extensive, it's also very exploratory, with many mechanisms and analyses mentioned, which might dilute the focus.
+
+*Additionally, while the exploration of mechanisms is extensive, it's also very exploratory, with many mechanisms and analyses mentioned, which might dilute the focus.*
 
 **Author response:**
 
@@ -83,8 +83,9 @@ While establishing causality is difficult [see @eronenCausalDiscoveryProblem2020
 
 ---
 
-** Reviewer #1 Comment 3: **
-The observation that most symptom reduction occurred between the first and second sessions is striking and raises questions about the underlying mechanisms driving these changes so early in the intervention.
+**Reviewer #1 Comment 3: **
+
+*The observation that most symptom reduction occurred between the first and second sessions is striking and raises questions about the underlying mechanisms driving these changes so early in the intervention.*
 
 **Author response:**
 
@@ -99,21 +100,22 @@ We also added a note emphasizing the need for future dose–response studies to 
 Our findings showed WET reduced response to core threats more effectively than NIW.
 The rate of threat-response reduction between Sessions 1 and 2 predicted symptom improvement by Session 4, supporting temporal precedence.
 
->Most change in core-threat responses occurred early, with minimal additional reduction thereafter despite continued symptom improvements.
+>Most change in core threat responses occurred early, with minimal additional reduction thereafter despite continued symptom improvements.
 This pattern suggests that early engagement with feared material may rapidly reduce perceived threat, while later sessions might improve these gains through processes such as distress tolerance or mastery.
-Future research should test the dose–response relationship between intervention exposure and the degree of core-threat reduction, and determine whether such early mechanism change is sufficient to produce enduring symptom improvement.
+Future research should test the dose–response relationship between intervention exposure and the degree of core threat reduction, and determine whether such early mechanism change is sufficient to produce enduring symptom improvement.
 Additionally, future iterations could examine whether refining writing scripts to better target “hot spots”—as done in WET for PTSD [@sloanWrittenExposureTherapy2019]—enhances the maintenance or magnitude of threat-reduction effects.
 
 ---
 
 **Reviewer #1 Comment 4: **
-Moreover, the most intriguing aspect—the focus on "core threats"—is not elaborated upon in detail.
-Although it's stated that participants created exposure scripts targeting core threats, the paper supports this primarily through case vignettes rather than comprehensive data or analysis.
+
+*Moreover, the most intriguing aspect—the focus on "core threats"—is not elaborated upon in detail.
+Although it's stated that participants created exposure scripts targeting core threats, the paper supports this primarily through case vignettes rather than comprehensive data or analysis.*
 
 **Author response:**
 
 We appreciate the reviewer’s interest in this point.
-The concept of *core threats* is elaborated in detail in a recent theoretical paper [@zlotnickMotivationalAnatomyFear2025], and in a methodological paper currently under review describing the **Core Threat Structured Interview (CTSI)**, available at [https://github.com/eladzlot/ctsi-2025-public](https://github.com/eladzlot/ctsi-2025-public).
+The concept of *core threats* is elaborated in detail in a recent theoretical paper [@zlotnickMotivationalAnatomyFear2025], and in a methodological paper [@zlotnickCoreThreatStructured2025] describing the **Core Threat Structured Interview (CTSI)**, available at [https://github.com/eladzlot/ctsi-2025-public](https://github.com/eladzlot/ctsi-2025-public).
 The CTSI has demonstrated good reliability and validity in online administration.
 
 In the current study, an independent judge evaluated whether participants meaningfully engaged with their identified core threat at any point during the four writing sessions.
@@ -132,12 +134,13 @@ Future work will evaluate inter-rater reliability and imagery immersion (e.g., p
 
 ---
 
+**Reviewer #1 Comment 5: **
 
-** Reviewer #1 Comment 5: **
-A few minor comments:
-1. The tables do not include notes explaining the variables in them
-2. There are a few typos to be corrected (e.g., line 8, page 31)
-3. Limitations of the present study are not discussed
+*A few minor comments:*
+
+1. *The tables do not include notes explaining the variables in them*
+2. *There are a few typos to be corrected (e.g., line 8, page 31)*
+3. *Limitations of the present study are not discussed*
 
 **Author response:**
 
@@ -149,42 +152,135 @@ We thank the reviewer for these helpful observations.
 
 3. **Limitations.** Although limitations were addressed across sections, we have added a brief dedicated paragraph at the end of the Discussion to summarize them explicitly. The new paragraph reads:
 
-   > Several limitations should be noted.
-    The waitlist group was drawn from a prior study rather than randomized concurrently, which may introduce time-related bias despite identical criteria.
-    Although mechanisms were preregistered, the analyses do not establish causality, and the number of exploratory tests increases the risk of false positives.
-    Engagement ratings were based on a single judge, and all measures were self-reported online, limiting external verification.
-    Participants were paid volunteers recruited through an online platform and likely more technologically oriented than typical clinical populations, which may restrict generalizability.
-    These limitations are balanced by preregistration, consistent methodology across cohorts, and replication of key effects in independent samples.
+  > Several limitations should be noted.
+  The waitlist group was drawn from a prior study rather than randomized concurrently, which may introduce time-related bias despite identical criteria.
+  Although mechanisms were preregistered, the analyses do not establish causality, and the number of exploratory tests increases the risk of false positives.
+  Engagement ratings were based on a single judge, and all measures were self-reported online, limiting external verification.
+  Participants were paid volunteers recruited through an online platform and likely less symptomatic and more technologically oriented than typical clinical populations, limiting generalizability to more severe or high-risk groups where assessment of suicidality and clinical management are essential.
+  These limitations are balanced by preregistration, consistent methodology across cohorts, and replication of key effects in independent samples.
 
 Together, these changes ensure that the tables, text, and limitations are complete and transparent.
 
-### Reviewer: 2
+## Reviewer 2
 
 **Reviewer #2 Comment 1: **
-The inclusion criteria were defined exclusively by psychometric scale scores.
+
+*The inclusion criteria were defined exclusively by psychometric scale scores.
 This doesn't necessarily call into question the presence of clinically relevant symptoms, but these scores don't allow for a conclusive assessment of whether the included individuals actually meet the criteria for mental disorders.
 Therefore, I wouldn't use the term "transdiagnostic anxiety," because that would suggest the presence of disorder-relevant symptoms, and I suggest therefore to omit it from the title.
-In my view, the study examines individuals with multifaceted anxiety burden.
+In my view, the study examines individuals with multifaceted anxiety burden.*
+
+**Author response:**
+
+We thank the reviewer for this thoughtful observation. We fully agree that the current sample was characterized by elevated anxiety symptoms rather than formally diagnosed anxiety disorders. To better reflect this distinction, we have replaced the term transdiagnostic anxiety with transdiagnostic anxiety symptoms throughout the manuscript, including in the title. The revised title now reads:
+
+> Written Exposure Therapy for Transdiagnostic Anxiety Symptoms: Treatment Efficacy and Mechanisms of Change
+
+This phrasing more accurately conveys that participants experienced diverse, clinically relevant anxiety symptoms without implying formal diagnostic status.
+
+---
 
 **Reviewer #2 Comment 2: **
-Exclusion criteria are also collected in the same way.
+
+*Exclusion criteria are also collected in the same way.
 Here, acute and/or past suicidality was not explicitly asked about.
-In general, this limitation of the study should be discussed in detail and critically.
+In general, this limitation of the study should be discussed in detail and critically.*
 
-**Reviewer #2 Comment 3: **
-The selection of various possible mechanisms of action seems fundamentally plausible.
-However, for inexperienced readers, the selection should be explained in more detail.
+**Author response:**
 
-**Reviewer #2 Comment 4: **
-I, too, have some conceptual questions left unanswered.
-Why do you assume that you can draw conclusions about fear extinction processes (as opposed to fear habituation) through within- and between-session fear reductions?
-I don't understand the part about "specific reductions to flashforward images."
+We appreciate the reviewer’s concern regarding participant safety. Suicidality was not explicitly assessed because the study focused on individuals with elevated anxiety rather than depressive or trauma-related disorders, and participants with high depression or PTSD scores were excluded during screening. The intervention, while emotionally demanding, was designed for a non-clinical population and included clear referral procedures: participants who reported distress or requested assistance were directed to local mental-health services and community support lines.
+
+The study protocol and exclusion criteria were reviewed and approved by the institutional ethics committee, which determined that a direct suicidality screen was not required given the population and recruitment context. We have added a note in the Limitations section acknowledging that suicidality was not directly assessed and that the findings may not generalize to clinical populations at higher risk, despite safeguards to ensure access to local support.
+
+The following sentence was integrated into the limitations section:
+
+> Participants were paid volunteers recruited through an online platform and likely less symptomatic and more technologically oriented than typical clinical populations, limiting generalizability to more severe or high-risk groups where assessment of suicidality and clinical management are essential.
+
+---
+
+**Reviewer #2 Comments 3 & 4**
+
+*The selection of various possible mechanisms of action seems fundamentally plausible. However, for inexperienced readers, the selection should be explained in more detail.*
+*I, too, have some conceptual questions left unanswered. Why do you assume that you can draw conclusions about fear extinction processes (as opposed to fear habituation) through within- and between-session fear reductions? I don't understand the part about "specific reductions to flashforward images."*
+
+**Author response:**
+
+We thank the reviewer for these helpful observations. To clarify the theoretical rationale for the mechanisms selected, we substantially revised the corresponding section in the *Introduction* (pp. XX–XX). The updated text now defines each construct and briefly explains its relevance to WET’s proposed mechanisms of change, distinguishing between affective, cognitive, and regulatory processes. This revision was designed to make the theoretical underpinnings accessible to a broader readership while preserving conceptual precision.
+
+Regarding **fear reduction**, we have clarified that the construct reflects *changes in perceived threat* and is used descriptively, not to adjudicate between competing theoretical models of emotional learning. We acknowledge that within- and between-session decreases in subjective threat can arise from multiple processes—such as habituation, extinction, or inhibitory learning—and have revised the text to make this explicit.
+
+Finally, to address the reviewer’s question about “specific reductions to flashforward images,” we rephrased this construct as **reactions to future imagery** to better reflect its focus. This measure captures distress, intrusiveness, and avoidance in response to personally feared future scenarios, allowing us to test whether WET alters emotional responses to such imagery beyond changes in general anxiety or cognition.
+
+These revisions collectively clarify both the theoretical rationale and operational meaning of the mechanisms examined, addressing the reviewer’s concerns about interpretability and conceptual specificity.
+
+> 1. **Fear reduction:** Exposure may reduce perceived threat by updating how feared situations are interpreted. This shift can occur through various learning processes, including habituation, extinction, or inhibitory learning [@foaEmotionalProcessingFear1986; @craskeOptimizingInhibitoryLearning2008].
+2. **Distress tolerance:** The ability to withstand negative emotional states may be more critical to exposure therapy success than fear reduction itself [@craskeOptimizingInhibitoryLearning2008; @hayesAcceptanceCommitmentTherapy1999].
+3. **Thought-action fusion:** The belief that thoughts directly influence reality is associated with anxiety disorders and OCD [@rassinThoughtactionFusionCausal1999; @thompson-hollandsThoughtactionFusionAnxiety2013]. We hypothesized that experiencing negative imagery without consequences would reduce thought fusion, improving outcomes.
+4. **Negative beliefs about imagery and memory:** Beliefs that engaging with distressing content is dangerous can sustain avoidance. WET may challenge these beliefs by promoting safe emotional engagement with feared scenarios, thereby facilitating cognitive restructuring.
+5. **Reactions to future imagery:** Personally feared future scenarios can evoke distress, intrusiveness, and avoidance distinct from general anxiety or metacognitive beliefs. Assessing these reactions clarifies whether WET changes emotional responses to feared future events themselves—such as distress when imagining failure, loss, or rejection—rather than only broader cognitive appraisals.
+6. **Self-compassion:** A capacity for non-judgmental acceptance of one’s emotional experience that can counter self-criticism and avoidance, promoting approach toward feared emotions.
+
+To link these theoretical constructs with measurable processes, each mechanism was operationalized using validated self-report instruments assessing the relevant emotional, cognitive, or regulatory domain. Changes in perceived threat were indexed by state anxiety during imaginal exposure (BSAM). Distress tolerance (DTS), thought–action fusion (TAF-R), negative beliefs about imagery and memory (MCQ-30 subscales), reactions to future imagery (IFES), and self-compassion (SCS-SF) were assessed to capture complementary dimensions of exposure-related change. Together, these measures allowed us to examine whether distinct yet interrelated processes accounted for improvement in anxiety symptoms during WET.
+
+> To identify processes that may mediate change, we examined both fear-specific and fear-agnostic mechanisms previously linked to exposure-based interventions.
+Reductions in perceived threat, indexed by state anxiety during imagining the core threat [BSAM; @bergAreEmotionsFrightening1998], reflect habituation or extinction processes.
+Broader regulatory and cognitive mechanisms included distress tolerance [DTS; @simonsDistressToleranceScale2005], reflecting the ability to endure negative emotion, self-compassion [SCS; @raesConstructionFactorialValidation2011], representing adaptive self-relating and emotional regulation; and thought–action fusion [TAF-R; @shafranThoughtactionFusionObsessive1996], the belief that thoughts can cause or prevent real outcomes.
+Metacognitive beliefs [MCQ-30; @wellsShortFormMetacognitions2004] and core schemas [BCSS; @fowlerBriefCoreSchema2006] indexed higher-order beliefs about control, self, and others.
+Finally, imagery-specific reactions [IFES; @deeproseMeasuringIntrusiveProspective2011] captured distress, intrusiveness, and avoidance in response to personally salient imagery.
+Together, these constructs span both targeted and transdiagnostic mechanisms, allowing a comprehensive view of how WET may promote change across emotional, cognitive, and regulatory domains.
+
+---
 
 **Reviewer #2 Comment 5: **
-How exactly did the individuals identify their core threats and what support (e.g., instructions) did they receive?
+
+*How exactly did the individuals identify their core threats and what support (e.g., instructions) did they receive?
 In principle, it can be assumed that patients with anxiety disorders do not only have isolated core threats.
-The limitations associated with addressing only one threat, as in this study, should be critically discussed.
+The limitations associated with addressing only one threat, as in this study, should be critically discussed.*
+
+**Author response:**
+
+We appreciate the reviewer’s interest in this point.
+Participants identified their *core threat* using the **Core Threat Structured Interview (CTSI)**, a standardized online procedure developed to assess the ultimate feared outcomes underlying anxiety and avoidance.
+A detailed description of the CTSI is provided in the supplementary materials, and its validation is presented in a methodological paper currently under review [@zlotnickCoreThreatStructured2025].
+The CTSI has demonstrated good reliability and validity in online administration.
+
+As elaborated in *The Motivational Anatomy of Fear* [@zlotnickMotivationalAnatomyFear2025], *core threats* differ from proximal or situational fears in that they reflect an individual’s most fundamental feared outcome (e.g., harm to loved ones, loss of control, moral failure).
+While people may experience numerous situational fears, these often converge on one or two central core threats that organize their fear structure.
+In our ongoing validation work, we have found that even diverse anxiety symptoms or compulsions frequently share the same core threat, supporting this integrative conceptualization.
+
+We believe that focusing on a person’s core threat offers efficient and meaningful coverage of their broader threat system, as it targets the motivational center underlying multiple fears.
+At the same time, we acknowledge that this approach cannot capture every relevant domain of threat.
+Brief interventions must necessarily focus on a limited number of themes, and the current study was designed to test the feasibility and mechanisms of addressing one core threat within a concise protocol rather than to replace comprehensive treatment.
+Future studies may examine multi-threat or sequential approaches to extend this framework.
+
+We have clarified both these issues in the methods section:
+
+> Before the first writing session, participants identified their primary core threat using the Core Threat Structured Interview (CTSI).
+The CTSI is a structured and psychometrically validated online assessment designed to elicit the individual’s ultimate feared outcome underlying anxiety or avoidance [@zlotnickCoreThreatStructured2025].
+It guides participants through examples and clarification prompts to ensure that the selected threat is personally meaningful and specific enough to serve as the focus for the writing exercises.
+
+And in the discussion as part of the limitations:
+
+> Finally, the intervention targeted a single core threat identified by each participant.
+We believe this approach captures the central motivational theme underlying multiple situational fears and thus provides efficient coverage of the broader threat system.
+Nevertheless, a single-target design cannot encompass all personally relevant threats, and future studies should examine whether addressing multiple core threats sequentially or hierarchically yields added benefit.
 
 **Reviewer #2 Comment 6: **
-Perhaps it's because I don't have access to supplementary materials, but the content of the psychoeducational materials should be described in more detail.
-What exactly does "standard exposure-based psychoeducation" mean in the study, given that exposure therapy can currently be conducted under very different rationales (e.g., habituation model vs. fear extinction model), coupled with different implications for the therapeutic approach.
+
+*Perhaps it's because I don't have access to supplementary materials, but the content of the psychoeducational materials should be described in more detail.
+What exactly does "standard exposure-based psychoeducation" mean in the study, given that exposure therapy can currently be conducted under very different rationales (e.g., habituation model vs. fear extinction model), coupled with different implications for the therapeutic approach.*
+
+**Author response:**
+
+We thank the reviewer for this important clarification request.
+The psychoeducational materials presented to participants provided a concise rationale for exposure therapy grounded in both habituation and inhibitory-learning (fear-extinction) models.
+Participants were informed that avoidance prevents corrective learning and that confronting feared situations—real or imagined—allows anxiety to decrease naturally and promotes new, non-threat associations.
+
+To ensure transparency, we have added a short summary of this content to the *Procedure* section As follows:
+
+> The WET group received exposure-based psychoeducation, which emphasized how confronting distressing material could reduce emotional impact over time.
+
+These additions clarify what is meant by “exposure-based psychoeducation” in the current study and make the materials accessible without reliance on the supplementary files.
+We ensured that the supplementary materials, including full instructions, are now accessible.
+
+## Bibliography
