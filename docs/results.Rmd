@@ -81,7 +81,8 @@ Fisher’s exact and Wilcoxon tests revealed no significant differences between 
 ```{r demographics, file=here('scripts','tables.demographics.R'), echo=FALSE, message=FALSE, warning=FALSE,cache=TRUE}
 ```
 
-## Intervention Quality
+## Acceptability and Credibility
+
 ```{r credibility, echo=FALSE, include=FALSE, cache=TRUE}
 # Filter and summarize the data for credibility measures
 d <- data_long %>%
@@ -108,27 +109,29 @@ feeling_score_ew <- d %>%
   pull(value)
 ```
 
-Both WET and NIW were rated highly on the Devilly Credibility Scale, indicating strong credibility in both interventions.
-On the cognitive subscale, WET scored `r format_mean_sd(cognitive_score_wet)`, while NIW scored  `r format_mean_sd(cognitive_score_ew)`.
-Similarly, on the feeling subscale, WET scored  `r format_mean_sd(feeling_score_wet)` and NIW scored `r format_mean_sd(feeling_score_ew)`.
-These results suggest that participants found both interventions to be highly credible in terms of both their perceived logic and their intuitive appeal.
-In their open feedback after the study, participants generally found the writing task acceptable, though some in the WET condition reported it as difficult, while some in the NIW condition described it as progressively boring.
 
-Participants in the WET condition successfully created powerful exposure scripts that addressed their core threats.
-For instance, an excerpt from the script of a socially anxious individual reads:
+Both WET and NIW were rated as highly credible on the Devilly Credibility Scale.
+On the cognitive subscale, WET scored `r format_mean_sd(cognitive_score_wet)`, whereas NIW scored `r format_mean_sd(cognitive_score_ew)`.
+Similarly, on the feeling subscale, WET scored `r format_mean_sd(feeling_score_wet)` and NIW scored `r format_mean_sd(feeling_score_ew)`.
 
-> What am I doing here? I am a nobody. I know nothing. I feel almost sick now with nerves and dread. What if I just left now? Would anyone even notice? But it's too late…  
-> I am to speak first, so I can't even steal other people's ideas…  
+Most participants reported that the instructions were clear, although a minority indicated difficulty understanding the requirement to return to the same script across sessions.
+The task was described as difficult by 26% of participants in the WET condition and 25% in the NIW condition, whereas 26% and 42%, respectively, described it as pleasant or useful.
+At the two-month follow-up, 55% of WET participants and 25% of NIW participants reported improvements in quality of life, and 41% and 38%, respectively, reported continued application of skills learned during the intervention.
+
+
+Qualitative inspection of the writing materials indicated clear differentiation between conditions. Participants in the WET condition generally produced emotionally intense scripts directly addressing their core threats. For example, one socially anxious participant wrote:
+
+> What am I doing here? I am a nobody. I know nothing. I feel almost sick now with nerves and dread. What if I just left now? Would anyone even notice? But it's too late…
+> I am to speak first, so I can't even steal other people's ideas…
 > [They're thinking] Who is this idiot? I stumble on and on. I want to stop and for it all to be over, but I can't. It just goes on forever. It is like dying in slow motion.
 
-Adherence in the NIW condition was less confined, with some participants writing scripts that focused on positive outcomes rather than neutral events.
-For example, one participant wrote:
+In contrast, adherence in the NIW condition was less constrained, with some participants producing scripts that emphasized positive outcomes rather than neutral content. For example, one participant wrote:
 
 > I feel enthusiastic about starting my day on a positive and productive day.
-> Today instead of going through my phone for an hour on social media, I start with making my bed and cleaning my room.
-> ... I start applying for opportunities that align with my qualifications and a bit of me is worried but still hopeful that I get recognized and recruited.
+> Today instead of going through my phone for an hour on social media, I start with making my bed and cleaning my room…
+> I start applying for opportunities that align with my qualifications and a bit of me is worried but still hopeful that I get recognized and recruited.
 
-This type of writing is similar to what is done in imagery rehearsal [cf. @krakowClinicalManagementChronic2006].
+This style of writing resembles techniques used in imagery rehearsal interventions [cf. @krakowClinicalManagementChronic2006].
 
 ## Symptom Measures
 
@@ -172,7 +175,7 @@ This standardization allows comparisons across measures, with higher effect size
 Additionally, we report the probability of direction, which quantifies the certainty that the outcome is greater than 0.
 The probability of direction, marked in this paper as P(>0), ranges from 0 to 1, where values close to 0 indicate high certainty of a negative effect (symptom deterioration), and values close to 1 indicate high certainty of a positive effect [symptom improvement See @makowskiIndicesEffectExistence2019].
 
-(ref:growth) Estimated treatment trajectories for each intervention based on the latent growth model. Values are adjusted for gender. WET = Written Exposure Therapy; NIW = Neutral Imagery Writing. The time intervals between pre-treatment and post-treatment, and between post-treatment and followup 1 (FU1), were approximately one week. The interval between FU1 and followup 2 (FU2) was approximately two months, which is indicated by the dashed regression line. The shaded gray area represents the 89% credible interval (CI).
+(ref:growth) Estimated treatment trajectories for each intervention based on the latent growth model. Values are adjusted for gender. WET = Written Exposure Therapy; NIW = Neutral Imagery Writing; OASIS = Overall Anxiety Severity and Impairment Scale. The time intervals between pre-treatment and post-treatment, and between post-treatment and followup 1 (FU1), were approximately one week. The interval between FU1 and followup 2 (FU2) was approximately two months, which is indicated by the dashed regression line. The shaded gray area represents the 89% credible interval (CI).
 
 ```{r growth, file=here('scripts','figures.growth.R'), echo=FALSE, message=FALSE, warning=FALSE, fig.cap='(ref:growth)', cache=TRUE}
 ```
@@ -238,9 +241,68 @@ Both WET (`r format_estimate(delta.wsas.wet/sd.wsas.wet - delta.wsas.wl/sd.wsas.
 However, no significant differences were observed between them (`r format_estimate(delta.wsas.wet/sd.wsas.wet - delta.wsas.ew/sd.wsas.ew)`).
 These outcomes were kept at the 2 month followup.
 
+## Engagement
+
+```{r engagement, echo=FALSE, include=FALSE, cache=TRUE}
+# Source the growth model script
+source(here('scripts', 'model.growth.R'))
+
+raw.engagement = read_csv(here('raw/engagement.csv'))
+
+# Filter and join the data for engagement measure
+d <- data_long %>%
+  filter(measure == 'oasis', condition != 'waitlist', !is.na(value), wave > 0) %>%
+  left_join(demographics.data, by = c("id", 'condition')) %>%  # Ensure proper join key if needed
+  left_join(raw.engagement, by = 'id') %>%
+  # We define niw as waitlist and engagement as treatment/control for convinience
+  mutate(condition = case_when(
+    condition == 'control' ~ 'waitlist',
+    engagement.1 == 1 ~ 'treatment',
+    TRUE ~ 'control'
+  ))
+
+n_engaged = sum(d$engagement.1)
+
+sd.engagement.yes = d %>% filter(wave == 1, condition == 'treatment') %>% group_by(id) %>% summarize(v = sum(value)) %>% pull(v) %>% sd
+sd.engagement.no = d %>% filter(wave == 1, condition == 'control') %>% group_by(id) %>% summarize(v = sum(value)) %>% pull(v) %>% sd
+sd.engagement.niw = d %>% filter(wave == 1, condition == 'waitlist') %>% group_by(id) %>% summarize(v = sum(value)) %>% pull(v) %>% sd
+
+# Fit the growth model
+m <- model.growth(d, 'enagement', force = FALSE)
+
+# Extract posterior samples
+post <- extract.samples(m)
+
+# Compute expected growth links
+expected <- list(
+  growth_link(post, 1),
+  growth_link(post, 2),
+  growth_link(post, 3)
+)
+
+# Calculate deltas for WET, NIW, and WL conditions
+delta.treatment.yes <- (expected[[1]][, 1] - expected[[1]][, 4])/sd.engagement.yes
+delta.treatment.no <- (expected[[2]][, 1] - expected[[2]][, 4])/sd.engagement.no
+delta.treatment.niw <- (expected[[3]][, 1] - expected[[3]][, 4])/sd.engagement.niw
+delta.fu1.yes <- (expected[[1]][, 1] - expected[[1]][, 5])/sd.engagement.yes
+delta.fu1.no <- (expected[[2]][, 1] - expected[[2]][, 5])/sd.engagement.no
+delta.fu1.niw <- (expected[[3]][, 1] - expected[[3]][, 5])/sd.engagement.niw
+delta.fu2.yes <- (expected[[1]][, 1] - expected[[1]][, 6])/sd.engagement.yes
+delta.fu2.no <- (expected[[2]][, 1] - expected[[2]][, 6])/sd.engagement.no
+delta.fu2.niw <- (expected[[3]][, 1] - expected[[3]][, 6])/sd.engagement.niw
+```
+
+Most `r format_count_perc(n_engaged, nrow(d))` of the participants who completed WET were classified as having engaged with their identified core threat at least once across the four writing sessions.
+Across all stages, participants who engaged showed better outcomes than those who did not.
+
+During treatment, engaged participants showed a small advantage over non-engaged participants (`r format_estimate(delta.treatment.yes - delta.treatment.no)`).
+At the one-week follow-up the difference was larger and statistically reliable (`r format_estimate(delta.fu1.yes - delta.fu1.no)`), whereas at the two-month follow-up the estimated difference was smaller and less certain (`r format_estimate(delta.fu2.yes - delta.fu2.no)`).
+
+When compared with the NIW group, outcomes during treatment were similar (`r format_estimate(delta.treatment.yes - delta.treatment.niw)`).
+A modest advanage was observed for engagers at the one-week follow-up (`r format_estimate(delta.fu1.yes - delta.fu1.niw)`), and by the two-month follow-up the difference was larger and statistically reliable (`r format_estimate(delta.fu2.yes - delta.fu2.niw)`).
+
 ## Treatment Processes
 
-We now shift our focus to understanding the processes underlying change in WET.
 Our second, exploratory hypothesis proposed that the identified mechanisms of change would improve during therapy.
 Detailed results for WET are presented in Table 2.
 Below the table, we highlight the significant findings in WET, alongside the corresponding effects observed in the NIW group.
@@ -270,19 +332,20 @@ d.mcq_danger.ew = get_change(process_models[['mcq_danger']], condition = 'ew')
 
 Distress tolerance (DTS) improved significantly in the WET group (`r format_estimate(-d.dts)`), while it somewhat deteriorated in the NIW group (`r format_estimate(-d.dts.ew)`).
 The difference between the groups was statistically significant (`r format_estimate(d.dts.ew - d.dts)`), aligning with our expectations.
-WET likely encouraged participants to tolerate distress through structured exposure, whereas NIW may have reinforced avoidance behaviors.
+WET likely encouraged participants to tolerate distress through structured exposure, whereas NIW may have reinforced distress tolerance and avoidance.
 
 Positive self-schemas, as measured by the BCSS, increased significantly in WET (`r format_estimate(-d.bcss_self_pos)`), suggesting that the intervention fostered more adaptive self-beliefs.
 In contrast, no significant change was found in the NIW group (`r format_estimate(-d.bcss_self_pos.ew)`).
-
 Perceived impact of future events (IFES) decreased significantly in the WET group (`r format_estimate(d.ifs)`).
 No significant change was observed in the NIW group (`r format_estimate(d.ifs.ew)`).
+No significant between group differences were found for both of these.
 
-For metacognitions measured by the MCQ, both (lack of) cognitive confidence (`r format_estimate(d.mcq_confidence)`) and negative beliefs about uncontrollability and danger (`r format_estimate(d.mcq_danger)`) increased significantly in WET.
+For metacognitions measured by the MCQ, both maladaptive indices-(lack of) cognitive confidence (`r format_estimate(d.mcq_confidence)`) and negative beliefs about uncontrollability and danger (`r format_estimate(d.mcq_danger)`) increased significantly in WET.
 However, no significant changes were found in the NIW group for either (lack of) cognitive confidence (`r format_estimate(d.mcq_confidence.ew)`) or negative beliefs about uncontrollability and danger (`r format_estimate(d.mcq_danger.ew)`).
+The only significant between group difference was found in (lack of) cognitive confidence (`r format_estimate(d.mcq_confidence.ew - d.mcq_confidence)`).
 
 These findings suggest several potential mechanisms of change for WET, which we investigate in the upcoming section.
-The other mechanisms did not improve and thus will not be analyzed.
+The other mechanisms did not improve and thus were not analyzed.
 
 ## Mechanisms of Change
 
@@ -302,7 +365,7 @@ The only process found both to respond to WET and to change alongside symptoms w
 The correlation between changes in DTS and symptoms during treatment was `r format_estimate(r.dts, estimand = '*r*')`.
 Given that NIW actively *decreased* distress tolerance, we investigated the effect of change in distress tolerance on change in symptoms within NIW as well.
 We found that in contrast with WET, in NIW an increase in distress tolerance was actually correlated with an increase in symptoms `r format_estimate(r.dts.ew, estimand = '*r*')`.
-This suggests a differential process where in WET distress tolerance decreases anxiety whereas in NIW anxiety is decreased via distraction and avoiding stress.
+This suggests a differential process where in WET distress tolerance decreases anxiety whereas in NIW anxiety is decreased via sensitization to distress, likely via distraction and avoidance.
 
 No processes were significantly predictive of change at follow-up.
 However, improvements in positive self-schema (`r format_estimate(r.bcss_self_pos, estimand = '*r*')`), cognitive confidence (`r format_estimate(r.mcq_confidence, estimand = '*r*')`), and a reduction in negative beliefs about uncontrollability and danger (`r format_estimate(r.mcq_danger, estimand = '*r*')`) all weakly predicted change at follow-up.
@@ -338,9 +401,9 @@ In contrast, the WET group’s anxiety levels remained high and stable, consiste
 
 By the second session, both groups had established new patterns:
 the NIW group maintained the reduced anxiety achieved after session one, while the WET group experienced a significant reduction in anxiety even below that of the NIW group.
-This between-session reduction in state anxiety predicted improvements in trait anxiety (OASIS), in line with meta-analysis showing that between session habituation is correlated with treatment outcome [e.g., @ruppEmotionalProcessingTheory2017].
+This between-session reduction in state anxiety predicted improvements in trait anxiety (OASIS), in line with meta-analysis showing that between session fear reduction is correlated with treatment outcome [e.g., @ruppEmotionalProcessingTheory2017].
 However, stronger correlations were found in the WET group (`r format_estimate(r.bsam.change.all, estimand = '*r*')`) than in the NIW group (`r format_estimate(r.bsam.change.all.ew, estimand = '*r*')`).
-It is reasonable to hypothesize that the reduction in trait anxiety in response to the core threat is caused by decrease in DTS, as seen above.
+It is reasonable to hypothesize that the reduction in state anxiety in response to the core threat is caused by decrease in DTS, as seen above.
 However, no correlation was found between change in DTS and change in state anxiety (`r format_estimate(r.dts.bsam.wet, estimand = '*r*')`).
 
 The distinct trajectory of state anxiety in the WET group suggests a unique mechanism of change.
@@ -351,4 +414,14 @@ For the NIW group, writing reduced state anxiety, while for the WET group, it in
 This result serves as a manipulation check and aligns with the interventions' instructions: WET participants were encouraged to actively engage with their fears, while NIW participants were guided to distract themselves from them.
 
 Interestingly, there was evidence of a slight reduction in the magnitude of within-session anxiety increases over time in the WET group.
-This trend suggests that participants may have become more accustomed to the task, potentially reflecting a process of habituation.
+This trend suggests that participants may have become more accustomed to the task, potentially reflecting a process of habituation or extinction.
+
+## Acceptability and Engagement
+
+In the present study, most participants reported that the instructions were clear; a minority indicated difficulty understanding the instructions to return to the same script, which will be clarified in future versions.
+Task difficulty was reported by 25% of participants in the NIW condition and 26% in the WET condition, whereas 42% and 26%, respectively, described the task as pleasant or useful.
+At the two-month follow-up, 25% of NIW participants and 55% of WET participants reported improvements in quality of life, and 38% and 41%, respectively, reported continued application of skills learned during the intervention.
+
+A trained judge rated whether participants meaningfully engaged with their identified core threat at any point across the four writing sessions.
+Thirty-one of fifty participants were judged to have engaged with their core threat.
+Participants who engaged tended to show greater improvement, particularly at the two-month follow-up.

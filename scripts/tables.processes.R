@@ -44,7 +44,7 @@ table_data %>%
     col_spanners = list(Mean = 2:3, Change = c(4,6) ),
     stub_indents = list(TAF = 4:5, BCSS = 6:9, MCQ = 10:14),
     span_text_columns = TRUE,
-    note = "DTS = distress tolerance; SCS = self-compassion; IFES = impact of future events; TAF = thought–action fusion; BCSS = beliefs about self and others; MCQ = metacognitive beliefs. Higher scores indicate greater symptom severity, except for measures marked with †, which are strength-based.",
+    note = "DTS = Distress Tolerance; SCS = Self-Compassion; IFES = Impact of Future Events; TAF = Thought–Action Fusion; BCSS = Beliefs about Self and Others; MCQ = Metacognitive Beliefs. Higher scores indicate greater symptom severity, except for measures marked with †, which are strength-based.",
     escape = TRUE
   )
 

@@ -20,20 +20,29 @@ It would be great if you could comment on whether this has been considered in ad
 We appreciate the editor’s thoughtful comment.
 The intervention was refined through multiple iterative pilots (two to three participants per cycle), each followed by structured feedback on clarity, difficulty, and engagement until the protocol was judged acceptable and feasible.
 In the present study, participants again evaluated the intervention’s clarity and usefulness.
-Most reported that the instructions were clear; a minority noted difficulty understanding the instruction to return to the same script, which will be clarified in future versions.
+Most reported that the instructions were clear; a minority noted difficulty understanding the instructions to return to the same script, which will be clarified in future versions.
 
 Regarding acceptability, 25% of participants in the neutral-imagery writing (NIW) condition and 26% in the written exposure therapy (WET) condition described the task as difficult, whereas 42% (NIW) and 26% (WET) rated it as pleasant or useful.
 At the two-month follow-up, 25% of NIW participants and 55% of WET participants reported improvements in quality of life, and 38% and 41%, respectively, reported continued use of skills learned during the intervention.
 Together, these data indicate that the intervention was generally well-accepted and that iterative participant feedback informed its refinement and delivery.
-This was added to the manuscript, as follows under the heading "Stakeholder Feedback and Acceptability)
+This was added to the manuscript in appropriate locations:
 
-> **Stakeholder Feedback and Acceptability**
+Methods:
+
+> **Intervention Development and Acceptability:**
 The intervention was developed iteratively through repeated pilot administrations (two to three participants per cycle), each followed by structured feedback regarding clarity, difficulty, and engagement.
-Revisions continued until the protocol was judged acceptable and effective.
-In the present study, most participants reported that the instructions were clear; a minority indicated difficulty understanding the instruction to return to the same script, which will be clarified in future versions.
-Task difficulty was reported by 25% of participants in the NIW condition and 26% in the WET condition, whereas 42% and 26%, respectively, described the task as pleasant or useful.
-At the two-month follow-up, 25% of NIW participants and 55% of WET participants reported improvements in quality of life, and 38% and 41%, respectively, reported continued application of skills learned during the intervention.
-These findings indicate that the intervention was acceptable and generally well-received, with specific procedural elements that can be refined through additional participatory feedback.
+Revisions were made across cycles until the protocol was judged acceptable for implementation.
+Acceptability and perceived usefulness were assessed in the present study using post-intervention and follow-up self-report items.
+
+Results:
+
+> Most participants reported that the instructions were clear, although a minority indicated difficulty understanding the requirement to return to the same script across sessions.
+The task was described as difficult by 26% of participants in the WET condition and 25% in the NIW condition, whereas 26% and 42%, respectively, described it as pleasant or useful.
+At the two-month follow-up, 55% of WET participants and 25% of NIW participants reported improvements in quality of life, and 41% and 38%, respectively, reported continued application of skills learned during the intervention.
+
+Discussion:
+
+> Beyond symptom change, both interventions were rated as highly credible, suggesting that participants perceived them as logical and emotionally compelling. Although a minority of participants described the writing task as difficult, overall acceptability was high, and many participants—particularly in the WET condition—reported improvements in quality of life and continued application of learned skills at follow-up. Importantly, judge-rated engagement with core threats was associated with greater symptom improvement, especially at two months, highlighting engagement as a potential implementation-sensitive factor. Together, these findings suggest that self-guided WET is not only effective but also acceptable and feasible, while underscoring the importance of optimizing instructional clarity and engagement to maximize longer-term benefit.
 
 ---
 
@@ -79,7 +88,7 @@ We clarified this intention within the manuscript (in the methods mechanisms sec
 
 > Our second research question investigates the role of mechanisms in change in pathological anxiety.
 Following Kazdin’s [-@kazdinMediatorsMechanismsChange2007] framework for mechanisms research, the present study intentionally employed a broad exploratory approach to identify potential targets for future confirmatory work.
-While establishing causality is difficult [see @eronenCausalDiscoveryProblem2020], our goal is to identify correlations that may signal causal relationships.
+While establishing causality is difficult [see @eronenCausalDiscoveryProblem2020], our goal is to identify correlations that may signal candidate causal relationships.
 
 ---
 
@@ -97,13 +106,14 @@ To make this clearer, we revised the relevant section to explicitly distinguish 
 We also added a note emphasizing the need for future dose–response studies to determine the minimal intervention “dose” required to elicit reliable reductions in threat responses, and whether such early mechanism change alone is sufficient to produce sustained symptom improvement (see Discussion, Responses to Core Threats).
 
 >Central to pathological fear is an inflated sense of threat, making perceived threat reduction key to alleviating anxiety [@zlotnickMotivationalAnatomyFear2025].
-Our findings showed WET reduced response to core threats more effectively than NIW.
-The rate of threat-response reduction between Sessions 1 and 2 predicted symptom improvement by Session 4, supporting temporal precedence.
+Our findings showed WET reduced fear responses to core threats more effectively than NIW.
+The rate of fear reduction between Sessions 1 and 2 predicted symptom improvement by Session 4, supporting temporal precedence.
 
->Most change in core threat responses occurred early, with minimal additional reduction thereafter despite continued symptom improvements.
-This pattern suggests that early engagement with feared material may rapidly reduce perceived threat, while later sessions might improve these gains through processes such as distress tolerance or mastery.
-Future research should test the dose–response relationship between intervention exposure and the degree of core threat reduction, and determine whether such early mechanism change is sufficient to produce enduring symptom improvement.
+>Most change in fear responses occurred early, with minimal additional reduction thereafter despite continued symptom improvements.
+This pattern suggests that early engagement with threat material may rapidly reduce fear, while later sessions might improve these gains through processes such as distress tolerance or mastery.
+Future research should test the dose–response relationship between intervention exposure and the degree of core threat fear reduction, and determine whether such early mechanism change is sufficient to produce enduring symptom improvement.
 Additionally, future iterations could examine whether refining writing scripts to better target “hot spots”—as done in WET for PTSD [@sloanWrittenExposureTherapy2019]—enhances the maintenance or magnitude of threat-reduction effects.
+
 
 ---
 
@@ -126,11 +136,32 @@ Nonetheless, the findings highlight the importance of enhancing engagement—for
 Future work will examine inter-rater reliability and imagery immersion (present tense, sensory, and emotional detail) as complementary indicators of engagement quality.
 We add this to the discussion in the Responses to Core Threats section.
 
+@JDH: how much??????????????????????????????????????
+
 > A trained judge also rated whether participants meaningfully engaged with their identified core threat at any point across the four writing sessions.
 Thirty-one of fifty participants were judged to have engaged with their core threat.
 Participants who engaged tended to show greater improvement, particularly at the two-month follow-up.
 Although this analysis was exploratory and not preregistered, it suggests that enhancing engagement—for example, through adaptive or self-feedback mechanisms—may strengthen treatment effects.
 Future work will evaluate inter-rater reliability and imagery immersion (e.g., present-tense, sensory, and emotional content) as complementary markers of engagement quality.
+
+
+**Methods**
+> Following reviewer feedback, we conducted a manualized content-coding procedure to assess core-threat engagement in the writing exercises.
+Two independent judges classified each four-wave exercise as either core-threat engaged or not engaged, based on whether at least one wave explicitly and emotionally engaged the participant’s pre-identified core threat.
+Coding followed a conservative, binary decision rule to minimize inference and maximize inter-rater reliability.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 
@@ -146,7 +177,7 @@ Future work will evaluate inter-rater reliability and imagery immersion (e.g., p
 
 We thank the reviewer for these helpful observations.
 
-1. **Table notes.** Explanatory notes have been added below all tables to clarify the meaning of abbreviations and variables. For example, Table 1 now includes the note: "*OASIS = transdiagnostic anxiety severity; WSAS = functional impairment.*" These additions make each table self-contained while avoiding redundancy with the Methods section.
+1. **Table notes.** Explanatory notes have been added below all tables to clarify the meaning of abbreviations and variables. For example, Table 1 now includes the note: "*OASIS = Overall Anxiety Severity and Impairment Scale; WSAS = Work and Social Adjustment Scale.*" These additions make each table self-contained while avoiding redundancy with the Methods section.
 
 2. **Typos.** The manuscript has been rechecked for spelling errors.
 
@@ -223,10 +254,10 @@ These revisions collectively clarify both the theoretical rationale and operatio
 To link these theoretical constructs with measurable processes, each mechanism was operationalized using validated self-report instruments assessing the relevant emotional, cognitive, or regulatory domain. Changes in perceived threat were indexed by state anxiety during imaginal exposure (BSAM). Distress tolerance (DTS), thought–action fusion (TAF-R), negative beliefs about imagery and memory (MCQ-30 subscales), reactions to future imagery (IFES), and self-compassion (SCS-SF) were assessed to capture complementary dimensions of exposure-related change. Together, these measures allowed us to examine whether distinct yet interrelated processes accounted for improvement in anxiety symptoms during WET.
 
 > To identify processes that may mediate change, we examined both fear-specific and fear-agnostic mechanisms previously linked to exposure-based interventions.
-Reductions in perceived threat, indexed by state anxiety during imagining the core threat [BSAM; @bergAreEmotionsFrightening1998], reflect habituation or extinction processes.
-Broader regulatory and cognitive mechanisms included distress tolerance [DTS; @simonsDistressToleranceScale2005], reflecting the ability to endure negative emotion, self-compassion [SCS; @raesConstructionFactorialValidation2011], representing adaptive self-relating and emotional regulation; and thought–action fusion [TAF-R; @shafranThoughtactionFusionObsessive1996], the belief that thoughts can cause or prevent real outcomes.
-Metacognitive beliefs [MCQ-30; @wellsShortFormMetacognitions2004] and core schemas [BCSS; @fowlerBriefCoreSchema2006] indexed higher-order beliefs about control, self, and others.
-Finally, imagery-specific reactions [IFES; @deeproseMeasuringIntrusiveProspective2011] captured distress, intrusiveness, and avoidance in response to personally salient imagery.
+Reductions in fear, indexed by state anxiety during imagining the core threat [BSAM\; @bergAreEmotionsFrightening1998], reflect habituation or extinction processes.
+Broader regulatory and cognitive mechanisms included distress tolerance [DTS\; @simonsDistressToleranceScale2005], reflecting the ability to endure negative emotion, self-compassion [SCS\; @raesConstructionFactorialValidation2011], representing adaptive self-relating and emotional regulation; and thought–action fusion [TAF-R\; @shafranThoughtactionFusionObsessive1996], the belief that thoughts can cause or prevent real outcomes.
+Metacognitive beliefs [MCQ-30\; @wellsShortFormMetacognitions2004] and core schemas [BCSS\; @fowlerBriefCoreSchema2006] indexed higher-order beliefs about control, self, and others.
+Finally, imagery-specific reactions [IFES\; @deeproseMeasuringIntrusiveProspective2011] captured distress, intrusiveness, and avoidance in response to personally salient imagery.
 Together, these constructs span both targeted and transdiagnostic mechanisms, allowing a comprehensive view of how WET may promote change across emotional, cognitive, and regulatory domains.
 
 ---
@@ -262,7 +293,7 @@ It guides participants through examples and clarification prompts to ensure that
 And in the discussion as part of the limitations:
 
 > Finally, the intervention targeted a single core threat identified by each participant.
-We believe this approach captures the central motivational theme underlying multiple situational fears and thus provides efficient coverage of the broader threat system.
+We believe this approach captures the central motivational theme underlying multiple situational fears and thus provides efficient coverage of the broader threat system [@zlotnickMotivationalAnatomyFear2025].
 Nevertheless, a single-target design cannot encompass all personally relevant threats, and future studies should examine whether addressing multiple core threats sequentially or hierarchically yields added benefit.
 
 **Reviewer #2 Comment 6: **
@@ -276,9 +307,11 @@ We thank the reviewer for this important clarification request.
 The psychoeducational materials presented to participants provided a concise rationale for exposure therapy grounded in both habituation and inhibitory-learning (fear-extinction) models.
 Participants were informed that avoidance prevents corrective learning and that confronting feared situations—real or imagined—allows anxiety to decrease naturally and promotes new, non-threat associations.
 
-To ensure transparency, we have added a short summary of this content to the *Procedure* section As follows:
+To ensure transparency, we have added a short summary of this content to the *Intervention* section As follows:
 
-> The WET group received exposure-based psychoeducation, which emphasized how confronting distressing material could reduce emotional impact over time.
+> **Written Exposure Therapy (WET).**
+Participants received brief exposure-based psychoeducation emphasizing that repeated engagement with distressing material reduces emotional impact [cf. @benitoMechanismsChangeExposure2024].
+They then repeatedly expanded their personalized threat script through detailed writing focused on feared content, attending to their thoughts and emotions.
 
 These additions clarify what is meant by “exposure-based psychoeducation” in the current study and make the materials accessible without reliance on the supplementary files.
 We ensured that the supplementary materials, including full instructions, are now accessible.

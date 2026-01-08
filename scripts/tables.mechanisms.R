@@ -46,6 +46,6 @@ table_data %>%
                   '89\\% CI',
                   'P(>0)'),
     col_spanners = list(Treatment = c(2,4), Followup = c(5,7)),
-    note = "DTS = distress tolerance; IFES = impact of future events; BCSS = beliefs about self and others. Higher scores indicate greater symptom severity, except for measures marked with †, which are strength-based.",
+    note = "DTS = Distress Tolerance; IFES = Impact of Future Events; BCSS = Beliefs about Self and others. Higher scores indicate greater symptom severity, except for measures marked with †, which are strength-based.",
     escape = TRUE
   )
