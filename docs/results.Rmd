@@ -261,7 +261,7 @@ d <- data_long %>%
     TRUE ~ 'control'
   ))
 
-n_engaged = sum(d$engagement.1)
+n_engaged = sum(raw.engagement$engagement.1)
 
 sd.engagement.yes = d %>% filter(wave == 1, condition == 'treatment') %>% group_by(id) %>% summarize(v = sum(value)) %>% pull(v) %>% sd
 sd.engagement.no = d %>% filter(wave == 1, condition == 'control') %>% group_by(id) %>% summarize(v = sum(value)) %>% pull(v) %>% sd
@@ -292,14 +292,14 @@ delta.fu2.no <- (expected[[2]][, 1] - expected[[2]][, 6])/sd.engagement.no
 delta.fu2.niw <- (expected[[3]][, 1] - expected[[3]][, 6])/sd.engagement.niw
 ```
 
-Most `r format_count_perc(n_engaged, nrow(d))` of the participants who completed WET were classified as having engaged with their identified core threat at least once across the four writing sessions.
+Most `r format_count_perc(n_engaged, nrow(raw.engagement))` of the participants who completed WET were classified as having engaged with their identified core threat at least once across the four writing sessions.
 Across all stages, participants who engaged showed better outcomes than those who did not.
 
 During treatment, engaged participants showed a small advantage over non-engaged participants (`r format_estimate(delta.treatment.yes - delta.treatment.no)`).
 At the one-week follow-up the difference was larger and statistically reliable (`r format_estimate(delta.fu1.yes - delta.fu1.no)`), whereas at the two-month follow-up the estimated difference was smaller and less certain (`r format_estimate(delta.fu2.yes - delta.fu2.no)`).
 
 When compared with the NIW group, outcomes during treatment were similar (`r format_estimate(delta.treatment.yes - delta.treatment.niw)`).
-A modest advanage was observed for engagers at the one-week follow-up (`r format_estimate(delta.fu1.yes - delta.fu1.niw)`), and by the two-month follow-up the difference was larger and statistically reliable (`r format_estimate(delta.fu2.yes - delta.fu2.niw)`).
+A modest advantage was observed for engagers at the one-week follow-up (`r format_estimate(delta.fu1.yes - delta.fu1.niw)`), and by the two-month follow-up the difference was larger and statistically reliable (`r format_estimate(delta.fu2.yes - delta.fu2.niw)`).
 
 ## Treatment Processes
 
@@ -418,7 +418,7 @@ This trend suggests that participants may have become more accustomed to the tas
 
 ## Acceptability and Engagement
 
-In the present study, most participants reported that the instructions were clear; a minority indicated difficulty understanding the instructions to return to the same script, which will be clarified in future versions.
+In the present study, most participants reported that the instructions were clear; a minority indicated difficulty understanding the instructions to return to the same script.
 Task difficulty was reported by 25% of participants in the NIW condition and 26% in the WET condition, whereas 42% and 26%, respectively, described the task as pleasant or useful.
 At the two-month follow-up, 25% of NIW participants and 55% of WET participants reported improvements in quality of life, and 38% and 41%, respectively, reported continued application of skills learned during the intervention.
 

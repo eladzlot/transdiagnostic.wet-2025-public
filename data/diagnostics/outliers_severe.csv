@@ -1,0 +1,21 @@
+id,condition.x,wave,measure,question,value,Age,Sex,Ethnicity,Country,Employment,condition.y,completed,oasis,wsas,model,row_id,p_waic,pareto_k,flag_waic,flag_psis,flag_both,flag_psis_severe,condition
+159,NA,1,taf_m,19,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,change.taf_m,1848,0.7352511170495184,0.7402745642190267,FALSE,TRUE,FALSE,TRUE,treatment
+10,NA,4,taf_l,5,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,change.taf_l,79,0.401952801942568,0.7098928833241157,FALSE,TRUE,FALSE,TRUE,control
+40,NA,1,taf_l,14,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,change.taf_l,286,1.0143813134694417,0.8254323186405693,TRUE,TRUE,TRUE,TRUE,treatment
+60,NA,4,taf_l,16,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,change.taf_l,371,1.2675567588296879,0.7804638079236274,TRUE,TRUE,TRUE,TRUE,treatment
+73,NA,1,taf_l,16,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,change.taf_l,490,0.9260100629650174,0.9326191413915798,FALSE,TRUE,FALSE,TRUE,treatment
+78,NA,1,taf_l,2,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,change.taf_l,512,1.2582259687695325,0.9098120177120147,TRUE,TRUE,TRUE,TRUE,control
+22,NA,4,mcq_confidence,17,1,NA,NA,NA,NA,NA,NA,NA,NA,NA,change.mcq_confidence,147,6.407822209584564e-4,0.7039326130417122,FALSE,TRUE,FALSE,TRUE,treatment
+38,NA,4,mcq_confidence,26,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,change.mcq_confidence,239,0.6236017977334569,0.7575418921218716,FALSE,TRUE,FALSE,TRUE,treatment
+43,NA,1,mcq_confidence,17,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,change.mcq_confidence,249,1.2408586915491515,0.7573917193733788,TRUE,TRUE,TRUE,TRUE,treatment
+117,NA,4,mcq_confidence,8,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,change.mcq_confidence,661,0.47598769414060493,0.77915649664821,FALSE,TRUE,FALSE,TRUE,treatment
+147,NA,1,mcq_confidence,24,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,change.mcq_confidence,850,1.7617228960244802,0.7638389494626875,TRUE,TRUE,TRUE,TRUE,treatment
+29,NA,4,mcq_worry,10,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,change.mcq_worry,189,0.9031547477124162,0.7203866939577465,FALSE,TRUE,FALSE,TRUE,control
+120,NA,1,mcq_worry,23,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,change.mcq_worry,695,0.7945904017292418,0.7650294032352319,FALSE,TRUE,FALSE,TRUE,treatment
+146,NA,1,mcq_worry,28,2,NA,NA,NA,NA,NA,NA,NA,NA,NA,change.mcq_worry,846,1.0599705113746012,0.7640349911475806,TRUE,TRUE,TRUE,TRUE,treatment
+10,NA,1,mcq_self,30,3,NA,NA,NA,NA,NA,NA,NA,NA,NA,change.mcq_self,66,0.869994664646343,0.8885767905326765,FALSE,TRUE,FALSE,TRUE,control
+159,treatment,1,oasis,3,1,66,Male,White,United Kingdom,Part-Time,treatment,FALSE,9,17,mechanism.bcss_self_pos.oasis,1338,0.5381272821923746,0.7154234464617752,FALSE,TRUE,FALSE,TRUE,NA
+165,treatment,6,oasis,5,0,27,Male,Black,United Kingdom,Full-Time,treatment,TRUE,6,17,mechanism.bcss_self_pos.oasis,1470,2.3152184109581643e-5,0.7385824737365674,FALSE,TRUE,FALSE,TRUE,NA
+146,treatment,1,oasis,5,2,28,Female,White,United Kingdom,Other,treatment,FALSE,8,9,mechanism.ifs.oasis,1195,0.2455417477349623,0.7261918449715475,FALSE,TRUE,FALSE,TRUE,NA
+165,treatment,6,oasis,5,0,27,Male,Black,United Kingdom,Full-Time,treatment,TRUE,6,17,mechanism.bsam.change.all.oasis,1470,4.673064507152794e-5,0.7095688591301019,FALSE,TRUE,FALSE,TRUE,NA
+128,control,6,oasis,1,1,22,Female,Black,South Africa,Part-Time,control,TRUE,13,26,mechanism.dts.ew.oasis,566,0.2023171047215394,0.7206167531111258,FALSE,TRUE,FALSE,TRUE,NA

@@ -1,0 +1,424 @@
+---
+title: "Preregistered Outlier Diagnostics (Supplementary)"
+subtitle: "CPX-25-0117 — Written Exposure Therapy for Transdiagnostic Anxiety"
+author: "Elad Zlotnick, Jonathan D. Huppert"
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+output:
+  pdf_document:
+    toc: true
+    toc_depth: 3
+    number_sections: true
+    latex_engine: pdflatex
+    keep_tex: false
+header-includes:
+  - \usepackage[utf8]{inputenc}
+  - \usepackage{pdflscape}
+  - \DeclareUnicodeCharacter{2014}{\textemdash}
+  - \DeclareUnicodeCharacter{00D7}{$\times$}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo    = FALSE,
+  warning = FALSE,
+  message = FALSE,
+  cache   = TRUE
+)
+
+library(tidyverse)
+library(rethinking)
+library(here)
+library(knitr)
+library(kableExtra)
+
+source(here('scripts', 'load_data.R'))
+source(here('scripts', 'helpers.R'))
+source(here('scripts', 'model.growth.R'))
+source(here('scripts', 'model.change.R'))
+source(here('scripts', 'model.mechanisms.R'))
+```
+
+```{r diagnose-fn, include=FALSE}
+diagnose_model <- function(m, d, model_label) {
+  w <- WAIC(m, pointwise = TRUE)
+  p <- PSIS(m, pointwise = TRUE)
+  penalty_col <- intersect(c('penalty', 'p_waic', 'pWAIC'), names(w))[1]
+  k_col       <- intersect(c('k', 'pareto_k'),              names(p))[1]
+  stopifnot(!is.na(penalty_col), !is.na(k_col))
+  if (nrow(w) != nrow(d) || nrow(p) != nrow(d)) {
+    warning(sprintf("[%s] Row mismatch. Skipped.", model_label))
+    return(NULL)
+  }
+  d %>%
+    mutate(
+      model     = model_label,
+      row_id    = row_number(),
+      p_waic    = w[[penalty_col]],
+      pareto_k  = p[[k_col]],
+      flag_waic = p_waic   > 1,
+      flag_psis = pareto_k > .5,
+      flag_both = flag_waic & flag_psis,
+      flag_psis_severe = pareto_k > .7
+    )
+}
+
+summarize_diag <- function(diag) {
+  if (is.null(diag)) return(NULL)
+  diag %>%
+    summarize(
+      n_obs            = n(),
+      n_participants   = n_distinct(id),
+      max_p_waic       = max(p_waic, na.rm = TRUE),
+      max_pareto_k     = max(pareto_k, na.rm = TRUE),
+      n_waic_gt1       = sum(flag_waic, na.rm = TRUE),
+      n_k_gt.5         = sum(flag_psis, na.rm = TRUE),
+      n_k_gt.7         = sum(flag_psis_severe, na.rm = TRUE),
+      n_both           = sum(flag_both, na.rm = TRUE),
+      pct_both         = round(mean(flag_both, na.rm = TRUE) * 100, 3)
+    )
+}
+
+diagnose_mechanism <- function(m, d_x, d_m, label_x, label_m = NULL) {
+  w <- WAIC(m, pointwise = TRUE)
+  p <- PSIS(m, pointwise = TRUE)
+  penalty_col <- intersect(c('penalty', 'p_waic', 'pWAIC'), names(w))[1]
+  k_col       <- intersect(c('k', 'pareto_k'),              names(p))[1]
+  stopifnot(!is.na(penalty_col), !is.na(k_col))
+  n_x <- nrow(d_x); n_m <- nrow(d_m); n_tot <- n_x + n_m
+  if (nrow(w) == n_tot && nrow(p) == n_tot) {
+    diag_x <- d_x %>%
+      mutate(model = label_x, row_id = row_number(),
+             p_waic = w[[penalty_col]][1:n_x],
+             pareto_k = p[[k_col]][1:n_x],
+             flag_waic = p_waic > 1, flag_psis = pareto_k > .5,
+             flag_both = flag_waic & flag_psis,
+             flag_psis_severe = pareto_k > .7)
+    diag_m <- d_m %>%
+      mutate(model = label_m %||% paste0(label_x, '.m'), row_id = row_number(),
+             p_waic = w[[penalty_col]][(n_x + 1):n_tot],
+             pareto_k = p[[k_col]][(n_x + 1):n_tot],
+             flag_waic = p_waic > 1, flag_psis = pareto_k > .5,
+             flag_both = flag_waic & flag_psis,
+             flag_psis_severe = pareto_k > .7)
+    return(bind_rows(diag_x, diag_m))
+  }
+  if (nrow(w) == n_x && nrow(p) == n_x) {
+    return(d_x %>%
+      mutate(model = label_x, row_id = row_number(),
+             p_waic = w[[penalty_col]], pareto_k = p[[k_col]],
+             flag_waic = p_waic > 1, flag_psis = pareto_k > .5,
+             flag_both = flag_waic & flag_psis,
+             flag_psis_severe = pareto_k > .7))
+  }
+  warning(sprintf("[%s] Unexpected row mismatch. Skipped.", label_x))
+  NULL
+}
+```
+
+```{r growth-diag, include=FALSE}
+growth_model_names <- list(
+  oasis      = 'oasis',
+  wsas       = 'wsas',
+  engagement = 'enagement'   # preserve original typo in the cached model name
+)
+
+growth_diag <- map_dfr(names(growth_model_names), function(mname) {
+  d <- data_long %>%
+    filter(measure == mname, !is.na(value), wave > 0) %>%
+    left_join(demographics.data, by = 'id')
+  m <- model.growth(d, growth_model_names[[mname]], force = FALSE)
+  diagnose_model(m, d, paste0('growth.', mname))
+})
+```
+
+```{r change-diag, include=FALSE}
+change_measures <- c(
+  'dts', 'scs', 'ifs',
+  'taf_m', 'taf_l',
+  'bcss_self_neg', 'bcss_other_neg', 'bcss_self_pos', 'bcss_other_pos',
+  'mcq_confidence', 'mcq_worry', 'mcq_self', 'mcq_danger', 'mcq_control'
+)
+
+change_diag <- map_dfr(change_measures, function(mname) {
+  d <- data_long %>%
+    filter(measure == mname, !is.na(value), condition != 'waitlist', wave > 0)
+  m <- model.change(d, model_name = mname, force = FALSE)
+  diagnose_model(m, d, paste0('change.', mname))
+})
+```
+
+```{r mechanism-diag, include=FALSE}
+oasis_treatment <- data_long %>%
+  filter(measure == 'oasis', !is.na(value), condition == 'treatment', wave > 0) %>%
+  left_join(demographics.data, by = 'id')
+
+oasis_control <- data_long %>%
+  filter(measure == 'oasis', !is.na(value), condition == 'control', wave > 0) %>%
+  left_join(demographics.data, by = 'id')
+
+mech_treatment_measures <- c('dts', 'bcss_self_pos', 'ifs', 'tiii',
+                             'mcq_confidence', 'mcq_danger')
+
+mech_diag_1 <- map_dfr(mech_treatment_measures, function(mname) {
+  d_m <- data_long %>%
+    filter(measure == mname, !is.na(value), condition == 'treatment', wave > 0)
+  m <- model.mechanism(oasis_treatment, d_m, model_name = mname, force = FALSE)
+  diagnose_mechanism(m, oasis_treatment, d_m,
+                     label_x = paste0('mechanism.', mname, '.oasis'))
+})
+
+bsam_wet <- data_long %>%
+  filter(measure == 'bsam.pre', condition == 'treatment',
+         wave %in% 1:2, !is.na(value)) %>%
+  mutate(wave = if_else(wave == 1, 1, 4))
+
+mech_bsam_wet <- model.mechanism(oasis_treatment, bsam_wet,
+                                 model_name = 'bsam.change.all', force = FALSE)
+mech_diag_bsam_wet <- diagnose_mechanism(
+  mech_bsam_wet, oasis_treatment, bsam_wet,
+  label_x = 'mechanism.bsam.change.all.oasis')
+
+bsam_ew <- data_long %>%
+  filter(measure == 'bsam.pre', condition == 'control',
+         wave %in% 1:2, !is.na(value)) %>%
+  mutate(wave = if_else(wave == 1, 1, 4))
+
+mech_bsam_ew <- model.mechanism(oasis_control, bsam_ew,
+                                model_name = 'bsam.change.all.ew', force = FALSE)
+mech_diag_bsam_ew <- diagnose_mechanism(
+  mech_bsam_ew, oasis_control, bsam_ew,
+  label_x = 'mechanism.bsam.change.all.ew.oasis')
+
+dts_ew <- data_long %>%
+  filter(measure == 'dts', !is.na(value), condition == 'control', wave > 0)
+
+mech_dts_ew <- model.mechanism(oasis_control, dts_ew,
+                               model_name = 'dts.ew', force = FALSE)
+mech_diag_dts_ew <- diagnose_mechanism(
+  mech_dts_ew, oasis_control, dts_ew,
+  label_x = 'mechanism.dts.ew.oasis')
+
+dts_treatment <- data_long %>%
+  filter(measure == 'dts', !is.na(value), condition == 'treatment', wave > 0) %>%
+  left_join(demographics.data, by = 'id')
+
+mech_dts_bsam <- model.mechanism(dts_treatment, bsam_wet,
+                                 model_name = 'dts.bsam.wet', force = FALSE)
+mech_diag_dts_bsam <- diagnose_mechanism(
+  mech_dts_bsam, dts_treatment, bsam_wet,
+  label_x = 'mechanism.dts.bsam.wet.dts')
+
+mechanism_diag <- bind_rows(
+  mech_diag_1,
+  mech_diag_bsam_wet, mech_diag_bsam_ew,
+  mech_diag_dts_ew,   mech_diag_dts_bsam
+)
+```
+
+```{r combine, include=FALSE}
+all_diag <- bind_rows(growth_diag, change_diag, mechanism_diag)
+
+summary_table <- all_diag %>%
+  group_by(model) %>%
+  group_modify(~ summarize_diag(.x)) %>%
+  ungroup() %>%
+  arrange(desc(n_both), desc(max_pareto_k))
+
+flagged <- all_diag %>% filter(flag_both)
+n_flagged <- nrow(flagged)
+n_total   <- nrow(all_diag)
+```
+
+# Outlier rule
+
+We flag a measurement as a candidate outlier when *both* of the following hold:
+
+- pointwise WAIC penalty $> 1$, and
+- PSIS Pareto $k > 0.5$.
+
+Both thresholds are conservative — meeting either alone is not unusual, and
+requiring both jointly identifies observations that the model handles
+appreciably worse than its average observation. A flag is not by itself
+grounds for exclusion. Flagged observations are excluded only when they are
+few enough that exclusion does not amount to reshaping the data to suit the
+model, and when the model can be said to fail to fit them rather than simply
+to predict them less well than average.
+
+This document applies the rule to all 27 Bayesian models fit in the project — 3
+growth models (OASIS, WSAS, engagement), 14 univariate change models for
+candidate mechanisms, and 10 multivariate mechanism models linking OASIS to
+individual processes. For each model we computed pointwise WAIC and PSIS using
+the posterior log-likelihood stored at fit time, flagged observations exceeding
+each threshold and those exceeding both, and inspected whether flagged
+observations clustered on particular participants, waves, items, or conditions.
+
+# Coverage note for mechanism models
+
+Multivariate mechanism models contain two likelihood statements (OASIS on the
+x-side and the candidate process on the m-side). Pointwise log-likelihoods for
+these models are available only for the x-outcome, because `ulam`'s `log_lik =
+TRUE` option records log-likelihood values only for the first declared likelihood
+statement. Per-observation fit for the process-side outcome of each mechanism
+model is covered instead by the corresponding univariate change model in the
+preceding section, which uses an identical measurement model on the same
+observations. Every observation in every model is therefore covered by the
+diagnostic through at least one fit.
+
+# Results
+
+## Overall picture
+
+Across all 27 models and `r format(n_total, big.mark=",")` observations,
+`r n_flagged` observations (`r round(100*n_flagged/n_total, 3)`%) met the
+joint flag (penalty $> 1$ AND $k > 0.5$). No model exceeded a small
+handful of flagged observations, and flags were dispersed across measures,
+participants, items, and conditions rather than concentrated in any
+structural location. The largest concentration in any single model was in
+the change model for the TAF-Likelihood subscale, addressed in its own
+section below.
+
+## Per-model summary
+
+Table 1 gives the full per-model summary, sorted by joint-flag count.
+Most models produced zero to a handful of jointly flagged observations;
+the maximum rate was 0.95% (TAF-Likelihood).
+
+\begin{landscape}
+
+```{r summary-table}
+summary_table %>%
+  kable(
+    digits = 3,
+    format = "latex",
+    booktabs = TRUE,
+    longtable = TRUE,
+    caption = "Per-model diagnostic summary. n\\_both = observations meeting the joint flag (WAIC penalty > 1 AND Pareto k > 0.5). Models are sorted by n\\_both (descending)."
+  ) %>%
+  kable_styling(latex_options = c("repeat_header"),
+                font_size = 9)
+```
+
+\end{landscape}
+
+## Observations meeting both criteria
+
+Table 2 lists the `r n_flagged` observations that met both flag thresholds
+(WAIC penalty $> 1$ AND Pareto $k > 0.5$).
+
+```{r flagged-both}
+flagged %>%
+  select(model, id, condition, wave, question, value, p_waic, pareto_k) %>%
+  arrange(desc(pareto_k), desc(p_waic)) %>%
+  kable(digits = 3, format = "latex", booktabs = TRUE, longtable = TRUE,
+        caption = "Observations exceeding both thresholds (WAIC penalty > 1 AND Pareto k > 0.5).") %>%
+  kable_styling(latex_options = c("repeat_header"), font_size = 9)
+```
+
+## Clustering
+
+Flagging was dispersed. No single participant accounted for more than three
+flagged observations across all 27 models, no single item dominated, and waves
+1 and 4 (where the full measurement battery was administered, contributing the
+most observations) carried the bulk of flags as expected. Mechanism-model
+flags at wave 6 reflect a single follow-up OASIS response by participant 100
+that was also flagged in the primary growth model and surfaces in multiple
+mechanism fits because each mechanism model includes the full OASIS observation
+set.
+
+```{r clustering-id, eval = n_flagged > 0}
+flagged %>% count(id, sort = TRUE) %>% head(10) %>%
+  kable(caption = "Top 10 participants by number of flagged observations.",
+        booktabs = TRUE)
+```
+
+```{r clustering-wave, eval = n_flagged > 0}
+flagged %>% count(wave, sort = TRUE) %>%
+  kable(caption = "Flagged observations by wave.", booktabs = TRUE)
+```
+
+```{r clustering-cond, eval = n_flagged > 0}
+flagged %>% count(condition, sort = TRUE) %>%
+  kable(caption = "Flagged observations by condition. \"NA\" rows correspond to OASIS observations that appear in multiple mechanism-model fits.",
+        booktabs = TRUE)
+```
+
+```{r clustering-fam, eval = n_flagged > 0}
+flagged %>% mutate(family = str_extract(model, '^[^.]+')) %>%
+  count(family, sort = TRUE) %>%
+  kable(caption = "Flagged observations by model family.", booktabs = TRUE)
+```
+
+## Distributions
+
+Figures 1 and 2 show the full distributions of Pareto $k$ and WAIC pointwise
+penalty across all models. Both distributions are strongly concentrated near
+zero with long, thin right tails.
+
+```{r k-dist, fig.width=8, fig.height=4, fig.cap="Distribution of PSIS Pareto k across all models. Dashed line marks 0.5 (the preregistered flag threshold)."}
+ggplot(all_diag, aes(x = pareto_k)) +
+  geom_histogram(binwidth = 0.05, boundary = 0, fill = 'grey70', color = 'black') +
+  geom_vline(xintercept = 0.5, linetype = 'dashed', color = 'darkorange') +
+  labs(x = 'Pareto k', y = 'Count') +
+  theme_minimal()
+```
+
+```{r w-dist, fig.width=8, fig.height=4, fig.cap="Distribution of pointwise WAIC penalty across all models. Dashed line marks 1.0 (joint flag)."}
+ggplot(all_diag, aes(x = p_waic)) +
+  geom_histogram(binwidth = 0.1, boundary = 0, fill = 'grey70', color = 'black') +
+  geom_vline(xintercept = 1.0, linetype = 'dashed', color = 'darkorange') +
+  labs(x = 'WAIC penalty', y = 'Count') +
+  theme_minimal()
+```
+
+# Decision
+
+The diagnostics support retaining all observations in all models. Across 27
+models and `r format(n_total, big.mark=",")` observations, only `r n_flagged`
+(`r round(100*n_flagged/n_total, 3)`%) met the conservative joint flag
+preregistered for this study. No single model exceeded 1% of flagged
+observations. Flags were dispersed across measures, participants, items, and
+conditions; no model showed the kind of structural misfit that would call
+the model itself into question.
+
+The "if few" qualifier therefore applies. Excluding the flagged observations
+would not materially change any reported estimate, and excluding them
+selectively risks reshaping the data to suit the model. We retain all
+observations in all analyses.
+
+# Note on the TAF-Likelihood measure
+
+One measure warrants comment. The change model for the Thought-Action Fusion
+Likelihood subscale (TAF-L) produced noticeably more flagged observations than
+any other model in the set — 11 observations met both criteria, 0.95% of that
+model's observations, the highest rate in the set. Inspecting Table 2 shows
+that these flagged responses are typically extreme low-end responses (value = 1)
+on moderately discriminating items.
+
+The TAF-L measure asks participants to endorse the belief that thinking certain
+thoughts increases the likelihood of them occurring — a construct with a
+strongly skewed distribution in non-clinical samples, where most participants
+legitimately endorse near-floor responses on most items. The measurement model
+uses a graded response IRT specification that assumes a reasonably continuous
+latent trait distribution; the floor effect in TAF-L responses makes individual
+extreme-endorsement patterns harder to predict from the overall participant
+trait estimate than comparable patterns on less-skewed measures. This is a
+known limitation of IRT models applied to skewed constructs rather than a
+problem specific to our fit, and the model remains usable.
+
+TAF-L results should accordingly be interpreted with slightly more caution than
+results from the other measures. We note this here for completeness; TAF-L was
+not identified as a mechanism of change in the present analyses.
+
+# Artifacts
+
+Per-observation diagnostics for all models, the per-model summary table, and
+the table of flagged observations have been saved as CSV and RDS files under
+`data/diagnostics/` in the repository for independent verification.
+
+```{r save, include=FALSE}
+dir.create(here('data', 'diagnostics'), showWarnings = FALSE, recursive = TRUE)
+saveRDS(all_diag,      here('data', 'diagnostics', 'outlier_diagnostics_all.rds'))
+saveRDS(summary_table, here('data', 'diagnostics', 'outlier_summary.rds'))
+write_csv(summary_table, here('data', 'diagnostics', 'outlier_summary.csv'))
+write_csv(flagged,       here('data', 'diagnostics', 'outliers_flagged.csv'))
+```

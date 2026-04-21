@@ -20,7 +20,7 @@ It would be great if you could comment on whether this has been considered in ad
 We appreciate the editor’s thoughtful comment.
 The intervention was refined through multiple iterative pilots (two to three participants per cycle), each followed by structured feedback on clarity, difficulty, and engagement until the protocol was judged acceptable and feasible.
 In the present study, participants again evaluated the intervention’s clarity and usefulness.
-Most reported that the instructions were clear; a minority noted difficulty understanding the instructions to return to the same script, which will be clarified in future versions.
+Most reported that the instructions were clear; a minority noted difficulty understanding the instructions to return to the same script.
 
 Regarding acceptability, 25% of participants in the neutral-imagery writing (NIW) condition and 26% in the written exposure therapy (WET) condition described the task as difficult, whereas 42% (NIW) and 26% (WET) rated it as pleasant or useful.
 At the two-month follow-up, 25% of NIW participants and 55% of WET participants reported improvements in quality of life, and 38% and 41%, respectively, reported continued use of skills learned during the intervention.
@@ -36,9 +36,9 @@ Acceptability and perceived usefulness were assessed in the present study using 
 
 Results:
 
-> Most participants reported that the instructions were clear, although a minority indicated difficulty understanding the requirement to return to the same script across sessions.
-The task was described as difficult by 26% of participants in the WET condition and 25% in the NIW condition, whereas 26% and 42%, respectively, described it as pleasant or useful.
-At the two-month follow-up, 55% of WET participants and 25% of NIW participants reported improvements in quality of life, and 41% and 38%, respectively, reported continued application of skills learned during the intervention.
+>Most participants reported that the instructions were clear, although a minority had difficulty understanding the requirement to return to the same script, which will be clarified in future versions.
+In NIW, 25% of participants reported that the task was difficult and 42% described it as pleasant or useful; in WET, the corresponding proportions were 26% and 26%.
+At the two-month follow-up, 25% of NIW participants and 55% of WET participants reported improvements in quality of life, and 38% and 41%, respectively, reported continued use of skills learned during the intervention.
 
 Discussion:
 
@@ -105,7 +105,7 @@ This pattern is consistent with our theoretical model, in which decreased reacti
 To make this clearer, we revised the relevant section to explicitly distinguish the mechanism from symptom change.
 We also added a note emphasizing the need for future dose–response studies to determine the minimal intervention “dose” required to elicit reliable reductions in threat responses, and whether such early mechanism change alone is sufficient to produce sustained symptom improvement (see Discussion, Responses to Core Threats).
 
->Central to pathological fear is an inflated sense of threat, making perceived threat reduction key to alleviating anxiety [@zlotnickMotivationalAnatomyFear2025].
+>Central to pathological fear is an inflated sense of threat, making fear reduction key to alleviating anxiety [@zlotnickMotivationalAnatomyFear2025].
 Our findings showed WET reduced fear responses to core threats more effectively than NIW.
 The rate of fear reduction between Sessions 1 and 2 predicted symptom improvement by Session 4, supporting temporal precedence.
 
@@ -124,44 +124,34 @@ Although it's stated that participants created exposure scripts targeting core t
 
 **Author response:**
 
-We appreciate the reviewer’s interest in this point.
-The concept of *core threats* is elaborated in detail in a recent theoretical paper [@zlotnickMotivationalAnatomyFear2025], and in a methodological paper [@zlotnickCoreThreatStructured2025] describing the **Core Threat Structured Interview (CTSI)**, available at [https://github.com/eladzlot/ctsi-2025-public](https://github.com/eladzlot/ctsi-2025-public).
-The CTSI has demonstrated good reliability and validity in online administration.
+We appreciate the reviewer’s comment and agree that the original manuscript relied too heavily on illustrative vignettes to support claims about core-threat engagement.
+The theoretical framework underlying core threats, as well as the Core Threat Structured Interview used to identify them, are described in detail elsewhere [@zlotnickMotivationalAnatomyFear2025; @zlotnickCoreThreatStructured2026].
+In response to this concern, we added a manualized content-coding procedure in which independent judges evaluated whether participants meaningfully engaged with their pre-identified core threat during the writing exercises.
+This coding showed substantial inter-rater reliability and enabled formal analyses of engagement as a process variable.
+We now report results showing that engagement with core threats was associated with better outcomes, particularly at follow-up, and discuss these findings as exploratory as detailed below.
 
-In the current study, an independent judge evaluated whether participants meaningfully engaged with their identified core threat at any point during the four writing sessions.
-Thirty-one of fifty participants were rated as having done so.
-Those who engaged with their core threat tended to show greater improvement, particularly at the two-month follow-up.
-These analyses were exploratory and not preregistered, as the trial aimed to evaluate the intervention as a whole rather than engagement quality per se.
-Nonetheless, the findings highlight the importance of enhancing engagement—for instance, by adding self-feedback to guide participants toward fuller threat engagement.
-Future work will examine inter-rater reliability and imagery immersion (present tense, sensory, and emotional detail) as complementary indicators of engagement quality.
-We add this to the discussion in the Responses to Core Threats section.
+**Methods:**
 
-@JDH: how much??????????????????????????????????????
+>Following reviewer feedback, we conducted a manualized content-coding procedure to assess core-threat engagement in the writing exercises.
+Two independent judges classified each participant’s four-wave exercise set as either engaged or not engaged, using a conservative binary rule: participants were coded as engaged if at least one wave explicitly and emotionally addressed their pre-identified core threat (see supplementary materials).
+All participants were coded by the first judge, and a random subset of 20 participants (40%) was independently coded by the second judge to evaluate inter-rater reliability.
+Inter-rater agreement was substantial (Cohen’s $\kappa$ = 0.70, 95% CI [0.40, 1.00], 85.7% agreement).
 
-> A trained judge also rated whether participants meaningfully engaged with their identified core threat at any point across the four writing sessions.
-Thirty-one of fifty participants were judged to have engaged with their core threat.
-Participants who engaged tended to show greater improvement, particularly at the two-month follow-up.
+**Results:**
+
+> Most (n = 33, 66%) of the participants who completed WET were classified as having engaged with their identified core threat at least once across the four writing sessions.
+Across all stages, participants who engaged showed better outcomes than those who did not.
+
+>During treatment, engaged participants showed a small advantage over non-engaged participants (d = 0.32, 89% CI [-0.16, 0.79], P(>0) = 86%).
+At the one-week follow-up the difference was larger and statistically reliable (d = 0.37, 89% CI [-0.16, 0.86], P(>0) = 88%), whereas at the two-month follow-up the estimated difference was smaller and less certain (d = 0.29, 89% CI [-0.26, 0.84], P(>0) = 80%).
+
+>When compared with the NIW group, outcomes during treatment were similar (d = 0.01, 89% CI [-0.38, 0.40], P(>0) = 51%). A modest advantage was observed for engagers at the one-week follow-up (d = 0.24, 89% CI [-0.18, 0.67], P(>0) = 81%), and by the two-month follow-up the difference was larger and statistically reliable (d = 0.40, 89% CI [-0.05, 0.86], P(>0) = 92%).
+
+**Discussion:**
+
+>Participant engagement predicted improvement particularly at the two month follow-up.
 Although this analysis was exploratory and not preregistered, it suggests that enhancing engagement—for example, through adaptive or self-feedback mechanisms—may strengthen treatment effects.
 Future work will evaluate inter-rater reliability and imagery immersion (e.g., present-tense, sensory, and emotional content) as complementary markers of engagement quality.
-
-
-**Methods**
-> Following reviewer feedback, we conducted a manualized content-coding procedure to assess core-threat engagement in the writing exercises.
-Two independent judges classified each four-wave exercise as either core-threat engaged or not engaged, based on whether at least one wave explicitly and emotionally engaged the participant’s pre-identified core threat.
-Coding followed a conservative, binary decision rule to minimize inference and maximize inter-rater reliability.
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ---
 
@@ -186,7 +176,7 @@ We thank the reviewer for these helpful observations.
   > Several limitations should be noted.
   The waitlist group was drawn from a prior study rather than randomized concurrently, which may introduce time-related bias despite identical criteria.
   Although mechanisms were preregistered, the analyses do not establish causality, and the number of exploratory tests increases the risk of false positives.
-  Engagement ratings were based on a single judge, and all measures were self-reported online, limiting external verification.
+  All measures were self-reported online, limiting external verification.
   Participants were paid volunteers recruited through an online platform and likely less symptomatic and more technologically oriented than typical clinical populations, limiting generalizability to more severe or high-risk groups where assessment of suicidality and clinical management are essential.
   These limitations are balanced by preregistration, consistent methodology across cohorts, and replication of key effects in independent samples.
 
@@ -272,10 +262,10 @@ The limitations associated with addressing only one threat, as in this study, sh
 
 We appreciate the reviewer’s interest in this point.
 Participants identified their *core threat* using the **Core Threat Structured Interview (CTSI)**, a standardized online procedure developed to assess the ultimate feared outcomes underlying anxiety and avoidance.
-A detailed description of the CTSI is provided in the supplementary materials, and its validation is presented in a methodological paper currently under review [@zlotnickCoreThreatStructured2025].
+A detailed description of the CTSI is provided in the supplementary materials, and its validation is presented in a methodological paper currently under review [@zlotnickCoreThreatStructured2026].
 The CTSI has demonstrated good reliability and validity in online administration.
 
-As elaborated in *The Motivational Anatomy of Fear* [@zlotnickMotivationalAnatomyFear2025], *core threats* differ from proximal or situational fears in that they reflect an individual’s most fundamental feared outcome (e.g., harm to loved ones, loss of control, moral failure).
+As elaborated by Zlotnick and Huppert [-@zlotnickMotivationalAnatomyFear2025], *core threats* differ from proximal or situational fears in that they reflect an individual’s most fundamental feared outcome (e.g., harm to loved ones, loss of control, moral failure).
 While people may experience numerous situational fears, these often converge on one or two central core threats that organize their fear structure.
 In our ongoing validation work, we have found that even diverse anxiety symptoms or compulsions frequently share the same core threat, supporting this integrative conceptualization.
 
@@ -287,7 +277,7 @@ Future studies may examine multi-threat or sequential approaches to extend this 
 We have clarified both these issues in the methods section:
 
 > Before the first writing session, participants identified their primary core threat using the Core Threat Structured Interview (CTSI).
-The CTSI is a structured and psychometrically validated online assessment designed to elicit the individual’s ultimate feared outcome underlying anxiety or avoidance [@zlotnickCoreThreatStructured2025].
+The CTSI is a structured and psychometrically validated online assessment designed to elicit the individual’s ultimate feared outcome underlying anxiety or avoidance [@zlotnickCoreThreatStructured2026].
 It guides participants through examples and clarification prompts to ensure that the selected threat is personally meaningful and specific enough to serve as the focus for the writing exercises.
 
 And in the discussion as part of the limitations:

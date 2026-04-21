@@ -84,8 +84,6 @@ However, we found contrasting trajectories with WET: NIW produced rapid initial 
 This suggests that NIW may offer immediate symptom relief, while WET provides more benefit over time.
 The small sample size in the NIW condition (29 participants) limits generalizability, emphasizing the need for further research to confirm these effects and determine optimal contexts for each approach.
 
-
-
 ## How WET Works
 
 The current study aims to advance our understanding of treatment mechanisms by identifying potential mediators.
@@ -112,7 +110,7 @@ A nuanced approach may reveal distinct change pathways, informing tailored inter
 
 ### Responses to Core Threats
 
-Central to pathological fear is an inflated sense of threat, making perceived threat reduction key to alleviating anxiety [@zlotnickMotivationalAnatomyFear2025].
+Central to pathological fear is an inflated sense of threat, making fear reduction key to alleviating anxiety [@zlotnickMotivationalAnatomyFear2025].
 Our findings showed WET reduced fear responses to core threats more effectively than NIW.
 The rate of fear reduction between Sessions 1 and 2 predicted symptom improvement by Session 4, supporting temporal precedence.
 

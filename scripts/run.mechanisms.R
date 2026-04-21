@@ -58,10 +58,10 @@ play_beep_if_installed(3)
 # DTS * BSAM
 #######################
 d_x = data_long %>%
-  filter(measure == 'dts', !is.na(value), condition == 'control', wave>0) %>%
+  filter(measure == 'dts', !is.na(value), condition == 'treatment', wave>0) %>%
   left_join(demographics.data, by = "id")  # Ensure 'id' is the key for joining
 d_m = data_long %>%
-  filter(measure == 'bsam.pre', condition=='control', wave %in% 1:2, !is.na(value)) %>%
+  filter(measure == 'bsam.pre', condition=='treatment', wave %in% 1:2, !is.na(value)) %>%
   mutate(wave = if_else(wave == 1, 1, 4))
 mname = "dts.bsam.wet"
 m = model.mechanism(d_x, d_m, model_name = mname, force=FALSE)

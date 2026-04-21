@@ -19,7 +19,7 @@ In PTSD, WET focuses on the central source of anxiety - the traumatic event.
 We propose that transdiagnostic WET should focus on core threats: the ultimate feared consequence of one's fear or anxiety [@huppertCoreFearsValues2012;@zlotnickMotivationalAnatomyFear2025].
 Clinicians suggest that focusing on core threats improves efficacy, enhances generalizability, and reduces relapse 
 [@foaEmotionalProcessingFear1986; @gillihanCommonPitfallsExposure2012; @murrayDissectingCoreFear2016].
-We have developed an online questionnaire to reliably identify core threats [@zlotnickCoreThreatStructured].
+We have developed an online questionnaire to reliably identify core threats [@zlotnickCoreThreatStructured2026].
 Thus, to ensure that the intervention is accurately focused, we help participants identify their core threats and then instruct them to focus on these idiosyncratic core threats throughout their writing.
 
 A second set of accommodations to WET is creating an immersive script.

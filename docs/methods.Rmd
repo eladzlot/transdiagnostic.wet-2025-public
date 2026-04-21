@@ -14,7 +14,8 @@ Datasets include only quantitative information to protect participant confidenti
 
 ## Reporting:
 We report how we determined our sample size, all data exclusions, all manipulations, and all measures in the study.
-A power analysis indicated a target of 148 participants, with Bayesian stopping criteria allowing for early termination when ROPE showed no significant difference between conditions during the intervention phase.
+A power analysis indicated a target of 148 participants.
+Recruitment was halted before this target was reached under a preregistered Bayesian stopping rule; specifics are given in the Methods.
 
 ## Ethical approval:
 This research was approved by the Ethics Committee of The Hebrew University of Jerusalem.
@@ -33,7 +34,6 @@ Covariations between changes in OASIS and changes in each potential mechanism we
 ## Participants
 
 Participants were recruited through the Prolific platform, compensated at $\pounds 9$/hour.
-
 Inclusion criteria included moderate pathological anxiety (OASIS score > 4)
 and impaired daily functioning (at least one WSAS item scored above 2 on a 0–8 scale).
 Exclusion criteria were severe depression [greater than 14 on the PHQ\; @kroenkePHQ8MeasureCurrent2009], elevated post-traumatic symptoms [greater than 6 on the brief PCL-5\; @zuromskiDevelopingOptimalShortform2019], or presence of psychotic symptoms [evaluated via items 19 and 20 from the DIAMOND screener\; @tolinPsychometricPropertiesStructured2018].
@@ -43,8 +43,8 @@ Finally, only experienced users on Prolific with an approval rate above 95, and 
 An ethnically diverse sample was requested from Prolific.
 
 Power analysis indicated that a sample size of 148 participants would provide 0.8 power.
-Due to financial constraints, Bayesian stopping criteria allowed for early termination.
-Recruitment continued until the region of practical equivalence (ROPE) showed no significant difference could be found between WET and NIW conditions.
+Due to financial constraints, we preregistered a Bayesian stopping rule allowing for early termination: participants were recruited in increments of 30, and after each increment we evaluated whether 90% of the posterior distribution for the WET–NIW difference in end-of-treatment OASIS fell within a region of practical equivalence of ±2 points.
+Recruitment stopped when this criterion was met.
 
 Participants were randomly assigned to the treatment and control groups in a 2:1 ratio, using stratified randomization ($OASIS < or \geq 8$), aiming to ensure equal distribution of anxiety severity between groups.
 The block randomization process was integrated into the experiment program code.
@@ -259,4 +259,7 @@ Missing data were imputed via Bayesian imputation, assuming that missingness may
 We used Bayesian methods to estimate the parameters of the model using Markov Chain Monte Carlo (MCMC) algorithms implemented in Stan [@carpenterStanProbabilisticProgramming2017], and via the rethinking interface [@mcelreathStatisticalRethinkingBayesian2020].
 We specified weakly informative priors for the regression coefficients, the thresholds, and the item parameters.
 We assessed the convergence and the fit of the model using posterior predictive checks, trace plots, and effective sample sizes.
+We additionally assessed measurement-level fit using pointwise WAIC and PSIS: observations with WAIC pointwise penalty greater than 1 *and* PSIS Pareto $k$ greater than .5 were flagged for inspection, with potential exclusion if such observations were few and the model failed to fit them.
+Across all 27 models in the study, flagged observations were rare (under 1% of all measurements; under 1% in any single model) and dispersed across measures, participants, and items; we therefore retained all observations.
+Per-model diagnostics are reported in the supplementary material.
 We use a credible interval of 89% [@mcelreathStatisticalRethinkingBayesian2020].
