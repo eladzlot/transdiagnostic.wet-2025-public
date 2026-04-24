@@ -2,11 +2,17 @@
 
 ## Preregistration:
 This study was preregistered prior to data collection at [doi.org/10.17605/OSF.IO/2CEHR](doi.org/10.17605/OSF.IO/2CEHR).
-We deviated from the preregistration by adding a passive waitlist control group and a two-month follow-up assessment.
-These modifications were implemented to strengthen the research design—the waitlist control group provided a benchmark for natural recovery under identical inclusion, exclusion, and procedural criteria, and was collected approximately six months before the present study.
-Because participants were recruited from the same platform using identical screening, compensation, and measurement procedures, systematic bias other than time effects is unlikely [see @sorkaTransdiagnosticSelfGuidedImageryinpreparation].
-The extended follow-up further allowed assessment of the durability of treatment effects.
-Nonetheless, as the waitlist group was not randomized concurrently with the intervention arms, results involving it should be interpreted as comparative rather than inferential.
+
+## Deviations from preregistration:
+We departed from the preregistration on the following points; all decisions were made before data collection.
+
+- We added a passive waitlist control group, drawn from a prior study with identical inclusion, exclusion, and procedural criteria on the same recruitment platform [see @sorkaTransdiagnosticSelfGuidedImageryinpreparation]. Because this group was not randomized concurrently with the intervention arms, results involving it should be interpreted as comparative rather than inferential.
+- We administered follow-up assessments at one week and two months rather than at a single unspecified follow-up.
+- We replaced the Thought Fusion Inventory with the Thought-Action Fusion Scale Revised, administered pre- and post-intervention rather than at every session.
+- State anxiety was measured using the Brief State Anxiety Measure (instrument unspecified in the preregistration).
+- We added the Core Threat Structured Interview (intervention component) and the Treatment Credibility Questionnaire (manipulation check).
+- We specified the growth model's time component as piecewise rather than as a single linear slope, reflecting the qualitatively different change regimes across the intervention and the two follow-up windows.
+- The Imaginal Behavior Approach Test was administered as preregistered but not analyzed in the present report.
 
 ## Data, materials, code, and online resources:
 Data, analysis scripts, and methodological documentation are available at [https://github.com/eladzlot/transdiagnostic.wet-2025-public](https://github.com/eladzlot/transdiagnostic.wet-2025-public).
