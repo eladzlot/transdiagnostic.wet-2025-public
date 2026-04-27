@@ -88,8 +88,8 @@ header-includes:
 csl               : "`r system.file('rmd', 'apa7.csl', package = 'papaja')`"
 documentclass     : "apa7"
 
-output            : papaja::apa6_pdf
-#output            : papaja::apa6_docx
+#output            : papaja::apa6_pdf
+output            : papaja::apa6_docx
 
 # output files should go to "out"
 knit: (function(inputFile, encoding) {

@@ -294,21 +294,37 @@ We anticipated that changes in mechanisms will align with symptom changes, suppo
 \subsection{Preregistration:}\label{preregistration}
 
 This study was preregistered prior to data collection at \url{doi.org/10.17605/OSF.IO/2CEHR}.
-We deviated from the preregistration by adding a passive waitlist control group and a two-month follow-up assessment.
-These modifications were implemented to strengthen the research design---the waitlist control group provided a benchmark for natural recovery under identical inclusion, exclusion, and procedural criteria, and was collected approximately six months before the present study.
-Because participants were recruited from the same platform using identical screening, compensation, and measurement procedures, systematic bias other than time effects is unlikely (see Sorka et al., in preparation).
-The extended follow-up further allowed assessment of the durability of treatment effects.
-Nonetheless, as the waitlist group was not randomized concurrently with the intervention arms, results involving it should be interpreted as comparative rather than inferential.
+
+\subsection{Deviations from preregistration:}\label{deviations-from-preregistration}
+
+We departed from the preregistration on the following points; all decisions were made before data collection.
+
+\begin{itemize}
+\tightlist
+\item
+  We added a passive waitlist control group, drawn from a prior study with identical inclusion, exclusion, and procedural criteria on the same recruitment platform (see Sorka et al., in preparation). Because this group was not randomized concurrently with the intervention arms, results involving it should be interpreted as comparative rather than inferential.
+\item
+  We administered follow-up assessments at one week and two months rather than at a single unspecified follow-up.
+\item
+  We replaced the Thought Fusion Inventory with the Thought-Action Fusion Scale Revised, and administered it pre- and post-intervention rather than at every writing session.
+\item
+  We specified the growth model's time component as piecewise rather than as a single linear slope, reflecting the qualitatively different change regimes across the intervention and the two follow-up windows.
+\item
+  The Imaginal Behavior Approach Test was administered as preregistered but not analyzed in the present report.
+\end{itemize}
 
 \subsection{Data, materials, code, and online resources:}\label{data-materials-code-and-online-resources}
 
-Data, analysis scripts, and methodological documentation are available at \url{https://github.com/eladzlot/transdiagnostic.wet-2025-public}.
+Data, analysis scripts, participant-facing materials, and methodological documentation are available at \url{https://github.com/eladzlot/transdiagnostic.wet-2025-public} and mirrored at the OSF project \url{https://osf.io/dfzgt/}.
+The repository is released under the MIT License.
 Datasets include only quantitative information to protect participant confidentiality.
+Participant-facing materials, including the consent text, intervention instructions, and a navigation document with response anchors and citations for every measure used in the study, are provided in \texttt{supplementary/materials/}.
 
 \subsection{Reporting:}\label{reporting}
 
 We report how we determined our sample size, all data exclusions, all manipulations, and all measures in the study.
-A power analysis indicated a target of 148 participants, with Bayesian stopping criteria allowing for early termination when ROPE showed no significant difference between conditions during the intervention phase.
+A power analysis indicated a target of 148 participants.
+Recruitment was halted before this target was reached under a preregistered Bayesian stopping rule; specifics are given in the Methods.
 
 \subsection{Ethical approval:}\label{ethical-approval}
 
@@ -337,8 +353,8 @@ Finally, only experienced users on Prolific with an approval rate above 95, and 
 An ethnically diverse sample was requested from Prolific.
 
 Power analysis indicated that a sample size of 148 participants would provide 0.8 power.
-Due to financial constraints, Bayesian stopping criteria allowed for early termination.
-Recruitment continued until the region of practical equivalence (ROPE) showed no significant difference could be found between WET and NIW conditions.
+Due to financial constraints, we preregistered a Bayesian stopping rule allowing for early termination: participants were recruited in increments of 30, and after each increment we evaluated whether 90\% of the posterior distribution for the WET--NIW difference in end-of-treatment OASIS fell within a region of practical equivalence of ±2 points.
+Recruitment stopped when this criterion was met.
 
 Participants were randomly assigned to the treatment and control groups in a 2:1 ratio, using stratified randomization (\(OASIS < or \geq 8\)), aiming to ensure equal distribution of anxiety severity between groups.
 The block randomization process was integrated into the experiment program code.
@@ -401,7 +417,7 @@ The scale has demonstrated strong internal consistency and test--retest reliabil
 Following reviewer feedback, we conducted a manualized content-coding procedure to assess core-threat engagement in the writing exercises.
 Two independent judges classified each participant's four-wave exercise set as either \emph{engaged} or \emph{not engaged}, using a conservative binary rule: participants were coded as engaged if at least one wave explicitly and emotionally addressed their pre-identified core threat (see supplementary materials).
 All participants were coded by the first judge, and a random subset of 20 participants (40\%) was independently coded by the second judge to evaluate inter-rater reliability.
-Inter-rater agreement was substantial (Cohen's κ = 0.70, 95\% CI {[}0.40, 1.00{]}, 85.7\% agreement).
+Inter-rater agreement was substantial (Cohen's \(\kappa\) = 0.70, 95\% CI {[}0.40, 1.00{]}, 85.7\% agreement).
 
 \subsection{Procedure}\label{procedure}
 
@@ -448,7 +464,7 @@ Furthermore, it becomes possible to investigate individual as well as group leve
 
 To determine treatment efficacy we examined the \emph{fixed effects} --- the average rates of change across individuals.
 As described below, to understand covariation between symptoms and processes we examined the \emph{random effects} --- the individual deviations from the group-level trends.
-To account for follow-up measurements at varying time lags (e.g., 1 week, 2 months), we employ a piecewise growth model, allowing for separate slopes at different follow-up times (Andersson et al., 2013; Bollen \& Curran, 2006).
+To account for follow-up measurements at varying time lags (e.g., 1 week, 2 months), we employ a piecewise growth model, allowing for separate slopes at different follow-up times (Bollen \& Curran, 2006; \textbf{andersson35yearFollowInternetdeliveredCognitive2013?}).
 Combined with the measurement model described below, this is in essence a latent change score model (Cáncer et al., 2021; McArdle, 2009).
 
 The equation used was:
@@ -520,6 +536,9 @@ Missing data were imputed via Bayesian imputation, assuming that missingness may
 We used Bayesian methods to estimate the parameters of the model using Markov Chain Monte Carlo (MCMC) algorithms implemented in Stan (Carpenter et al., 2017), and via the rethinking interface (McElreath, 2020).
 We specified weakly informative priors for the regression coefficients, the thresholds, and the item parameters.
 We assessed the convergence and the fit of the model using posterior predictive checks, trace plots, and effective sample sizes.
+We additionally assessed measurement-level fit using pointwise WAIC and PSIS: observations with WAIC pointwise penalty greater than 1 \emph{and} PSIS Pareto \(k\) greater than .5 were flagged for inspection, with potential exclusion if such observations were few and the model failed to fit them.
+Across all 27 models in the study, flagged observations were rare (under 1\% of all measurements; under 1\% in any single model) and dispersed across measures, participants, and items; we therefore retained all observations.
+Per-model diagnostics are reported in the supplementary material.
 We use a credible interval of 89\% (McElreath, 2020).
 
 \section{Results}\label{results}
@@ -1044,9 +1063,6 @@ This work was supported by the Israel Science Foundation (ISF 1905/20) awarded t
 \begin{CSLReferences}{1}{0}
 \leavevmode\vadjust pre{\hypertarget{ref-abramowitzPsychologicalTreatmentObsessive2006}{}}%
 Abramowitz, J. S. (2006). The Psychological Treatment of Obsessive---Compulsive Disorder. \emph{The Canadian Journal of Psychiatry}, \emph{51}(7), 407--416.
-
-\leavevmode\vadjust pre{\hypertarget{ref-andersson35yearFollowInternetdeliveredCognitive2013}{}}%
-Andersson, G., Hesser, H., Hummerdal, D., Bergman-Nordgren, L., \& Carlbring, P. (2013). A 3.5-year follow-up of Internet-delivered cognitive behavior therapy for major depression. \emph{Journal of Mental Health}, \emph{22}(2), 155--164. \url{https://doi.org/10.3109/09638237.2011.608747}
 
 \leavevmode\vadjust pre{\hypertarget{ref-anderssonInternetdeliveredPsychologicalTreatments2019}{}}%
 Andersson, G., Titov, N., Dear, B. F., Rozental, A., \& Carlbring, P. (2019). Internet-delivered psychological treatments: from innovation to implementation. \emph{World psychiatry: official journal of the World Psychiatric Association (WPA)}, \emph{18}(1), 20--28. \url{https://doi.org/10.1002/wps.20610}

@@ -134,9 +134,8 @@ kap = raw.engagement %>% select(-id) %>%
   as.matrix %>%
   cohen.kappa()
 
-
 engagement_kappa = sprintf(
-  "Cohen’s κ = %.2f, 95%% CI [%.2f, %.2f], %.1f%% agreement",
+  "Cohen's $\\kappa$ = %.2f, 95%% CI [%.2f, %.2f], %.1f%% agreement",
   kap$kappa,
   kap$confid[1,1], kap$confid[1,3],
   sum(diag(kap$agree)) * 100
