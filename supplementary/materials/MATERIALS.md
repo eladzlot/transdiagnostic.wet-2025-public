@@ -1,6 +1,12 @@
-# Study Materials
+---
+title: "Study Materials"
+subtitle: "Written Exposure Therapy for Transdiagnostic Anxiety"
+header-includes:
+  - \usepackage{booktabs}
+  - \usepackage{longtable}
+---
 
-Participant-facing materials for **Written Exposure Therapy for Transdiagnostic Anxiety** (CPX-25-0117).
+Participant-facing materials for the Written Exposure Therapy transdiagnostic-anxiety study.
 
 This document describes every material presented to participants: the screening procedure, the consent and comprehension procedure, the questionnaire battery, the intervention itself, the follow-ups, and qualitative reflection items collected during the study. For each published scale we give the exact instruction stem, the response anchors as displayed, the number of items, and a citation to the source publication where the full item wording is available. Items from published scales are not reproduced verbatim. Study-designed materials that are short are reproduced in this document; longer ones (the CTSI core-threat elicitation protocol and the WET and NIW psychoeducation + writing instructions) are provided as separate rendered files alongside this document.
 
@@ -27,47 +33,58 @@ Demographic information (age, sex, ethnicity, country, employment) was collected
 
 The study had seven contact points. Screening determined eligibility. Sessions 1–4 delivered the writing intervention. One-week and two-month follow-ups assessed durability.
 
-| Block | Screening | S1 | S2 | S3 | S4 | 1wk FU | 2mo FU |
-|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| Consent | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Prolific ID | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Comprehension check (protocol/payment structure) | | ✓ | | | | | |
-| Welcome / orientation | | ✓ | | | | | |
-| OASIS | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| WSAS | ✓ | ✓ | | | ✓ | ✓ | ✓ |
-| PHQ-9 (eligibility) | ✓ | | | | | | |
-| Brief PCL-5 (eligibility, conditional) | ✓ | | | | | | |
-| DIAMOND delusion/hallucination items (eligibility) | ✓ | | | | | | |
-| Embedded attention-check items (eligibility) | ✓ | | | | | | |
-| DTS | | ✓ | | | ✓ | | |
-| TAF-R | | ✓ | | | ✓ | | |
-| BCSS (24 items, 4 subscales) | | ✓ | | | ✓ | | |
-| IFES | | ✓ | | | ✓ | | |
-| MCQ-30 | | ✓ | | | ✓ | | |
-| SCS-SF | | ✓ | | | ✓ | | |
-| Core-threat elicitation (CTSI) | | ✓ | | | | | |
-| Treatment Credibility (4 think + 2 feel items) | | ✓ | | | | | |
-| BSAM — pre-writing, after imagining core-threat script | | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Fear-script evaluation items — pre-writing (5 items, not analysed) | | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| WET / NIW psychoeducation | | ✓ | | | | | |
-| 20-minute writing task | | ✓ | ✓ | ✓ | ✓ | | |
-| Within-writing distress rating (single-item slider, not analysed) | | ✓ | ✓ | ✓ | ✓ | | |
-| BSAM — post-writing | | ✓ | ✓ | ✓ | ✓ | | |
-| Fear-script evaluation items — post-writing (5 items, not analysed) | | ✓ | ✓ | ✓ | ✓ | | |
-| Session-wrap reflection questions (3 open-ended, not analysed) | | ✓ | ✓ | ✓ | ✓ | | |
-| Repeated writing — daily belief & behaviour probes (2 sliders, S2 and S3 only, not analysed) | | | ✓ | ✓ | | | |
-| End-of-session debrief | | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Commitment-to-return item | | ✓ | ✓ | ✓ | ✓ | | |
-| Impact and skill-transfer prompts (2 items, 2mo FU only, analysed qualitatively) | | | | | | | ✓ |
-| Nightmare-description block (S4 only, not analysed) | | | | | ✓ | | |
-| Study-feedback prompt (S4 only, analysed qualitatively) | | | | | ✓ | | |
+\begin{longtable}{p{8cm}ccccccc}
+\toprule
+\textbf{Block} & \textbf{Screen} & \textbf{S1} & \textbf{S2} & \textbf{S3} & \textbf{S4} & \textbf{1wk} & \textbf{2mo} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Block} & \textbf{Screen} & \textbf{S1} & \textbf{S2} & \textbf{S3} & \textbf{S4} & \textbf{1wk} & \textbf{2mo} \\
+\midrule
+\endhead
 
-*S1–S4 = sessions 1 through 4 of the writing intervention. FU = follow-up.*
+Consent & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+Prolific ID & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+Comprehension check (protocol/payment structure) & & $\checkmark$ & & & & & \\
+Welcome / orientation & & $\checkmark$ & & & & & \\
+OASIS & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+WSAS & $\checkmark$ & $\checkmark$ & & & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+PHQ-9 (eligibility) & $\checkmark$ & & & & & & \\
+Brief PCL-5 (eligibility, conditional) & $\checkmark$ & & & & & & \\
+DIAMOND delusion/hallucination items (eligibility) & $\checkmark$ & & & & & & \\
+Embedded attention-check items (eligibility) & $\checkmark$ & & & & & & \\
+DTS & & $\checkmark$ & & & $\checkmark$ & & \\
+TAF-R & & $\checkmark$ & & & $\checkmark$ & & \\
+BCSS (24 items, 4 subscales) & & $\checkmark$ & & & $\checkmark$ & & \\
+IFES & & $\checkmark$ & & & $\checkmark$ & & \\
+MCQ-30 & & $\checkmark$ & & & $\checkmark$ & & \\
+SCS-SF & & $\checkmark$ & & & $\checkmark$ & & \\
+Core-threat elicitation (CTSI) & & $\checkmark$ & & & & & \\
+Treatment Credibility (4 think + 2 feel items) & & $\checkmark$ & & & & & \\
+BSAM, pre-writing (after imagining core-threat script) & & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+Fear-script evaluation, pre-writing (5 items, not analysed) & & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+WET / NIW psychoeducation & & $\checkmark$ & & & & & \\
+20-minute writing task & & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & & \\
+Within-writing distress rating (slider, not analysed) & & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & & \\
+BSAM, post-writing & & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & & \\
+Fear-script evaluation, post-writing (5 items, not analysed) & & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & & \\
+Session-wrap reflection (3 open-ended items, not analysed) & & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & & \\
+Daily belief and behaviour probes (S2, S3 only, not analysed) & & & $\checkmark$ & $\checkmark$ & & & \\
+End-of-session debrief & & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+Commitment-to-return item & & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & & \\
+Impact / skill-transfer prompts (2 items, analysed qualitatively) & & & & & & & $\checkmark$ \\
+Nightmare-description block (S4 only, not analysed) & & & & & $\checkmark$ & & \\
+Study-feedback prompt (S4 only, analysed qualitatively) & & & & & $\checkmark$ & & \\
+
+\bottomrule
+\end{longtable}
+
+\textit{S1--S4 = sessions 1 through 4. Screen = screening. 1wk / 2mo = follow-ups.}
 
 Notes on the table:
 
 - Sessions 2 and 3 abbreviate the session-1 structure: consent, pre-writing BSAM + fear-script eval, writing task with a mid-task distress rating and the three reflection questions, post-writing BSAM + fear-script eval, OASIS, two sliders probing belief and behaviour during the day (see Materials administered but not analysed), and debrief with the commitment item.
-- Session 4 administers the full writing protocol (evaluate_pre → writing → evaluate_post). In session 1 the OASIS and the full mechanism battery are administered *before* the writing protocol; in session 4 they are administered *after* it. This change in ordering — present at session 4 only — was a procedural choice made before data collection. Session 4 also includes the iBAT protocol after the mechanism battery, a nightmare-description block (not analysed), and an open-ended study-feedback prompt (analysed qualitatively; see Qualitative feedback items).
+- Session 4 administers the full writing protocol (evaluate_pre $\to$ writing $\to$ evaluate_post). In session 1 the OASIS and the full mechanism battery are administered *before* the writing protocol; in session 4 they are administered *after* it. This change in ordering (present at session 4 only) was a procedural choice made before data collection. Session 4 also includes the iBAT protocol after the mechanism battery, a nightmare-description block (not analysed), and an open-ended study-feedback prompt (analysed qualitatively; see Qualitative feedback items).
 - Consent was re-presented at the start of every session including both follow-ups; Prolific ID was re-captured at every session.
 - The waitlist group followed an equivalent schedule of assessment-only contacts (no psychoeducation, no writing) at timepoints matched to the active arms.
 - The one-week follow-up administers consent, BSAM + fear-script eval, OASIS, WSAS, and a brief thank-you debrief — no writing task.
@@ -84,12 +101,12 @@ The consent form was presented at the screening stage and at the start of every 
 
 ### Comprehension check
 
-Before beginning the main session 1 protocol, participants completed a two-question comprehension check designed to ensure they understood the multi-part study structure and associated payment arrangements (not the study content or hypotheses). Participants who answered incorrectly were shown the correct answer and given one further attempt on the same item. The two questions were:
+Before beginning the main session 1 protocol, participants completed a brief two-question comprehension check on the multi-part study structure and payment arrangements (not the study content or hypotheses). The two questions were:
 
-1. A multiple-choice question asking when the £5.00 bonus payment would be awarded (correct answer: after completing all five parts of the study, including the one-week follow-up).
-2. A multiple-select question asking what participants would be asked to do next (correct answer: a further writing task, in 1–2 days, lasting 30 minutes, repeated three more times that week).
+1. A multiple-choice question about when the £5.00 bonus payment would be awarded (correct answer: after completing all five parts of the study, including the one-week follow-up).
+2. A multiple-select question about what participants would be asked to do next (correct answer: a further writing task, in 1–2 days, lasting 30 minutes, repeated three more times that week).
 
-The comprehension check was purely a payment/protocol understanding check; participants with incorrect answers on both attempts were still permitted to continue.
+The check was for payment/protocol understanding only.
 
 ---
 
@@ -253,9 +270,9 @@ Administered at sessions 1 and 4 only, except for BSAM which is administered at 
 
 ### Core-threat elicitation (CTSI)
 
-A structured self-administered protocol to identify each participant's idiosyncratic core threat and produce a short threat script used as the focus of subsequent writing sessions [@zlotnickCoreThreatStructured2026]. Administered only at session 1.
+A structured self-administered protocol used to identify each participant's idiosyncratic core threat and produce a short threat script for use in subsequent writing sessions [@zlotnickCoreThreatStructured2026]. Administered only at session 1 of the active arms (WET and NIW); waitlist participants did not receive the CTSI.
 
-The full protocol text (including the subjective-units-of-distress rating procedure, the "magic wand" fear-selection question, the threat-laddering table with worked examples, the core-threat identification and emotional-avoidance probes, the safety-behaviour checklist, and the "connect the dots" script-composition exercise) is provided as a separate rendered file: [ctsi.pdf](ctsi.pdf) (source: [ctsi.Rmd](ctsi.Rmd)).
+The full protocol text (subjective-units-of-distress rating procedure, the "magic wand" fear-selection question, the threat-laddering table with worked examples, the core-threat identification and emotional-avoidance probes, the safety-behaviour checklist, and the "connect the dots" script-composition exercise) is provided as a separate file: [ctsi.pdf](ctsi.pdf) (source: [ctsi.Rmd](ctsi.Rmd)).
 
 ### Treatment Credibility Questionnaire (CEQ)
 
@@ -350,7 +367,7 @@ Administered approximately two months after the one-week follow-up. Same content
 
 ## Qualitative feedback items
 
-Three open-ended prompts collected after the intervention are analysed qualitatively (with some quantitative summary) in the manuscript.
+Three open-ended prompts collected after the intervention are analysed qualitatively (with some quantitative summary) in the manuscript. These are distinct from the session-wrap reflection questions described above (which were collected at the end of each writing session and are not analysed in this report).
 
 ### Study-feedback prompt (session 4)
 
@@ -374,14 +391,14 @@ Two open-ended text items administered at the two-month follow-up, before the de
 
 ## Materials administered but not analysed in this report
 
-Several measures and probes were administered to participants but are not analysed or reported in this study. Their item content is not reproduced, for two reasons: (a) they played no role in the hypotheses or results of the present paper, and (b) documenting them here would add length without supporting evaluation of the reported work.
+The following measures and probes were administered but are not analysed or reported in this study. They played no role in the present hypotheses or results, and we do not reproduce their item content here.
 
 - **Imaginal Behavior Approach Test (iBAT).** An experimental behavioural measure involving audio-stimulus calibration followed by imagery-based approach trials. Administered at sessions 1 and 4 per the preregistration. The measure did not yield usable data in the present sample and is not analyzed or reported.
-- **Thought Intrusion Intensity Instrument (TIII).** An experimental measure collected at sessions 1 and 4 and the two-month follow-up for purposes outside the scope of this report.
+- **Thought Intrusion Intensity Instrument (TIII).** An experimental measure collected at sessions 1, 4, and the two-month follow-up for purposes outside the scope of this report.
 - **Self-Appraisal of Illness Questionnaire (SAIQ).** Administered at sessions 1 and 4 for purposes outside the scope of this report.
-- **Insight Self-Report (insight SR).** Administered at sessions 1 and 4 for purposes outside the scope of this report.
-- **Fear-script evaluation items.** The 5-item script-evaluation matrix described in the Intervention section was collected before and after each writing session (and pre-writing at both follow-ups) but is not analysed in this report. We document its content above because it sits inside the main session flow alongside the BSAM and could otherwise be confused with it.
-- **Within-writing distress slider.** A single-item visual analogue distress rating administered during every writing session (1–4). Not analysed.
-- **Daily belief and behaviour probes.** Sessions 2 and 3 include two brief slider-style matrices probing beliefs and behaviour during the preceding day. These were intended as an abbreviated alternative to the full mechanism battery for repeat sessions; they are not analysed in this report.
-- **Nightmare-description block.** Session 4 includes a self-designed block asking participants about a nightmare. Administered but neither preregistered nor analysed in this report.
+- **A self-report insight measure (labelled `insight SR` in the survey export).** Administered at sessions 1 and 4 for purposes outside the scope of this report.
+- **Fear-script evaluation items.** A 5-item matrix probing beliefs about the core-threat script (likelihood, valence, stressfulness, vividness, coherence). Administered before and after every writing session and pre-writing at both follow-ups, alongside the BSAM. We document the content above (Intervention procedure) because the matrix sits in the main session flow alongside the BSAM and could otherwise be confused with it. Not analysed in this report.
+- **Within-writing distress slider.** A single-item visual analogue distress rating administered during every writing session. Not analysed.
+- **Daily belief and behaviour probes (sessions 2 and 3).** Two brief slider-style matrices probing beliefs and behaviour during the preceding day. Intended as an abbreviated alternative to the full mechanism battery for repeat sessions; not analysed.
+- **Nightmare-description block (session 4).** A self-designed block asking participants about a nightmare. Administered, but neither preregistered nor analysed.
 
