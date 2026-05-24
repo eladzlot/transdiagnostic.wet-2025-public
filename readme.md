@@ -1,93 +1,104 @@
-# Transdiagnostic Written Exposure Therapy (WET) - 2025
+# Transdiagnostic Written Exposure Therapy (WET) — 2026
 
-This repository contains the data, scripts, and supplementary materials for the study "Transdiagnostic Written Exposure Therapy: Piloting an Online Intervention." The study investigates the efficacy and mechanisms of Written Exposure Therapy (WET) for transdiagnostic anxiety in an online setting.
+This repository contains the data, scripts, materials, and supplementary documentation for "Transdiagnostic Written Exposure Therapy: Piloting an Online Intervention." The study investigates the efficacy and mechanisms of Written Exposure Therapy (WET) for transdiagnostic anxiety in an online setting.
+
+A time-stamped, immutable snapshot of this repository is archived on Zenodo (DOI to be added on publication).
 
 ## Contents
 
-### 1. **Scripts**
-- **Folder:** [`scripts/`](scripts/)
-- Contains all analysis scripts used to process data, compute results, and generate visualizations for the manuscript.
-  - Tables: files with the `tables` prefix include the code for creating tables.
-  - Figures: files with the `figures` prefix include the code for creating figures.
-  - Models: files with the `models` prefix include the code for describing and running growth or mechanism models. All models are run with a wrapper to the rethinking package defined in [`model.helpers`](scripts/model.helpers.R).
+### Manuscript
 
-### 2. **Supplementary Materials**
-- **Folder:** [`supplementary/`](supplementary/)
-- Includes:
-  - Detailed outcomes of all [process models](supplementary/processes/processes.pdf).
-  - Intervention instructions
-    - For [written exposure therapy (WET)](supplementary/instructions/instructions.wet.pdf)
-    - For [neutral imagery writing (NIW)](supplementary/instructions/instructions.niw.pdf)
-    - For [core threat structured interview (CTSI)](supplementary/instructions/ctsi.pdf)
-  - Detailed description of all [models](supplementary/models.pdf).
+Folder: [`docs/`](docs/). Contains R Markdown source files that compile to the manuscript, including all models and calculations.
 
-### 3. **Data**
-- **Folder:** [`data/`](data/)
-- Contains processed datasets used in the analyses presented in the manuscript.
-- Includes:
-  - **`data_long.csv`**: Long-format dataset for repeated measures or hierarchical analyses.  
-  - **`demographics.data.csv`**: Demographic information about participants (e.g., age, gender).  
-  - **`pid.condition.csv`**: Maps participant IDs to experimental conditions.  
-  - **`screening.csv`**: Data from the participant screening process.
-  - **`LICENSE`**: Specifies terms for data usage and distribution.  
-- **Note:** Raw data is not available to ensure participant confidentiality. Only de-identified and aggregated data are included.
+- [`docs/output/wet.pdf`](docs/output/wet.pdf) — rendered manuscript.
+- [`docs/output/wet.docx`](docs/output/wet.docx) — rendered manuscript (Word format, for journal submission).
 
-### 4. **Manuscript**
-- **Folder:** [`docs/`](docs/)
-* Contains Rmd files used to produce the manuscript including all models and calculations.
-- The full manuscript of the study is included for reference.
-  - **File:** [`wet.pdf`](docs/output/wet.pdf)
-  - **File:** [`wet.docx`](docs/output/wet.docx)
+### Scripts
 
+Folder: [`scripts/`](scripts/). All analysis scripts used to process data, compute results, and generate visualisations.
 
-## How to Use
+- Files prefixed `tables.` produce the manuscript tables.
+- Files prefixed `figures.` produce the manuscript figures.
+- Files prefixed `model.` define and run the growth, change, and mechanism models. Models are fit via a wrapper around the `rethinking` package, defined in [`scripts/model.helpers.R`](scripts/model.helpers.R).
+- Files prefixed `run.` execute model batches for processes and mechanisms.
+- [`scripts/tidy.R`](scripts/tidy.R) and [`scripts/load_data.R`](scripts/load_data.R) handle data loading and reshaping.
 
-1. Clone the repository:
-```bash
-git clone https://github.com/eladzlot/transdiagnostic.wet-2025-public.git
-```
+### Data
 
-2. Install Dependencies
-Ensure all required R packages are installed. The scripts depend on the following packages:
+Folder: [`data/`](data/). Processed datasets used in the analyses presented in the manuscript.
+
+- [`data/CODEBOOK.md`](data/CODEBOOK.md) — variable-level documentation for every data file. Read this first.
+- [`data/data_long.csv`](data/data_long.csv) — long-format dataset, one row per item response per participant per timepoint.
+- [`data/demographics.data.csv`](data/demographics.data.csv) — demographic information and baseline OASIS/WSAS totals per participant.
+- [`data/pid.condition.csv`](data/pid.condition.csv) — id-to-condition crosswalk.
+- [`data/screening.csv`](data/screening.csv) — data from the pre-randomization screening pool (n = 375).
+- [`data/diagnostics/`](data/diagnostics/) — outputs of the preregistered outlier-diagnostic procedure (see the diagnostics supplement).
+
+Participant identifiers in all data files are serial numbers, not real Prolific IDs, to protect participant privacy.
+
+### Supplementary materials
+
+Folder: [`supplementary/`](supplementary/).
+
+**Materials presented to participants** ([`supplementary/materials/`](supplementary/materials/)):
+
+- [`MATERIALS.pdf`](supplementary/materials/MATERIALS.pdf) — navigation document for all participant-facing materials. Includes a cross-reference table showing what participants saw at each timepoint, instructions and response anchors for every measure used, and citations to source publications.
+- [`consent.pdf`](supplementary/materials/consent.pdf) — consent form text.
+- [`ctsi.pdf`](supplementary/materials/ctsi.pdf) — Core Threat Structured Interview (intervention component).
+- [`instructions.wet.pdf`](supplementary/materials/instructions.wet.pdf) — Written Exposure Therapy psychoeducation and writing instructions.
+- [`instructions.niw.pdf`](supplementary/materials/instructions.niw.pdf) — Neutral Imagery Writing psychoeducation and writing instructions.
+
+**Analytic supplements**:
+
+- [`supplementary/models.pdf`](supplementary/models.pdf) — detailed description of all statistical models.
+- [`supplementary/processes/processes.pdf`](supplementary/processes/processes.pdf) — detailed outcomes of all candidate-mechanism (process) models.
+- [`supplementary/diagnostics_outliers.pdf`](supplementary/diagnostics_outliers.pdf) — preregistered measurement-level WAIC and PSIS outlier diagnostics across all 27 fitted models.
+- [`supplementary/engagement/engagement.manual.pdf`](supplementary/engagement/engagement.manual.pdf) — coding manual for engagement.
+- [`supplementary/judges/coding.impact.md`](supplementary/judges/coding.impact.md) — coding scheme for qualitative analysis of impact and skill-transfer responses.
+
+The preregistration for this study is available on OSF at [https://osf.io/2cehr](https://osf.io/2cehr) ([DOI 10.17605/OSF.IO/2CEHR](https://doi.org/10.17605/OSF.IO/2CEHR)).
+
+## How to use
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/eladzlot/transdiagnostic.wet-2025-public.git
+   ```
+
+2. **Install dependencies.** The scripts depend on:
    - `tidyverse`
    - `here`
    - `psych`
    - `papaja`
-   - `rethinking` 
+   - `rethinking`
 
-  For installing `rethinking` see the [installation manual](https://github.com/rmcelreath/rethinking/tree/master). You can install the rest of these packages in R using:
-```R
-install.packages(c("tidyverse", "here", "psych", "papaja"))
-```
+   For installing `rethinking`, see the [installation guide](https://github.com/rmcelreath/rethinking/tree/master). The remaining packages can be installed with:
+   ```r
+   install.packages(c("tidyverse", "here", "psych", "papaja"))
+   ```
 
-3. Knit the Document  
-   Knit the file `docs/wet.Rmd` in RStudio or using another method of your choice to generate the output document.
+3. **Reproduce the manuscript.** Knit [`docs/wet.Rmd`](docs/wet.Rmd) in RStudio (or via `rmarkdown::render()`) to regenerate the output document. The first knit will fit all Bayesian models from scratch, which is slow; cached fits are stored in `data/models/` on subsequent runs.
 
 ## Citation
 
 If you use this repository in your work, please cite:
-```
-Elad Zlotnick, Hila Sorka, Snir Barzilay, Jonathan D. Huppert (2025). 
-Transdiagnostic Written Exposure Therapy: Piloting an Online Intervention. 
-[Paper submitted for publication]
-```
+
+> Zlotnick, E., Sorka, H., Barzilay, S., & Huppert, J. D. (2026). Transdiagnostic Written Exposure Therapy: Piloting an Online Intervention. *Clinical Psychological Science*.
 
 ## License Overview
 
 ### Code
 The code in this repository is licensed under the [MIT License](LICENSE). You are free to use, modify, and distribute the code, provided proper attribution is given.
 
-### Data 
+### Data
 The data are under a restricted-use [license](data/LICENSE):
 - **Embargo**: These materials are private and cannot be used without explicit permission until the associated publication.
 - **Post-Embargo License**: After publication, these materials will be licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 (CC BY-NC-SA)](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
 - **Attribution**: Proper attribution is required for any use.
 
 ### Manuscript License
-The manuscript files in this repository are private and under embargo until the associated work is officially published.
-During the embargo period, they may not be used, shared, or distributed without explicit permission.
-
-Post-publication use of the manuscript will be subject to publisher policies and agreements. See [manuscript/LICENSE](manuscript/LICENSE) for details.
+The manuscript files in this repository are private and under embargo until the associated work is officially published. During the embargo period, they may not be used, shared, or distributed without explicit permission. Post-publication use of the manuscript will be subject to publisher policies and agreements.
 
 ## Contact
+
 For questions or feedback, please contact [Elad Zlotnick](mailto:elad.zlotnick@mail.huji.ac.il).
