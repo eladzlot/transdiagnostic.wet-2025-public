@@ -2,7 +2,7 @@
 
 Dear Dr. Urry,
 
-Thank you for your careful review and for supporting our badge applications. We respond point-by-point below, indicating what was done and where it can be found. The manuscript, the GitHub repository, and the linked OSF project ([https://osf.io/dfzgt/](https://osf.io/dfzgt/)) have all been updated; the OSF project will be registered to produce the time-stamped, immutable snapshot once all other revisions are in place, immediately before resubmission.
+Thank you for your careful review and for supporting our badge applications. We respond point-by-point below, indicating what was done and where it can be found. The manuscript and the GitHub repository have been updated accordingly, and the repository has been archived on Zenodo to provide the time-stamped, immutable snapshot requested in your letter.
 
 ## A correction we found while auditing the analyses
 
@@ -116,13 +116,13 @@ If you would prefer that we list the BSAM, CTSI, and CEQ in the Deviations subse
 
 ---
 
-### 9. OSF registration
+### 9. Time-stamping and immutability of the repository
 
 > *"Please use the Add-ons feature in your OSF project to connect the GitHub repository to OSF, then register the OSF project. This way, contents are time-stamped and immutable."*
 
-**Response:** The GitHub repository is now connected to the OSF project ([https://osf.io/dfzgt/](https://osf.io/dfzgt/)) via the OSF Add-ons feature. We will register the OSF project — taking a time-stamped snapshot of the linked repository — once all other revisions are in place, immediately before resubmission.
+**Response:** Done, via Zenodo rather than OSF. We were unable to register the OSF project because the repository exceeded OSF's per-component size limit when including the linked GitHub contents. We instead archived the repository on Zenodo, which produces a time-stamped, immutable snapshot with a DOI (https://doi.org/10.5281/zenodo.20366472 for this version; concept DOI https://doi.org/10.5281/zenodo.20366471 for all versions). This serves the same function as OSF registration: readers can access exactly the version of the repository that supports the paper.
 
-**Location:** [https://osf.io/dfzgt/](https://osf.io/dfzgt/).
+**Location:** https://doi.org/10.5281/zenodo.20366472
 
 ---
 
@@ -130,7 +130,7 @@ If you would prefer that we list the BSAM, CTSI, and CEQ in the Deviations subse
 
 > *"Please update the manuscript to provide a link to the OSF project (in addition to the link to the GitHub repository) so that readers can access the time-stamped, immutable version."*
 
-**Response:** The Transparency and Openness section now lists both the GitHub repository and the OSF project. The link to the registered (time-stamped) snapshot will replace the project link once registration is complete.
+**Response:** Done. The Transparency and Openness section now lists both the GitHub repository and the Zenodo archive (with its DOI) as the time-stamped, immutable snapshot.
 
 **Location:** Methods — Transparency and Openness (Data, materials, code, and online resources).
 
@@ -164,13 +164,11 @@ A few measures were administered but are not analysed in this report (iBAT, TIII
 
 ---
 
-## Optional items
-
-### 13. License the OSF project
+### 13. License the repository
 
 > *"Please consider applying a license to your OSF project."*
 
-**Response:** The repository is released under the MIT License (see `LICENSE` at the repository root); the same license will apply to the OSF project at registration. The Transparency and Openness section now states the license alongside the repository link.
+**Response:** The repository is released under the MIT License (see `LICENSE` at the repository root). The Zenodo deposit inherits the same license. The Transparency and Openness section now states the license alongside the repository link.
 
 **Location:** Methods — Transparency and Openness (Data, materials, code, and online resources); `LICENSE` at the repository root.
 

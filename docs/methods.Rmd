@@ -12,8 +12,9 @@ We departed from the preregistration on the following points; all decisions were
 - We specified the growth model's time component as piecewise rather than as a single linear slope, reflecting the qualitatively different change regimes across the intervention and the two follow-up windows.
 - The Imaginal Behavior Approach Test was administered as preregistered but not analyzed in the present report.
 
+
 ## Data, materials, code, and online resources:
-Data, analysis scripts, participant-facing materials, and methodological documentation are available at [https://github.com/eladzlot/transdiagnostic.wet-2025-public](https://github.com/eladzlot/transdiagnostic.wet-2025-public) and mirrored at the OSF project [https://osf.io/dfzgt/](https://osf.io/dfzgt/).
+Data, analysis scripts, participant-facing materials, and methodological documentation are available at [https://github.com/eladzlot/transdiagnostic.wet-2025-public](https://github.com/eladzlot/transdiagnostic.wet-2025-public) and archived on Zenodo at [https://doi.org/10.5281/zenodo.20366472](https://doi.org/10.5281/zenodo.20366472).
 The repository is released under the MIT License.
 Datasets include only quantitative information to protect participant confidentiality.
 Participant-facing materials, including the consent text, intervention instructions, and a navigation document with response anchors and citations for every measure used in the study, are provided in `supplementary/materials/`.

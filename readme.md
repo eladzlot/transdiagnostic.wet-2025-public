@@ -1,8 +1,10 @@
 # Transdiagnostic Written Exposure Therapy (WET) — 2026
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20366472.svg)](https://doi.org/10.5281/zenodo.20366472)
+
 This repository contains the data, scripts, materials, and supplementary documentation for "Transdiagnostic Written Exposure Therapy: Piloting an Online Intervention." The study investigates the efficacy and mechanisms of Written Exposure Therapy (WET) for transdiagnostic anxiety in an online setting.
 
-A time-stamped, immutable snapshot of this repository is archived on Zenodo (DOI to be added on publication).
+A time-stamped, immutable snapshot of this repository is archived on Zenodo at [https://doi.org/10.5281/zenodo.20366471](https://doi.org/10.5281/zenodo.20366471) (concept DOI; always resolves to the latest version).
 
 ## Contents
 
